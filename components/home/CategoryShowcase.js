@@ -57,7 +57,7 @@ const CategoryShowcase = () => {
     <Fragment>
       <section className="categories">
         <div className="container p-0">
-          <h1 className="font-24 text-center font-inter pt-3 pb-3 mt-3 mb-3 text-stroke home-cat-title">
+          <h1 className="font-30 text-center prosto_one_regular pt-3 pb-3 mt-3 mb-3 home-cat-title">
             Categories
           </h1>
           <div className="row">

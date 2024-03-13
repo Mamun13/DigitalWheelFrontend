@@ -55,7 +55,7 @@ const BrandSection = () => {
     <section className="brands-part pb-4">
       <div className="container">
         <div className="row">
-          <h1 className="text-uppercase pt-5 fw-bold text-center font-inter fs-1 pb-3 text-light">
+          <h1 className="text-capitalize pt-5 fw-bold text-center prosto_one_regular fs-2 pb-3">
             brands
           </h1>
           <Slider {...settings}>

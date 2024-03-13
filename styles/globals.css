@@ -27,7 +27,7 @@ del {
 
 html,
 body {
-  background-color: #000 !important;
+  background-color: #e6e6e6 !important;
   /* background-image: url(/smoke.jpg); */
   background-size: cover;
   background-position: center;
@@ -782,11 +782,7 @@ banner css starts
 /*===============
  category css starts
 =================*/
-.text-stroke {
-  color: #fff;
-  border-radius: 5px;
-  border: 1px solid #fff;
-}
+
 
 .category-img-one {
   height: auto;
@@ -3052,9 +3048,15 @@ Responsive part end
   width: 100px;
   transform: translateX(100%);
   background-color: transparent;
-  border: 1px dashed #fff;
-  color: #fff;
+  border: 1px dashed var(--primary);
+  color: var(--primary);
   font-weight: bold;
+  transition: all linear 0.3s;
+}
+.coupon_input button:hover{
+  color: #fff;
+  border: 1px dashed #fff;
+  background-color: var(--primary);
 }
 .remove-coupon {
   cursor: pointer;

@@ -99,7 +99,13 @@ const CheckoutPage = () => {
   //   });
   // }, []);
 
-  const applyDiscount = (subtotal, shippingCharge, districtId, upazilaId, customerGroups) => {
+  const applyDiscount = (
+    subtotal,
+    shippingCharge,
+    districtId,
+    upazilaId,
+    customerGroups
+  ) => {
     // console.log(conditionalDiscount)
     let discount = [];
 
@@ -120,15 +126,23 @@ const CheckoutPage = () => {
           : Infinity;
         const conditionCustomerGroups = JSON.parse(condition.customer_group);
 
-          const customerGroupsIds = customerGroups?.length ? new Set(customerGroups.map(item => item.id)) : [];
+        const customerGroupsIds = customerGroups?.length
+          ? new Set(customerGroups.map((item) => item.id))
+          : [];
 
-          const conditionCustomerGroupsIntegers = new Set(conditionCustomerGroups.map(idStr => parseInt(idStr, 10)));
+        const conditionCustomerGroupsIntegers = new Set(
+          conditionCustomerGroups.map((idStr) => parseInt(idStr, 10))
+        );
 
-          const commonIds = [...customerGroupsIds].filter(id => conditionCustomerGroupsIntegers.has(id));
+        const commonIds = [...customerGroupsIds].filter((id) =>
+          conditionCustomerGroupsIntegers.has(id)
+        );
 
         if (
-          districtId && districtIds.includes(districtId.toString()) &&
-          upazilaId && upazilaIds.includes(upazilaId.toString()) &&
+          districtId &&
+          districtIds.includes(districtId.toString()) &&
+          upazilaId &&
+          upazilaIds.includes(upazilaId.toString()) &&
           subtotal >= minSpend &&
           subtotal <= maxSpend &&
           commonIds.length > 0
@@ -140,17 +154,17 @@ const CheckoutPage = () => {
               conditionName: condition.condition_name,
               conditionType: condition.condition_type,
               discountDescription: condition.condition_name,
-              discountAmount: (subtotal) * (percentageDiscount / 100),
-            }
-            discount.push(obj)
+              discountAmount: subtotal * (percentageDiscount / 100),
+            };
+            discount.push(obj);
           } else if (condition.condition_type === "fixed_amount_discount") {
             let obj = {
               conditionName: condition.condition_name,
               conditionType: condition.condition_type,
               discountDescription: condition.condition_name,
               discountAmount: parseFloat(condition.discount_amount),
-            }
-            discount.push(obj)
+            };
+            discount.push(obj);
           } else if (condition.condition_type === "free_delivery") {
             let obj = {
               conditionName: condition.condition_name,
@@ -158,8 +172,8 @@ const CheckoutPage = () => {
               discountDescription: condition.condition_name,
               discountAmount: 0,
               shippingCharge: 0,
-            }
-            discount.push(obj)
+            };
+            discount.push(obj);
           }
         }
       }
@@ -175,9 +189,15 @@ const CheckoutPage = () => {
     const upazilaId = shippingAddress?.upazila?.id;
 
     // Calculate the discount based on the conditions
-    const additionalDiscount = applyDiscount(subtotal, totalShippingCharge, districtId, upazilaId, auth.group);
-    setDiscount(additionalDiscount)
-  }, [cart?.items, conditionalDiscount, shippingAddress])
+    const additionalDiscount = applyDiscount(
+      subtotal,
+      totalShippingCharge,
+      districtId,
+      upazilaId,
+      auth.group
+    );
+    setDiscount(additionalDiscount);
+  }, [cart?.items, conditionalDiscount, shippingAddress]);
 
   useEffect(() => {
     setCoupon((prevCoupon) => ({
@@ -376,7 +396,10 @@ const CheckoutPage = () => {
         // shipping_charge: totalShippingCharge,
         shipping_charge: hasFreeShipping ? 0 : coupon?.shipping_charge,
         tax: cart.tax,
-        grand_total: cart.subTotal + (hasFreeShipping ? 0 : coupon?.shipping_charge || 0) - (coupon?.discount + totalDiscount || 0),
+        grand_total:
+          cart.subTotal +
+          (hasFreeShipping ? 0 : coupon?.shipping_charge || 0) -
+          (coupon?.discount + totalDiscount || 0),
         // grand_total: cart.subTotal + coupon?.shipping_charge - coupon?.discount,
         payment_method_id: cart.paymentMethodId,
         total_weight: totalWeight,
@@ -413,7 +436,10 @@ const CheckoutPage = () => {
         tax: cart.tax,
         // grand_total: cart.subTotal + totalShippingCharge - coupon?.discount,
         // grand_total: cart.subTotal + coupon?.shipping_charge - coupon?.discount,
-        grand_total: cart.subTotal + (hasFreeShipping ? 0 : coupon?.shipping_charge || 0) - (coupon?.discount + totalDiscount || 0),
+        grand_total:
+          cart.subTotal +
+          (hasFreeShipping ? 0 : coupon?.shipping_charge || 0) -
+          (coupon?.discount + totalDiscount || 0),
         payment_method_id: cart.paymentMethodId,
         total_weight: totalWeight,
         coupon_code: coupon?.appliedCode || "",
@@ -942,8 +968,11 @@ const CheckoutPage = () => {
     }
   };
 
-  const hasFreeShipping = discount?.some(item => item.shippingCharge === 0);
-  const totalDiscount = discount.reduce((total, item) => total + item.discountAmount, 0);
+  const hasFreeShipping = discount?.some((item) => item.shippingCharge === 0);
+  const totalDiscount = discount.reduce(
+    (total, item) => total + item.discountAmount,
+    0
+  );
 
   return (
     <Fragment>
@@ -953,7 +982,7 @@ const CheckoutPage = () => {
       <section>
         <div className="position-relative mn">
           <Image src={Payment} alt="" className="img-fluid payment" />
-          <h1 className="pay-banner-text text-light text-uppercase font-48 fw-bold">
+          <h1 className="pay-banner-text text-light prosto_one_regular text-uppercase font-48 fw-bold">
             payment
           </h1>
         </div>
@@ -962,7 +991,7 @@ const CheckoutPage = () => {
             <Col lg={7} md={12} sm={12} className=" mt-4">
               <div className="row">
                 <div className="col-8">
-                  <h1 className="text-uppercase font-24 fw-bold mb-3 billing_details text-light">
+                  <h1 className="text-capitalize font-24 fw-bold mb-3 billing_details prosto_one_regular">
                     BILLING DETAILS
                   </h1>
                 </div>
@@ -999,7 +1028,7 @@ const CheckoutPage = () => {
               <Row>
                 <Col lg={12} md={12} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label className=" text-light">Full Name</Form.Label>
+                    <Form.Label>Full Name</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder=""
@@ -1017,7 +1046,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={6} md={6} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label className=" text-light">Address Line 1</Form.Label>
+                    <Form.Label>Address Line 1</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder=""
@@ -1035,7 +1064,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={6} md={6} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label className=" text-light">Address Line 2</Form.Label>
+                    <Form.Label>Address Line 2</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder=""
@@ -1053,7 +1082,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={4} md={4} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label className=" text-light">Division</Form.Label>
+                    <Form.Label>Division</Form.Label>
 
                     <Form.Select
                       className="rounded-0 form-deco form-control"
@@ -1081,7 +1110,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={4} md={4} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label className=" text-light">District</Form.Label>
+                    <Form.Label>District</Form.Label>
                     <Form.Select
                       className="rounded-0 form-deco form-control"
                       aria-label="Default select example"
@@ -1107,7 +1136,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={4} md={4} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label className=" text-light">Upazila</Form.Label>
+                    <Form.Label>Upazila</Form.Label>
                     <Form.Select
                       className="rounded-0 form-deco form-control"
                       aria-label="Default select example"
@@ -1133,7 +1162,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={4} md={4} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label className=" text-light">Postcode</Form.Label>
+                    <Form.Label>Postcode</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder=""
@@ -1151,7 +1180,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={4} md={4} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label className=" text-light">Phone</Form.Label>
+                    <Form.Label>Phone</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder=""
@@ -1169,7 +1198,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={4} md={4} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label className="font-lato text-light">Email Address</Form.Label>
+                    <Form.Label>Email Address</Form.Label>
                     <Form.Control
                       type="email"
                       placeholder=""
@@ -1227,7 +1256,7 @@ const CheckoutPage = () => {
               <br />
               <div className="row">
                 <div className="col-8">
-                  <h1 className="text-uppercase font-24 fw-bold mb-3 text-light">
+                  <h1 className="text-uppercase font-24 fw-bold mb-3">
                     SHIPPING DETAILS
                   </h1>
                   <div className="col-lg-12 d-flex justify-content-start align-items-center mb-3">
@@ -1241,7 +1270,7 @@ const CheckoutPage = () => {
                         id="permanentSameAsPresent"
                       />
                     </div>
-                    <span className="text-light">Same as billing address</span>
+                    <span className="">Same as billing address</span>
                   </div>
                 </div>
                 {!isShippingSameAsBilling && (
@@ -1279,11 +1308,11 @@ const CheckoutPage = () => {
                 <Row>
                   <Col lg={12} md={12} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label className="text-light">Full Name</Form.Label>
+                      <Form.Label>Full Name</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder=""
-                        className="rounded-0 form-deco"
+                        className="form-deco"
                         value={shippingAddress?.name || ""}
                         readOnly={!addressStatus?.shipping?.isUpdating}
                         onChange={(e) =>
@@ -1297,11 +1326,11 @@ const CheckoutPage = () => {
                   </Col>
                   <Col lg={6} md={6} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label className="text-light">Address Line 1</Form.Label>
+                      <Form.Label>Address Line 1</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder=""
-                        className="rounded-0 form-deco"
+                        className="form-deco"
                         value={shippingAddress?.address_line_1 || ""}
                         readOnly={!addressStatus?.shipping?.isUpdating}
                         onChange={(e) =>
@@ -1315,11 +1344,11 @@ const CheckoutPage = () => {
                   </Col>
                   <Col lg={6} md={6} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label className="text-light">Address Line 2</Form.Label>
+                      <Form.Label>Address Line 2</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder=""
-                        className="rounded-0 form-deco"
+                        className="form-deco"
                         value={shippingAddress?.address_line_2 || ""}
                         readOnly={!addressStatus?.shipping?.isUpdating}
                         onChange={(e) =>
@@ -1391,10 +1420,10 @@ const CheckoutPage = () => {
 
                   <Col lg={4} md={4} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label className="text-light">Division</Form.Label>
+                      <Form.Label>Division</Form.Label>
 
                       <Form.Select
-                        className="rounded-0 form-deco form-control"
+                        className="form-deco form-control"
                         aria-label="Default select example"
                         onChange={(e) => {
                           const selectedDivisionId = e.target.value;
@@ -1419,9 +1448,9 @@ const CheckoutPage = () => {
                   </Col>
                   <Col lg={4} md={4} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label className="text-light">District</Form.Label>
+                      <Form.Label>District</Form.Label>
                       <Form.Select
-                        className="rounded-0 form-deco form-control"
+                        className=" form-deco form-control"
                         aria-label="Default select example"
                         onChange={(e) => {
                           const selectedDistrictId = e.target.value;
@@ -1445,9 +1474,9 @@ const CheckoutPage = () => {
                   </Col>
                   <Col lg={4} md={4} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label className="text-light">Upazila</Form.Label>
+                      <Form.Label>Upazila</Form.Label>
                       <Form.Select
-                        className="rounded-0 form-deco form-control"
+                        className="form-deco form-control"
                         aria-label="Default select example"
                         onChange={(e) => {
                           const selectedUpazilaId = e.target.value;
@@ -1472,11 +1501,11 @@ const CheckoutPage = () => {
 
                   <Col lg={4} md={4} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label className="text-light">Postcode</Form.Label>
+                      <Form.Label>Postcode</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder=""
-                        className="rounded-0 form-deco"
+                        className="form-deco"
                         value={shippingAddress?.postcode || ""}
                         readOnly={!addressStatus?.shipping?.isUpdating}
                         onChange={(e) =>
@@ -1490,11 +1519,11 @@ const CheckoutPage = () => {
                   </Col>
                   <Col lg={4} md={4} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label className="text-light">Phone</Form.Label>
+                      <Form.Label>Phone</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder=""
-                        className="rounded-0 form-deco"
+                        className="form-deco"
                         value={shippingAddress?.phone || ""}
                         readOnly={!addressStatus?.shipping?.isUpdating}
                         onChange={(e) =>
@@ -1508,13 +1537,11 @@ const CheckoutPage = () => {
                   </Col>
                   <Col lg={4} md={4} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label className="font-lato text-light">
-                        Email Address
-                      </Form.Label>
+                      <Form.Label>Email Address</Form.Label>
                       <Form.Control
                         type="email"
                         placeholder=""
-                        className="rounded-0 form-deco"
+                        className="form-deco"
                         value={shippingAddress?.email || ""}
                         readOnly={!addressStatus?.shipping?.isUpdating}
                         onChange={(e) =>
@@ -1566,7 +1593,7 @@ const CheckoutPage = () => {
 
               <br />
               <br />
-              <h1 className="text-uppercase font-24 fw-bold mb-3 text-light">NOTE</h1>
+              <h1 className="text-uppercase font-24 fw-bold mb-3">NOTE</h1>
               <textarea
                 className="form-control form-deco"
                 rows={5}
@@ -1577,14 +1604,14 @@ const CheckoutPage = () => {
             </Col>
             <Col lg={5} md={12} sm={12} className=" my-4">
               <div className="payment-card p-3">
-                <h2 className="text-uppercase font-24 fw-bold ps-2 text-light">
+                <h2 className="text-capitalize font-24 fw-bold ps-2 prosto_one_regular">
                   your order
                 </h2>
                 <table className="table">
                   <thead>
                     <tr>
-                      <th scope="col" className="text-light">Product</th>
-                      <th scope="col" className="text-end text-light">
+                      <th scope="col">Product</th>
+                      <th scope="col" className="text-end">
                         Total
                       </th>
                     </tr>
@@ -1596,7 +1623,7 @@ const CheckoutPage = () => {
                         <tr key={key}>
                           <th
                             scope="row"
-                            className="fw-normal text-wrap lh-base text-capitalize font-16 text-light"
+                            className="fw-normal text-wrap lh-base text-capitalize font-16"
                           >
                             {item.type === "product" && (
                               <a href={`/product/${item.inventory_id}`}>
@@ -1609,7 +1636,7 @@ const CheckoutPage = () => {
                               </a>
                             )}
                           </th>
-                          <td className="text-end text-light">
+                          <td className="text-end">
                             {item.quantity}
                             &nbsp;x &nbsp;{item.unit_price}
                             &nbsp;= &nbsp;{item.total} Tk
@@ -1620,10 +1647,10 @@ const CheckoutPage = () => {
                 </table>
                 <div className="">
                   <div className="d-flex justify-content-between">
-                    <p className="font-lato text-capitalize font-20 pe-2 phone_res text-light">
+                    <p className="font-lato text-capitalize font-20 pe-2 phone_res">
                       subtotal:{" "}
                     </p>
-                    <p className="text-light font-20 phone_res ">{cart.subTotal} Tk</p>
+                    <p className=" font-20 phone_res ">{cart.subTotal} Tk</p>
                   </div>
 
                   {coupon?.isApplied ? (
@@ -1659,10 +1686,10 @@ const CheckoutPage = () => {
 
                   {coupon?.shipping_charge ? (
                     <div className="d-flex justify-content-between">
-                      <p className="font-lato text-capitalize font-20 pe-2 phone_res text-light">
+                      <p className="font-lato text-capitalize font-20 pe-2 phone_res">
                         shipping charge ({totalWeight.toFixed(2)} kg):{" "}
                       </p>
-                      <p className=" font-20  phone_res text-light">
+                      <p className=" font-20  phone_res">
                         {hasFreeShipping ? 0 : coupon?.shipping_charge} Tk
                       </p>
                     </div>
@@ -1670,25 +1697,32 @@ const CheckoutPage = () => {
                     ""
                   )}
 
-                  {discount?.length ? discount.map(d => {
-                     return !(d?.shippingCharge === 0) ? (
-                      <div className="d-flex justify-content-between">
-                      <p className="font-lato text-capitalize font-20 pe-2 phone_res">
-                        Discount ({d.discountDescription}):
-                      </p>
-                      <p className=" font-20  phone_res">
-                        {d?.discountAmount} Tk
-                      </p>
-                    </div>
-                    ) : ""
-                  }) : ""}
+                  {discount?.length
+                    ? discount.map((d) => {
+                        return !(d?.shippingCharge === 0) ? (
+                          <div className="d-flex justify-content-between">
+                            <p className="font-lato text-capitalize font-20 pe-2 phone_res">
+                              Discount ({d.discountDescription}):
+                            </p>
+                            <p className=" font-20  phone_res">
+                              {d?.discountAmount} Tk
+                            </p>
+                          </div>
+                        ) : (
+                          ""
+                        );
+                      })
+                    : ""}
 
                   <div className="d-flex justify-content-between">
-                    <p className="font-lato text-capitalize font-20 pe-2 phone_res text-light">
+                    <p className="font-lato text-capitalize font-20 pe-2 phone_res">
                       total:
                     </p>
-                    <p className="font-20 phone_res text-light">
-                      {cart.subTotal + (hasFreeShipping ? 0 : coupon?.shipping_charge || 0) - (coupon?.discount + totalDiscount || 0)}{" "}Tk
+                    <p className="font-20 phone_res">
+                      {cart.subTotal +
+                        (hasFreeShipping ? 0 : coupon?.shipping_charge || 0) -
+                        (coupon?.discount + totalDiscount || 0)}{" "}
+                      Tk
                     </p>
                   </div>
                 </div>
@@ -1708,7 +1742,7 @@ const CheckoutPage = () => {
                           }
                         />
                         <label
-                          className="form-check-label text-capitalize  text-light"
+                          className="form-check-label text-capitalize"
                           htmlFor="inlineRadio1"
                         >
                           {paymentMethod.code === "sslcommerze"
@@ -1719,7 +1753,7 @@ const CheckoutPage = () => {
                     ))}
                 </div>
 
-                <p className="mt-3 d-flex flex-column text-light">
+                <p className="mt-3 d-flex flex-column">
                   <span>
                     <strong>Delivery:</strong> Inside Dhaka in 24 hours, outside
                     Dhaka in 48 hours
@@ -1740,20 +1774,20 @@ const CheckoutPage = () => {
                       onChange={(event) => setAgree(event.target.checked)}
                       className="me-2"
                     />
-                    <Link href="/terms-and-conditions" className="mr-1 text-light">
+                    <Link href="/terms-and-conditions" className="mr-1">
                       Terms & Conditions,
                     </Link>
-                    <Link href="/refund-policy" className="mr-1 text-light">
+                    <Link href="/refund-policy" className="mr-1">
                       Refund policy,
                     </Link>
-                    <Link href="/privacy-policy" className="mr-1 text-light">
+                    <Link href="/privacy-policy" className="mr-1">
                       Privacy policy
                     </Link>
                   </Form.Group>
                 </div>
 
                 <div className="coupon mb-4 mt-4">
-                  <label className="mb-2 text-light" htmlFor="coupon">
+                  <label className="mb-2" htmlFor="coupon">
                     Have a coupon?
                   </label>
                   <div className="coupon_input">
@@ -1773,12 +1807,12 @@ const CheckoutPage = () => {
                     />
                     <button
                       type="button"
-                      // className="d-flex align-items-center justify-content-center text-capitalize place_order_border cursor-pointer font-16 w-100 place-order mt-4 font-lato fw-bold theme-text"
+                      className=" "
                       onClick={(e) => handleSendCoupon(e)}
                       disabled={coupon?.isChecking}
                     >
                       {coupon?.isChecking && (
-                        <span className="me-2 text-light">
+                        <span className="me-2">
                           <Oval
                             height={18}
                             width={18}
@@ -1801,7 +1835,7 @@ const CheckoutPage = () => {
                 <div className="">
                   <button
                     type="button"
-                    className="d-flex align-items-center justify-content-center text-capitalize place_order_border text-light cursor-pointer font-16 w-100 place-order mt-4 font-lato fw-bold theme-text"
+                    className="d-flex align-items-center justify-content-center text-capitalize place_order_border cursor-pointer font-16 w-100 place-order mt-4 font-lato fw-bold theme-text"
                     onClick={(event) => handlePlaceOrder(event)}
                     disabled={isLoading}
                   >
@@ -1827,12 +1861,14 @@ const CheckoutPage = () => {
               </div>
 
               <div className="">
-                <p className="text-capitalize py-3 font-16 text-light">
+                <p className="text-capitalize py-3 font-16">
                   online payment by SSLCommerz:
                 </p>
                 <div className="row">
                   <Col lg={4} md={4} sm={4} className="mb-3">
-                    <p className="text-capitalize text-center pb-2 text-light">card</p>
+                    <p className="text-capitalize text-center pb-2">
+                      card
+                    </p>
                     <Image
                       src={Card}
                       alt="card"
@@ -1840,7 +1876,7 @@ const CheckoutPage = () => {
                     />
                   </Col>
                   <Col lg={4} md={4} sm={4} className="mb-3">
-                    <p className="text-capitalize text-center pb-2  text-light">
+                    <p className="text-capitalize text-center pb-2">
                       bank transfer
                     </p>
                     <Image
@@ -1850,7 +1886,7 @@ const CheckoutPage = () => {
                     />
                   </Col>
                   <Col lg={4} md={4} sm={4} className="mb-3">
-                    <p className="text-capitalize text-center pb-2 text-light">
+                    <p className="text-capitalize text-center pb-2">
                       mobile banking
                     </p>
                     <Image
@@ -1862,61 +1898,61 @@ const CheckoutPage = () => {
                 </div>
               </div>
 
-              <div className="">
-                <p className="text-capitalize py-3 font-16 fw-bold text-light">
+              {/* <div className="">
+                <p className="text-capitalize py-3 font-16 fw-bold">
                   Company Information:
                 </p>
                 <div className="row">
                   <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1 text-light">
+                    <b className="text-capitalize text-center pb-2 mr-1">
                       TIN:
                     </b>
-                    <p className="text-capitalize text-center pb-2 text-light">
+                    <p className="text-capitalize text-center pb-2">
                       117029919179
                     </p>
                   </Col>
                   <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1 text-light">
+                    <b className="text-capitalize text-center pb-2 mr-1">
                       BIN:
                     </b>
-                    <p className="text-capitalize text-center pb-2 text-light text-light">
+                    <p className="text-capitalize text-center pb-2">
                       000079132-0403
                     </p>
                   </Col>
                   <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1 text-light text-light">
+                    <b className="text-capitalize text-center pb-2 mr-1">
                       Trade License:
                     </b>
-                    <p className="text-capitalize text-center pb-2 text-light text-light">
+                    <p className="text-capitalize text-center pb-2">
                       TRAD/DESCC/216136/2019
                     </p>
                   </Col>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="">
-                <p className="text-capitalize py-3 font-16 fw-bold text-light">
+              {/* <div className="">
+                <p className="text-capitalize py-3 font-16 fw-bold">
                   Bank Account Info:
                 </p>
                 <div className="row">
                   <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1 text-light">
+                    <b className="text-capitalize text-center pb-2 mr-1">
                       Acc Name:
                     </b>
-                    <p className="text-capitalize text-center pb-2 text-light">
+                    <p className="text-capitalize text-center pb-2">
                       Ifad Multi Products Limited
                     </p>
                   </Col>
                   <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1 text-light">
+                    <b className="text-capitalize text-center pb-2 mr-1">
                       Acc No:
                     </b>
-                    <p className="text-capitalize text-center pb-2 text-light">
+                    <p className="text-capitalize text-center pb-2">
                       00233011222
                     </p>
                   </Col>
                 </div>
-              </div>
+              </div> */}
             </Col>
           </Row>
         </Container>
