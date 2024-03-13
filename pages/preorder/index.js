@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getStoragePath } from "../../utils/helpers";
-import Preorder from "../../components/Preorder/Preorder";
+import Preorder from "../../components/preOrder/PreOrder";
 import { fetchVendorInventories } from "../../services/VendorServices";
 
 const index = ({ title, categoryId }) => {
