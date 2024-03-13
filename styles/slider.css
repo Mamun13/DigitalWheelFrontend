@@ -1,0 +1,172 @@
+/* .overbanner2 {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+} */
+.screen-opacity{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+.hero_banner {
+  height: 100vh;
+  width: 100%;
+}
+.hero_banner_img {
+  height: 100vh!important;
+  width: 100%;
+  object-fit: cover;
+  background-size: auto;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-animation: zoomin 20s ease-in infinite;
+  animation: zoomin 20s ease-in infinite;
+  transition: all 0.3s ease-in-out;
+}
+.slider_overlay::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.5);
+  /* z-index: 999999; */
+}
+@-webkit-keyframes zoomin {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes zoomin {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+} /*End of Zoom in Keyframes */
+
+/* Zoom out Keyframes */
+@-webkit-keyframes zoomout {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.67);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes zoomout {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.67);
+  }
+  100% {
+    transform: scale(1);
+  }
+} /*End of Zoom out Keyframes */
+
+@-webkit-keyframes zoomin {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes imgRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.slider_details {
+  height: 100vh;
+  padding-right: 200px;
+}
+.slideInUp {
+  --animate-duration: 2s;
+}
+
+/*** Section Title ***/
+.slider_title {
+  font-family: 'Montserrat', sans-serif!important;
+  line-height: 65px !important;
+}
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.test_animation {
+  position: relative !important;
+  animation: mymove 2s;
+}
+@keyframes mymove {
+  from {
+    top: 50px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+  }
+}
+.test_des_animation {
+  position: relative !important;
+  animation: mybtn 2s;
+  animation-delay: 0.3s;
+}
+@keyframes mybtn {
+  from {
+    top: 50px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+  }
+}
+.carousel-fade .carousel-item.active,
+.btn_animation {
+  z-index: 1;
+  opacity: 1;
+}
+.btn_animation {
+  position: relative !important;
+  animation: mybtn 2s;
+  animation-delay: 0.5s;
+
+}
+@keyframes mybtn {
+  from {
+    top: 50px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
