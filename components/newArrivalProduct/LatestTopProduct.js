@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-
+import JustDemo from "./JustDemo";
 
 const LatestTopProduct = () => {
   const [value, setValue] = useState("one");
@@ -17,32 +17,12 @@ const LatestTopProduct = () => {
   return (
     <>
       <Container>
-        <div className="d-flex justify-content-between border-black border-bottom mb-4">
-          <div>
-            <p className="text-capitalize prosto_one_regular font-30">
-              Latest arrival
-            </p>
-          </div>
-          <div className="d-flex">
-            <Box sx={{ width: "100%" }}>
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                textColor="secondary"
-                indicatorColor="secondary"
-                aria-label="secondary tabs example"
-              >
-                <Tab value="one" label="Item One" />
-                <Tab value="two" label="Item Two" />
-                <Tab value="three" label="Item Three" />
-              
-              </Tabs>
-            </Box>
-           
-            
-          </div>
+        <div className="mb-4 float-right">
+          <p className="text-capitalize prosto_one_regular font-30">
+            Latest arrival
+          </p>
         </div>
-        <div></div>
+        <JustDemo />
       </Container>
     </>
   );

@@ -24,7 +24,6 @@ import Layout from "../layouts/Layout";
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {persistor, store} from "../store";
-// import MessengerChatBot from "../components/common/MessengerChatBot";
 import PopupBanner from '../components/common/PopupBanner';
 import { fetchPopupData } from '../services/CommonServices';
 
