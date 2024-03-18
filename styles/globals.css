@@ -1624,7 +1624,6 @@ product part css start
 }
 
 .buy-btn {
-  color: #fff !important;
   transition: all linear 0.3s;
 }
 
@@ -1633,7 +1632,6 @@ product part css start
 }
 
 .buy-btn2 {
-  color: #fff !important;
   border: 1px solid var(--primary) !important;
   /* border-color: #ffa500!important; */
   transition: all linear 0.3s;
@@ -2005,7 +2003,7 @@ how to but part css start
 }
 .cart_icon {
   background-color: var(--primary);
-  padding: 3px 0px;
+  padding: 5px 0px;
   border-radius: 50px 0% 0% 50px;
 }
 .terms-banner-div {

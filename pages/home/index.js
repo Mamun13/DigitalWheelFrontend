@@ -15,7 +15,9 @@ import { makeTitle } from "../../utils/helpers";
 import Head from "next/head";
 import DemoSlider from "../../components/home/DemoSlider";
 import { fetchCombos } from "../../services/ComboServices";
-import NewArrival from "../../components/newArrival/NewArrival";
+// import NewArrival from "../../components/newArrival/NewArrival";
+import NewArrivalProduct from "../../components/newArrivalProduct/NewArrivalProduct";
+import LatestTopProduct from "../../components/newArrivalProduct/LatestTopProduct";
 
 const HomePage = () => {
   const [banners, setBanners] = useState([]);
@@ -67,11 +69,12 @@ const HomePage = () => {
       {/* <DiscountedProductScroll
 				title="Discounted Product"
 			/> */}
-
+      <LatestTopProduct />
       {banners && banners.length && (
         <AddBanner imagePath={banners?.[0]?.item_image} />
       )}
-      
+
+      <NewArrivalProduct />
       {/* {categories.map((category, key) => {
         return (
           <CategoryProductScroll
@@ -81,7 +84,6 @@ const HomePage = () => {
           />
         );
       })} */}
-      <NewArrival/>
 
       {banners && banners.length > 1 && (
         <AddBanner imagePath={banners?.[1]?.item_image} />

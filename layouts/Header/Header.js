@@ -12,9 +12,9 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Image from "next/image";
 import Logo from "../../public/logo/LOGO.png";
-import { BiAlignLeft, BiChevronDown } from "react-icons/bi";
-import { AiOutlineUser } from "react-icons/ai";
-import { CiUser } from "react-icons/ci";
+import { BiChevronDown } from "react-icons/bi";
+import { CiViewList } from "react-icons/ci";
+
 import CartOverlys from "./CartOverlay";
 import { fetchCategories } from "../../services/CategoryServices";
 import { isLoggedIn, logout } from "../../utils/auth";
@@ -49,30 +49,24 @@ export default function Header() {
     });
   }, []);
 
-
-
   useEffect(() => {
     // Get the data from localStorage
-    const localStorageData = localStorage.getItem('persist:root');
-  
+    const localStorageData = localStorage.getItem("persist:root");
+
     if (localStorageData) {
       // Parse the JSON string to an object
       const parsedData = JSON.parse(localStorageData);
-  
+
       // Access the auth object and parse it if it exists
       const authData = parsedData.auth ? JSON.parse(parsedData.auth) : null;
-  
+
       if (authData) {
         // Access and store the customer_type data
         const customerType = authData.customer_type;
         setCustomerType(customerType);
-       
       }
     }
   }, []);
-
-
-
 
   // useEffect(() => {
   //   if (isLoggedIn()) {
@@ -110,22 +104,21 @@ export default function Header() {
                         My Account
                       </Link>
                     </li>
-                    {customerType === '1' && (
-                    <Fragment>
-                    <li className="pe-3 login-modal">
-                      <Link href="/vendor" className="text-light">
-                        Vendor
-                      </Link>
-                    </li>
-                    <li className="pe-3 login-modal">
-                      <Link href="/preorder" className="text-light">
-                        Pre-order
-                      </Link>
-                    </li>
-
-                    </Fragment>
+                    {customerType === "1" && (
+                      <Fragment>
+                        <li className="pe-3 login-modal">
+                          <Link href="/vendor" className="text-light">
+                            Vendor
+                          </Link>
+                        </li>
+                        <li className="pe-3 login-modal">
+                          <Link href="/preorder" className="text-light">
+                            Pre-order
+                          </Link>
+                        </li>
+                      </Fragment>
                     )}
-              
+
                     <li className="">
                       <Link
                         href="/auth/logout"
@@ -186,10 +179,12 @@ export default function Header() {
                 />
               </Form>
             </div>
-
-            <div className="">
+            <div className="cart_icon">
+              <CartOverlys />
+            </div>
+            {/* <div className="">
               <div className="d-flex justify-content-between align-items-center">
-                {/* {storedToken && (
+                {storedToken && (
                     <Fragment>
                       <DropdownButton
                         id="dropdown-basic-button"
@@ -228,25 +223,16 @@ export default function Header() {
                         </Dropdown.Item>
                       </DropdownButton>
                     </Fragment>
-                  )} */}
-                {/* <div className="d-flex cart_details me-3">
-                  <div className="cart_icon">
-                    <FaUser color="white" />
-                  </div>
-                  <div className="cart_amount text-capitalize">my account</div>
-                </div> */}
+                  )}
+               
 
-                {/* <div className="d-flex cart_icon_bg me-0">
-                  <div className="cart_icon">
-                    <CartOverlys />
-                  </div>
-                </div> */}
+                
               </div>
-            </div>
+            </div> */}
           </div>
         </Container>
 
-        <section className="bg-dark py-1">
+        <section className="bg-dark py-2">
           <Navbar bg="dark" expand="md">
             <Container>
               <Navbar.Collapse id="basic-navbar-nav">
@@ -330,18 +316,25 @@ export default function Header() {
                 </Nav>
               </Navbar.Collapse>
 
-              <div className="d-flex align-items-center cart_icon_bg me-0">
+              {/* <div className="d-flex align-items-center cart_icon_bg me-0">
                 <div className="me-3 d-flex align-items-center bg-light px-3 py-2 rounded-pill">
                   <AiOutlineUser className="me-2" color="" size={"20px"} />
                   <div className="d-flex align-items-center">
                     <Link href="/auth/login">Login / </Link>
                     <Link href="/auth/register"> Register</Link>
                   </div>
+                </div>*/}
+              <div className="d-flex align-items-center">
+                <div className="me-2">
+                  <CiViewList color="white" size={"50px"} />
                 </div>
-                <div className="cart_icon">
-                  <CartOverlys />
+                <div>
+                  <p className="text-light text-capitalize">contact</p>
+                  <p className="text-light text-capitalize">000111223344</p>
                 </div>
+
               </div>
+              {/* </div>  */}
             </Container>
           </Navbar>
         </section>
