@@ -18,6 +18,7 @@ import { fetchCombos } from "../../services/ComboServices";
 // import NewArrival from "../../components/newArrival/NewArrival";
 import NewArrivalProduct from "../../components/newArrivalProduct/NewArrivalProduct";
 import LatestTopProduct from "../../components/newArrivalProduct/LatestTopProduct";
+import BrandsName from "../../components/all_band_name/BrandsName";
 
 const HomePage = () => {
   const [banners, setBanners] = useState([]);
@@ -73,7 +74,7 @@ const HomePage = () => {
       {banners && banners.length && (
         <AddBanner imagePath={banners?.[0]?.item_image} />
       )}
-
+      <BrandsName />
       <NewArrivalProduct />
       {/* {categories.map((category, key) => {
         return (
