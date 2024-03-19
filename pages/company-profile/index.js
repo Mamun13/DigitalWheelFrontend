@@ -55,7 +55,7 @@ const CompanyReview = () => {
           {aboutInfo?.map((item, index) => (
             <div className="row justify-content-center" key={index}>
               <div className="col-12 col-md-7 col-lg-7 col-xxl-6">
-                <h2 className="font-32 fw-bold pt-5 font-inter text-light">
+                <h2 className="font-32 fw-bold pt-5 prosto_one_regular">
                   {item?.item_name}
                 </h2>
                 <p className="font-16 pt-3 pb-3 font-inter text-justify text-secondary">
@@ -91,7 +91,7 @@ const CompanyReview = () => {
                         width={150}
                       />
                     </div>
-                    <h1 className="text-center text-capitalize font-poppins fw-bold pt-5 font-40 text-light">
+                    <h1 className="text-center text-capitalize prosto_one_regular fw-bold pt-5 font-40">
                       {item.item_name.split(" ")[0]}
                       <span className="theme-color">
                         {" "}
@@ -117,7 +117,7 @@ const CompanyReview = () => {
       <section>
         <Container className="pb-4">
           <Row>
-            <h1 className="text-center text-capitalize font-poppins fw-bolder py-4 font-40  text-light">
+            <h1 className="text-center text-capitalize prosto_one_regular fw-bolder py-4 font-40">
               our <span className="theme-color"> values</span>
             </h1>
 

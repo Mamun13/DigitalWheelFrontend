@@ -120,11 +120,10 @@ const UserInfoTab = () => {
     <div className="user-information">
       <Form onSubmit={handleSubmit}>
         <Row>
-          <h1 className="text-capitalize fo nnt-32 fw-bolder font-jost pb-4 text-light">
+          <h1 className="text-capitalize font-32 fw-bolder prosto_one_regular pb-4">
             account information
           </h1>
           <Col lg={3}>
-              <p className="text-light">012345</p>  
             <div className="d-flex justify-content-center">
               <Image
                 // src={formData?.old_image ? `${API_URL}/${formData.old_image}` : '/user/man.png'}
@@ -160,7 +159,7 @@ const UserInfoTab = () => {
           </Col>
           <Col lg={9}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label className="text-light">
+              <Form.Label className="">
                 Full Name <span className="text-danger"> *</span>
               </Form.Label>
               <Form.Control
@@ -176,7 +175,7 @@ const UserInfoTab = () => {
             <div className="row">
               <div className="col">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label className="text-light">
+                  <Form.Label className="">
                     Email<span className="text-danger"> *</span>
                   </Form.Label>
                   <Form.Control
@@ -192,7 +191,7 @@ const UserInfoTab = () => {
               </div>
               <div className="col">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label className="text-light">
+                  <Form.Label className="">
                     Phone<span className="text-danger"> *</span>
                   </Form.Label>
                   <Form.Control
@@ -208,7 +207,7 @@ const UserInfoTab = () => {
               </div>
             </div>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label htmlFor="" className="form-label text-capitalize text-light">
+              <Form.Label htmlFor="" className="form-label text-capitalize">
                 Date of Birth
                 {/* <span className="text-danger"> *</span> */}
               </Form.Label>
@@ -222,7 +221,7 @@ const UserInfoTab = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label className="text-light">Gender</Form.Label>
+              <Form.Label className="">Gender</Form.Label>
               <Form.Select
                 name="gender"
                 value={formData.gender}
@@ -245,7 +244,7 @@ const UserInfoTab = () => {
             <Button
               type="submit"
               variant="primary"
-              className="text-capitalize font-18 px-5 mb-4 user-sub-btn rounded-1 font-lato text-light"
+              className="text-capitalize font-18 px-5 mb-4 user-sub-btn rounded-1 font-lato"
             >
               submit
             </Button>{" "}

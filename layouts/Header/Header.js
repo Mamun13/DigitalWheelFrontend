@@ -279,6 +279,26 @@ export default function Header() {
                   </NavDropdown>
 
                   <NavDropdown
+                    className="p-0 px-4 me-auto rounded-0"
+                    title={
+                      <span className="text-white font-inter  py-3 d-flex align-items-center categories">
+                        about us
+                        <BiChevronDown size={"15px"} className="ms-2" />
+                      </span>
+                    }
+                    id="navbarScrollingDropdown"
+                  >
+                    <NavDropdown.Item className="m-0 p-0">
+                      <Link
+                        href="/company-profile"
+                        className="cate-drop text-uppercase all-icons text-dark px-4 py-2 d-block font-inter"
+                      >
+                        Who we are
+                      </Link>
+                    </NavDropdown.Item>
+                  </NavDropdown>
+
+                  {/* <NavDropdown
                     className="p-0 rounded-0 about-btn"
                     title={
                       <span className="text-white font-inter px-4 py-3 d-flex align-items-center categories">
@@ -287,17 +307,20 @@ export default function Header() {
                     }
                     id="navbarScrollingDropdown"
                   >
-                    <NavDropdown.Item className="text-capitalize all-icons text-dark px-4 py-2 d-block">
-                      <Link href="/company-profile" className="cate-drop">
+                    <NavDropdown.Item className="text-capitalize all-icons text-dark d-block">
+                      <Link
+                        href="/company-profile"
+                        className="cate-drop text-uppercase all-icons text-dark d-block font-inter"
+                      >
                         Who we are
                       </Link>
                     </NavDropdown.Item>
-                    <NavDropdown.Item className="text-capitalize all-icons text-dark px-4 py-2 d-block">
+                    {/* <NavDropdown.Item className="text-capitalize all-icons text-dark px-4 py-2 d-block">
                       <Link href="/board-of-directors" className="cate-drop">
                         BOD & Leadership
                       </Link>
-                    </NavDropdown.Item>
-                  </NavDropdown>
+                    </NavDropdown.Item> 
+                  </NavDropdown> */}
 
                   <Nav.Link
                     as={Link}
@@ -332,7 +355,6 @@ export default function Header() {
                   <p className="text-light text-capitalize">contact</p>
                   <p className="text-light text-capitalize">000111223344</p>
                 </div>
-
               </div>
               {/* </div>  */}
             </Container>

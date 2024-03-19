@@ -68,7 +68,7 @@ const MyAccountPage = () => {
                     <Nav.Item>
                       <Nav.Link
                         eventKey="account-info"
-                        className="text-capitalize rounded-0"
+                        className="text-capitalize rounded-0 text-dark"
                         onClick={() => {
                           router.push({
                             pathname: "/my-account",
@@ -84,7 +84,7 @@ const MyAccountPage = () => {
                     <Nav.Item>
                       <Nav.Link
                         eventKey="wishlist"
-                        className="text-capitalize rounded-0"
+                        className="text-capitalize rounded-0 text-dark"
                         onClick={() => {
                           router.push({
                             pathname: "/my-account",
@@ -100,7 +100,7 @@ const MyAccountPage = () => {
                     <Nav.Item>
                       <Nav.Link
                         eventKey="upcoming_product"
-                        className="text-capitalize rounded-0"
+                        className="text-capitalize rounded-0 text-dark"
                         onClick={() => {
                           router.push({
                             pathname: "",
@@ -116,7 +116,7 @@ const MyAccountPage = () => {
                     <Nav.Item>
                       <Nav.Link
                         eventKey="order"
-                        className="text-capitalize rounded-0"
+                        className="text-capitalize rounded-0 text-dark"
                         onClick={() => {
                           router.push({
                             pathname: "/my-account",
@@ -132,7 +132,7 @@ const MyAccountPage = () => {
                     <Nav.Item>
                       <Nav.Link
                         eventKey="change-password"
-                        className="text-capitalize rounded-0"
+                        className="text-capitalize rounded-0 text-dark"
                         onClick={() => {
                           router.push({
                             pathname: "/my-account",
@@ -148,7 +148,7 @@ const MyAccountPage = () => {
                     <Nav.Item>
                       <Nav.Link
                         eventKey="address"
-                        className="text-capitalize rounded-0"
+                        className="text-capitalize rounded-0 text-dark"
                         onClick={() => {
                           router.push({
                             pathname: "/my-account",
@@ -167,7 +167,7 @@ const MyAccountPage = () => {
                     <Nav.Item>
                       <Nav.Link
                         eventKey="transaction_history"
-                        className="text-capitalize rounded-0"
+                        className="text-capitalize rounded-0 text-dark"
                         onClick={() => {
                           router.push({
                             pathname: "/my-account",
@@ -183,7 +183,7 @@ const MyAccountPage = () => {
                     <Nav.Item>
                       <Nav.Link
                         eventKey="deposit"
-                        className="text-capitalize rounded-0"
+                        className="text-capitalize rounded-0 text-dark"
                         onClick={() => {
                           router.push({
                             pathname: "/my-account",
@@ -199,7 +199,7 @@ const MyAccountPage = () => {
                     <Nav.Item>
                       <Nav.Link
                         eventKey="Withdraw"
-                        className="text-capitalize rounded-0"
+                        className="text-capitalize rounded-0 text-dark"
                         onClick={() => {
                           router.push({
                             pathname: "/my-account",

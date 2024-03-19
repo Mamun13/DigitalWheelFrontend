@@ -1860,6 +1860,7 @@ my-account part css start
 }
 
 .nav-pills .nav-link.active {
+  color: #fff !important;
   background-color: var(--primary) !important;
   font-weight: 500;
 }

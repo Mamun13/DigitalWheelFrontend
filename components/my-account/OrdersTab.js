@@ -55,19 +55,19 @@ const OrdersTab = ({orderStatus}) => {
             )}
             <Row>
 
-                <h1 className="text-capitalize font-32 fw-bolder font-jost pb-4 text-light">
+                <h1 className="text-capitalize font-32 fw-bolder prosto_one_regular pb-4">
                     Ordered Products
                 </h1>
                 <div className=" table-responsive">
                     <table className="table mb-5 table-width">
                         <thead>
                         <tr>
-                            <th scope="col" className="text-capitalize accordion text-light">ID</th>
-                            <th scope="col" className="text-capitalize accordion text-light">Order Date</th>
-                            <th scope="col" className="text-capitalize accordion text-light">Payment Status</th>
-                            <th scope="col" className="text-capitalize accordion text-light">Order Status</th>
-                            <th scope="col" className="text-capitalize accordion text-light">Grand Total</th>
-                            <th scope="col" className="text-capitalize accordion text-light">Actions</th>
+                            <th scope="col" className="text-capitalize accordion">ID</th>
+                            <th scope="col" className="text-capitalize accordion">Order Date</th>
+                            <th scope="col" className="text-capitalize accordion">Payment Status</th>
+                            <th scope="col" className="text-capitalize accordion">Order Status</th>
+                            <th scope="col" className="text-capitalize accordion">Grand Total</th>
+                            <th scope="col" className="text-capitalize accordion">Actions</th>
                         </tr>
                         </thead>
                         <tbody>

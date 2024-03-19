@@ -176,7 +176,7 @@ const AddressTab = () => {
       <>
         <Row>
           <Col lg={6}>
-            <h1 className="text-capitalize font-32 fw-bolder font-jost pb-4 text-light text-light" >Address</h1>
+            <h1 className="text-capitalize font-32 fw-bolder prosto_one_regular pb-4" >Address</h1>
           </Col>
           <Col lg={6} className="address-col">
             <div className="d-flex justify-content-end">

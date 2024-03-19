@@ -49,7 +49,7 @@ const ChangePasswordTab = () => {
           <Col lg={8}>
             <Form onSubmit={handleSubmit} autoComplete="off">
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label className=" text-light">Old Password <span className="text-danger">*</span></Form.Label>
+                <Form.Label className="">Old Password <span className="text-danger">*</span></Form.Label>
                 <Form.Control
                     name='current_password'
                     value={myPassword.current_password}
@@ -60,7 +60,7 @@ const ChangePasswordTab = () => {
                     onChange={handleChange}/>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label className=" text-light">New Password <span className="text-danger">*</span></Form.Label>
+                <Form.Label className="">New Password <span className="text-danger">*</span></Form.Label>
                 <Form.Control
                     name='password'
                     value={myPassword.password}
@@ -71,7 +71,7 @@ const ChangePasswordTab = () => {
                     onChange={handleChange}/>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label className=" text-light">Confirm Password <span className="text-danger">*</span></Form.Label>
+                <Form.Label className="">Confirm Password <span className="text-danger">*</span></Form.Label>
                 <Form.Control
                     name='password_confirmation'
                     value={myPassword.password_confirmation}
@@ -83,7 +83,7 @@ const ChangePasswordTab = () => {
                     onChange={handleChange}/>
               </Form.Group>
               <Button type="submit" variant="primary"
-                      className="text-capitalize font-18 px-5 mb-4 user-sub-btn rounded-1 font-jost text-light">save</Button>{" "}
+                      className="text-capitalize font-18 px-5 mb-4 user-sub-btn rounded-1">save</Button>{" "}
             </Form>
           </Col>
         </Row>

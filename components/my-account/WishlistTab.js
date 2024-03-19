@@ -37,7 +37,7 @@ const WishlistTab = () => {
 
 	return (
 		<Row>
-			<h1 className="text-capitalize font-32 fw-bolder font-jost pb-4 text-light">Wish list</h1>
+			<h1 className="text-capitalize font-32 fw-bolder prosto_one_regular pb-4 t">Wish list</h1>
 			{myWishlist.map((item, key) => (
 				<Col lg={4} key={key} className="mb-3">
 					<div className="text-end">
