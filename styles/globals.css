@@ -783,7 +783,6 @@ banner css starts
  category css starts
 =================*/
 
-
 .category-img-one {
   height: auto;
   width: 100%;
@@ -1624,6 +1623,7 @@ product part css start
 }
 
 .buy-btn {
+  color: #333 !important;
   transition: all linear 0.3s;
 }
 
@@ -1739,8 +1739,8 @@ vendor part css start
 .vendor_part .vendor-banner {
   height: 300px;
 }
-.vendor_img{
-  width: 100%!important ;
+.vendor_img {
+  width: 100% !important ;
   height: 300px;
   object-fit: cover;
 }
@@ -3052,7 +3052,7 @@ Responsive part end
   font-weight: bold;
   transition: all linear 0.3s;
 }
-.coupon_input button:hover{
+.coupon_input button:hover {
   color: #fff;
   border: 1px dashed #fff;
   background-color: var(--primary);

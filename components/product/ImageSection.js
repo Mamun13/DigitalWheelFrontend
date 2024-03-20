@@ -17,19 +17,19 @@ const ImageSection = ({inventory}) => {
         thumbnailImage = getStoragePath(`product-image/${inventory?.product?.image}`);
     }
 
-    if (inventory?.inventory_images) {
-        inventory?.inventory_images?.map((inventory_image) => {
-            galleryImages.push(getStoragePath(`inventory-multi-image/${inventory_image?.image}`))
-        });
-    } else {
-        inventory?.product?.product_images?.map((product_image) => {
-            galleryImages.push(getStoragePath(`product-multi-image/${product_image?.image}`))
-        });
-    }
+    // if (inventory?.inventory_images) {
+    //     inventory?.inventory_images?.map((inventory_image) => {
+    //         galleryImages.push(getStoragePath(`inventory-multi-image/${inventory_image?.image}`))
+    //     });
+    // } else {
+    //     inventory?.product?.product_images?.map((product_image) => {
+    //         galleryImages.push(getStoragePath(`product-multi-image/${product_image?.image}`))
+    //     });
+    // }
 
     return (
         <Fragment>
-            <Swiper
+            {/* <Swiper
                 style={{
                     "--swiper-navigation-color": "#fff",
                     "--swiper-pagination-color": "#fff",
@@ -53,7 +53,7 @@ const ImageSection = ({inventory}) => {
                              className="single-object"/>
                     </SwiperSlide>
                 ))}
-            </Swiper>
+            </Swiper> */}
 
             <Swiper
                 onSwiper={setThumbsSwiper}
@@ -64,13 +64,14 @@ const ImageSection = ({inventory}) => {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="prod-detail-small-slider"
             >
-                {galleryImages.map((galleryImage, key) => (
-                    <SwiperSlide key={key}>
-                        <img src={galleryImage} alt="product-img-two"
+                {/* {galleryImages.map((galleryImage, key) => ( 
+                     <SwiperSlide key={key}>  */}
+                        <img src={thumbnailImage} alt="product-img-two"
                              className="single-object"/>
-                    </SwiperSlide>
-                ))}
+                     {/* </SwiperSlide> 
+                ))} */}
             </Swiper>
+            <br/>
         </Fragment>
     );
 }

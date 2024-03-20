@@ -223,7 +223,7 @@ const SingleInventoryPage = () => {
                             )}
 
                             <div className="d-flex justify-content-start align-items-center counter mt-3">
-                                <p className="text-capitalize pe-3 font-lato text-light">quantity :</p>
+                                <p className="text-capitalize pe-3 font-lato">quantity :</p>
 
                                 <div
                                     className="d-flex justify-content-between align-items-center border border-secondary rounded-0 counter">
