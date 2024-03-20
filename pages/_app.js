@@ -89,11 +89,11 @@ export default function App({Component, pageProps}) {
 
                     {/* <MessengerChatBot /> */}
 
-                    <PopupBanner
+                    {/* <PopupBanner
                       show={showPopup && dataLoaded}
                       onClose={closePopup}
                       popupData={popupData}
-                    />
+                    /> */}
                 </Layout>
             </SSRProvider>
         </Fragment>
