@@ -100,7 +100,7 @@ const SingleInventoryPage = () => {
     const handleAddToCart = (event, inventory, buyNow = false) => {
         event.preventDefault();
 
-        try {
+        try { 
 
             if (!quantity) {
                 tostify(toast, 'warning', {
@@ -127,6 +127,7 @@ const SingleInventoryPage = () => {
                     ? getStoragePath(`inventory-image/${inventory?.image}`)
                     : getStoragePath(`product-image/${inventory?.product?.image}`),
                 variations: '',
+
                 variant_id: inventory.inventory_variants[0].variant.id,
                 variant_name: inventory.inventory_variants[0].variant.name,
                 variant_quantity: inventory.inventory_variants[0].variant_option.name
@@ -204,6 +205,7 @@ const SingleInventoryPage = () => {
                                     )}
                                 </p>
                             </div>
+                            
 
                             {inventory?.inventory_variants && (
                                 <div className="variation-infos">
