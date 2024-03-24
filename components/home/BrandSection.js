@@ -17,13 +17,13 @@ const BrandSection = () => {
 
   var settings = {
     dots: true,
+    arrow: true,
     infinite: true,
     speed: 1000,
     autoplay: true,
     autoplaySpeed: 3000,
     slidesToShow: 5,
     slidesToScroll: 1,
-    arrow: false,
     responsive: [
       {
         breakpoint: 992,
@@ -53,7 +53,7 @@ const BrandSection = () => {
 
   return (
     <section className="brands-part pb-4">
-      <div className="container">
+      <div className="container fluid">
         <div className="row">
           <h1 className="text-capitalize pt-5 fw-bold text-center prosto_one_regular fs-2 pb-3">
             brands
