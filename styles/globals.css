@@ -829,6 +829,24 @@ banner css starts
   background-position: center;
 }
 
+.vendor_part .slick-prev:before,
+.vendor_part .slick-next:before {
+  content: "" !important;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../public/arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.vendor_part .slick-prev:before {
+  position: absolute;
+  padding: 5px 5px !important;
+  transform: rotate(180deg);
+  margin-left: 10px;
+}
 .categories .slick-prev:before {
   position: absolute;
   padding: 5px 5px !important;

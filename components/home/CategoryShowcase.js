@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import { fetchCategories } from "../../services/CategoryServices";
 import { getStoragePath } from "../../utils/helpers";
 

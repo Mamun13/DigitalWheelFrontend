@@ -7,7 +7,8 @@ import Slider from "react-slick";
 
 const index = ({ title, categoryId }) => {
   const [inventories, setInventories] = useState([]);
-
+  const sliced = inventories.slice(0, 10);
+  console.log(sliced)
   // fetch
   useEffect(() => {
     fetchInventories(categoryId, {
@@ -61,7 +62,7 @@ const index = ({ title, categoryId }) => {
         <div className="container fluid">
           <div className="row">
           <Slider {...settings}>
-            {inventories.map((inventory, key) => {
+            {sliced.map((inventory, key) => {
               return (
                 <div className="col-lg-3 px-2">
                   <div className="mt-0" key={key}>

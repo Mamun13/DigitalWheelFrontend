@@ -1,52 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { fetchCategories } from "../../services/CategoryServices";
 
 const BrandsName = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetchCategories({
+      paginate: "no",
+    }).then((response) => {
+      if (response?.data) {
+        setCategories(response.data);
+      }
+    });
+  }, []);
+
   return (
     <>
       <div className="marquee-cont">
         <div className="marquee-slider">
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">design</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">web development </p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">campanigns</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">photography</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">videography</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">social media</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">visual identity</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">digital</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold"> strategy</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">seo</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">copywriting</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">branding</p>
+          {categories &&
+            categories.map((category, key) => {
+              return (
+                <p className="prosto_one_regular text_style text-capitalize fw-bold">
+                  {category.name}
+                </p>
+              );
+            })}
         </div>
         <div className="marquee-slider">
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">design</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">web development </p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">campanigns</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">photography</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">videography</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">social media</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">visual identity</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">digital</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold"> strategy</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">seo</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">copywriting</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">branding</p>
+          {categories &&
+            categories.map((category, key) => {
+              return (
+                <p className="prosto_one_regular text_style text-capitalize fw-bold">
+                  {category.name}
+                </p>
+              );
+            })}
         </div>
         <div className="marquee-slider">
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">design</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">web development </p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">campanigns</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">photography</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">videography</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">social media</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">visual identity</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">digital</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold"> strategy</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">seo</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">copywriting</p>
-          <p className="prosto_one_regular text_style text-capitalize fw-bold">branding</p>
+          {categories &&
+            categories.map((category, key) => {
+              return (
+                <p className="prosto_one_regular text_style text-capitalize fw-bold">
+                  {category.name}
+                </p>
+              );
+            })}
         </div>
-       
       </div>
     </>
   );
