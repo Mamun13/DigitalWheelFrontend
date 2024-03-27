@@ -22,7 +22,7 @@ const BrandSection = () => {
     speed: 1000,
     autoplay: true,
     autoplaySpeed: 3000,
-    slidesToShow: 5,
+    slidesToShow: 6,
     slidesToScroll: 1,
     responsive: [
       {

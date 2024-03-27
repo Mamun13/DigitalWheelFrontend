@@ -161,7 +161,7 @@ const CategoryPage = () => {
                 {filteredInventory.map((inventory, key) => {
                   return (
                     <div
-                      className="col-lg-4 col-md-6 text-center mb-4"
+                      className="col-lg-3 col-md-6 text-center mb-4"
                       key={key}
                     >
                       <ProductCard

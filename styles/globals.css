@@ -1008,6 +1008,7 @@ banner css starts
   top: 0;
   height: 25px;
   width: 50px;
+  border-radius: 5px 0px 0px 0px;
 }
 
 .combo-img-bg .offer-token .veri-align {
@@ -1179,6 +1180,8 @@ banner css starts
 Brands part starts
 ================== */
 .brands-size {
+  height: 120px;
+  width: 120px;
   border-radius: 50%;
   width: auto;
 }
@@ -1230,7 +1233,7 @@ footer part starts
   background: #000;
 }
 .footer-logo {
-  width: 80px;
+  width: 100px;
 }
 .payment-img {
   max-width: 180px !important;
@@ -1431,18 +1434,18 @@ BOD part css end
 product part css start
 ==================*/
 .add-cart-btn {
-  border: 1px solid #ffa850;
+  border: 1px solid var(--primary);
   padding: 5px 10px;
   transition: all linear 0.3s;
 }
 
 .add-cart-btn:hover {
-  background: #ffa850;
+  background: var(--primary);
   color: white;
 }
 
 .card-border {
-  border: 1px solid #ffa850;
+  border: 1px solid var(--primary);
 }
 
 .css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root {
@@ -1487,7 +1490,7 @@ product part css start
 }
 
 .category-btn:hover {
-  color: #f38120;
+  color: var(--primary);
 }
 
 .carousel:hover span.carousel-control-prev-icon {
@@ -2687,12 +2690,13 @@ Responsive part end
 .footer {
   background-color: #333;
 }
-
+.footer_text_color {
+  color: #ccc !important;
+}
 .nav-link-ifad {
   color: #ccc !important;
-  padding: 5px;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .nav-link-ifad:after {
@@ -2700,10 +2704,7 @@ Responsive part end
   padding-left: 10px;
 }
 
-.footer-manu-item {
-  border-right: 2px solid #b3b3b3;
-  padding: 0 0 0 10px;
-}
+
 
 .footer-manu-item:last-child {
   border-right: 0 solid #000;

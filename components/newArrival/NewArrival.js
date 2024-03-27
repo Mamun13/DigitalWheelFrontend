@@ -90,14 +90,14 @@ const ProductCard = ({
   };
 
   return (
-    <Card className={`c-shadow rounded-0 ${cssClasses}`}>
+    <Card className={`c-shadow rounded ${cssClasses}`}>
       <div className="combo-img-bg position-relative">
         <Link href={viewLink}>
           <img
             src={imagePath}
             width={224}
             height={172}
-            className="card-img-top mt-4 mb-4"
+            className="card-img-top mt-4 mb-4 rounded-top"
             alt={title}
           />
         </Link>
@@ -150,14 +150,14 @@ const ProductCard = ({
         <div className="d-flex justify-content-center">
           <button
             type="button"
-            className="btn btn-success buy-now rounded-0 text-capitalize px-2 font-14 me-2 font-lato"
+            className="btn btn-success buy-now rounded text-capitalize px-2 font-14 me-2 font-lato"
             onClick={(event) => handleAddToCart(event, true)}
           >
             buy now
           </button>
           <button
             type="button"
-            className="btn btn-warning buy-add-btn rounded-0 text-capitalize px-2 font-14 font-lato"
+            className="btn btn-warning buy-add-btn rounded text-capitalize px-2 font-14 font-lato"
             onClick={(event) => handleAddToCart(event)}
           >
             add to cart

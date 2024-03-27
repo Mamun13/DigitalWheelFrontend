@@ -90,14 +90,14 @@ const ProductCard = ({
   };
 
   return (
-    <Card className={`c-shadow rounded-0 ${cssClasses}`}>
+    <Card className={`c-shadow rounded ${cssClasses}`}>
       <div className="combo-img-bg position-relative">
         <Link href={viewLink}>
           <img
             src={imagePath}
             width={224}
             height={172}
-            className="card-img-top mt-4 mb-4"
+            className="card-img-top mt-4 mb-4 rounded-top"
             alt={title}
           />
         </Link>

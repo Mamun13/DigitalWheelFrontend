@@ -75,7 +75,7 @@ const ComboPage = () => {
 
                     {/*Category Info*/}
                     <div className="w-100 mb-5">
-                        <h1 className="fw-bolder text-center mt-5 font-40 font-inter our-product">Combo Pack</h1>
+                        <h1 className="fw-bolder text-center mt-5 font-40 prosto_one_regular our-product">Combo Pack</h1>
                         {/* <p className="font-lato text-center font-18 mb-5 product-des">
                         We Are Restocking as Quickly as Possible. Come Back 7/30 to OrderMore of These Flavors
                         Inspired by the Places You Call
@@ -87,7 +87,7 @@ const ComboPage = () => {
 
                         {/*Category Sidebar*/}
                         <div className="col-lg-3 col-md-4 col-sm-4">
-                            <ul className="stickyContent list-unstyled text-start ps-5 font-20 lh-lg card-border py-3 ">
+                            <ul className="stickyContent list-unstyled text-start ps-5 font-20 lh-lg card-border py-3 mb-3">
                                 {comboCategories?.map((item, key) => (
                                     <li key={key}>
                                         <Link href={`/combo/category/${item.id}`}>

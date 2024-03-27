@@ -16,7 +16,7 @@ const index = ({ title, categoryId }) => {
       }
     });
   }, [categoryId]);
-
+console.log(inventories)
   return (
     <>
       <section className="vendor_part">

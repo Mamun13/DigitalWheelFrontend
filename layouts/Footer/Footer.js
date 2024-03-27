@@ -12,6 +12,7 @@ import {
 import { AiOutlineInstagram } from "react-icons/ai";
 import { fetchSocial } from "../../services/CommonServices";
 import { BiChevronDown } from "react-icons/bi";
+import { Col, Container, Row } from "react-bootstrap";
 
 export default function Footer() {
   const [socials, setSocials] = useState([]);
@@ -42,46 +43,31 @@ export default function Footer() {
         <div className="container">
           <div className="row">
             <div className="swiper">
-              <div className="row position-relative">
-                <div className="col-sm-12 d-flex justify-content-center py-4 border-bottom">
-                  <nav className="navbar navbar-expand-md">
-                    <div className="container-fluid">
-                      <div className="footer-bg-opacity" id="navbarNav">
-                        <ul className="navbar-nav text-center bg-phn">
-                          <li className="nav-item">
-                            <div className="dropdown">
-                              <a
-                                href="#"
-                                className="my-0 me-1 py-0 nav-link-ifad dropdown-toggle d-flex justify-content-center align-items-center"
-                                type="button"
-                                id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                              >
-                                about us <BiChevronDown className="ms-1" />
-                              </a>
-                              <ul
-                                className="dropdown-menu ms-0"
-                                aria-labelledby="dropdownMenuButton1"
-                              >
-                                <li>
-                                  <Link
-                                    href="/company-profile"
-                                    className="dropdown-item"
-                                  >
-                                    Who we are
-                                  </Link>
-                                </li>
-                                {/* <li>
-                                    <Link href="/board-of-directors"
-                                          className="dropdown-item">
-                                      BOD & Leadership
-                                    </Link>
-                                  </li> */}
-                              </ul>
-                            </div>
-                          </li>
-                          <li className="nav-item">
+              <section className="my-5">
+                <Container>
+                  <Row>
+                    <Col lg={3}>
+                      <div className="footer_text_color">
+                        <Link href="/" target="_blank">
+                          <img
+                            alt="logo"
+                            src="/logo/LOGO.png"
+                            className="img-fluid footer-logo mb-4"
+                            loading="lazy"
+                          />
+                        </Link>
+                        <p className="font-16">mirpur 10, dhaka</p>
+                        <p className="font-14">demo@gmail.com</p>
+                        
+                      </div>
+                    </Col>
+                    <Col lg={3}>
+                      <div>
+                        <h5 className="text-capitalize prosto_one_regular text-light">
+                          legal terms
+                        </h5>
+                        <ul className="mt-3">
+                          <li className="nav-item pb-2">
                             <Link
                               href="/privacy-policy"
                               className="nav-link-ifad"
@@ -89,7 +75,7 @@ export default function Footer() {
                               privacy & policy
                             </Link>
                           </li>
-                          <li className="nav-item">
+                          <li className="nav-item pb-2">
                             <Link
                               href="/terms-and-conditions"
                               className="nav-link-ifad"
@@ -97,7 +83,7 @@ export default function Footer() {
                               terms & conditions
                             </Link>
                           </li>
-                          <li className="nav-item">
+                          <li className="nav-item pb-2">
                             <Link
                               href="/refund-policy"
                               className="nav-link-ifad"
@@ -105,7 +91,7 @@ export default function Footer() {
                               refund policy
                             </Link>
                           </li>
-                          <li className="nav-item">
+                          <li className="nav-item pb-2">
                             <Link
                               href="/delivery-information"
                               className="nav-link-ifad"
@@ -115,93 +101,80 @@ export default function Footer() {
                           </li>
                         </ul>
                       </div>
-                    </div>
-                  </nav>
-                </div>
-              </div>
-              <div className="row py-3">
-                <div className="col-lg-3">
-                  <div className=" d-flex justify-content-center align-items-center">
-                    <a href="/" target="_blank">
-                      <img
-                        alt="logo"
-                        src="/logo/LOGO.png"
-                        className="img-fluid footer-logo"
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className=" d-flex justify-content-center align-items-center">
-                    <nav className="navbar navbar-expand-lg text-center">
-                      <ul className="navbar-nav footer_manu_list">
-                        <li className="nav-item footer-manu-item">
-                          <Link href="/auth/login" className="nav-link-ifad">
-                            login
+                    </Col>
+                    <Col lg={3}>
+                      <div>
+                        <h5 className="text-capitalize prosto_one_regular text-light mb-3">
+                          accounts
+                        </h5>
+                        <ul className="navbar-nav footer_manu_list">
+                          <li className="nav-item pb-2">
+                            <Link href="/auth/login" className="nav-link-ifad">
+                              login
+                            </Link>
+                          </li>
+                          <li className="nav-item pb-2">
+                            <Link href="/checkout" className="nav-link-ifad">
+                              checkout
+                            </Link>
+                          </li>
+                          <li className="nav-item pb-2">
+                            <Link href="/my-account" className="nav-link-ifad">
+                              my account
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </Col>
+                    <Col lg={3}>
+                      <div className="text-light">
+                        <h5 className="text-capitalize prosto_one_regular text-light mb-3">
+                          connect with us
+                        </h5>
+                        {socials?.map((social, index) => (
+                          <Link
+                            key={index}
+                            href={social?.item_link}
+                            target="_blank"
+                          >
+                            {
+                              linkIconMap[
+                                social?.item_link.includes("facebook.com")
+                                  ? "facebook"
+                                  : social?.item_link.includes("linkedin.com")
+                                  ? "linkedin"
+                                  : social?.item_link.includes("twitter.com")
+                                  ? "twitter"
+                                  : social?.item_link.includes("youtube.com")
+                                  ? "youtube"
+                                  : social?.item_link.includes("instagram.com")
+                                  ? "instagram"
+                                  : "default"
+                              ]
+                            }
                           </Link>
-                        </li>
-                        <li className="nav-item footer-manu-item">
-                          <Link href="/checkout" className="nav-link-ifad">
-                            checkout
-                          </Link>
-                        </li>
-                        <li className="nav-item footer-manu-item">
-                          <Link href="/my-account" className="nav-link-ifad">
-                            my account
-                          </Link>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-                <div className="col-lg-3">
-                  <div className="d-flex justify-content-center align-items-center fs-4 text-white footer-social-icon">
-                    <div
-                      className="d-flex justify-content-center align-items-center"
-                      style={{ marginTop: "5px" }}
-                    >
-                      {socials?.map((social, index) => (
-                        <Link
-                          key={index}
-                          href={social?.item_link}
-                          target="_blank"
-                        >
-                          {
-                            linkIconMap[
-                              social?.item_link.includes("facebook.com")
-                                ? "facebook"
-                                : social?.item_link.includes("linkedin.com")
-                                ? "linkedin"
-                                : social?.item_link.includes("twitter.com")
-                                ? "twitter"
-                                : social?.item_link.includes("youtube.com")
-                                ? "youtube"
-                                : social?.item_link.includes("instagram.com")
-                                ? "instagram"
-                                : "default"
-                            ]
-                          }
-                        </Link>
-                      ))}
-                    </div>
-                    {/* <div className="call-to-action">
-                        <a href="tel:09612114444">
-                          <h6 className="footer_number  ps-2 ms-2">
-                            09612114444
-                          </h6>
-                        </a>
-                      </div> */}
-                  </div>
-                </div>
-              </div>
-              <div className="row py-3 ">
-                <img
-                  src="/payment-full-size.png"
-                  alt="payment-logo"
-                  className="img-fluid"
-                />
-              </div>
+                        ))}
+                      </div>
+                    </Col>
+                    {/* <Col lg={3}>
+                      <div>
+                        <h5 className="text-capitalize prosto_one_regular text-light mb-3">
+                          subscribe
+                        </h5>
+                        <form>
+                          <div class="mb-3">
+                            <input type="email" class="form-control" id="" />
+                          </div>
+
+                          <button type="submit" class="btn btn-primary">
+                            Submit
+                          </button>
+                        </form>
+                      </div>
+                    </Col> */}
+                  </Row>
+                </Container>
+              </section>
             </div>
           </div>
         </div>
@@ -215,7 +188,7 @@ export default function Footer() {
             <Link
               href="https://codersmind.vercel.app/"
               target="_blank"
-              className="fw-bolder theme-text"
+              className="fw-bolder "
             >
               CM23
             </Link>
