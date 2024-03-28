@@ -17,11 +17,7 @@ const LatestTopProduct = () => {
   return (
     <>
       <Container>
-        <div className="mb-4 float-right">
-          <p className="text-capitalize prosto_one_regular font-30">
-            Latest arrival
-          </p>
-        </div>
+       
         <JustDemo />
       </Container>
     </>
