@@ -129,7 +129,7 @@ export default function Footer() {
                     <Col lg={3}>
                       <div className="text-light">
                         <h5 className="text-capitalize prosto_one_regular text-light mb-3">
-                          connect with us
+                          connect with us 
                         </h5>
                         {socials?.map((social, index) => (
                           <Link

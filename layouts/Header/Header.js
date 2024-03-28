@@ -174,7 +174,7 @@ export default function Header() {
                   type="search"
                   name="keyword"
                   placeholder="Search..."
-                  className="me-2 ps-4 rounded-pill search-field"
+                  className="me-2 ps-4 rounded-pill search-field border"
                   aria-label="Search"
                 />
               </Form>
