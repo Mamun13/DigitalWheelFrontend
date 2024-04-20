@@ -91,7 +91,7 @@ const CategoryPage = () => {
   return (
     <Fragment>
       <Head>
-        <title>{makeTitle(category?.name || "Category Products")}</title>
+        <title>category | Digital Wheel</title>
       </Head>
       <section className="all_product_accordion">
         {/*Category Banner*/}
@@ -118,40 +118,45 @@ const CategoryPage = () => {
           <div className="row">
             {/*Category Sidebar*/}
             <div className="col-lg-3 col-md-4 col-sm-5 mb-3">
-              <div className="accordion_focus catagory_side_nv py-3 rounded-1">
-                {categories?.map((item, index) => (
-                  <Accordion
-                    className="border-0 bg-transparent rounded-0 "
-                    key={index}
-                  >
-                    <Accordion.Item
-                      eventKey="0"
-                      className="bg-transparent rounded-0"
-                    >
-                      <Link href={`/category/${item.id}`}>
-                        <Accordion.Header>{item.name}</Accordion.Header>
-                      </Link>
-                      {item?.sub_categories?.length ? (
-                        <Accordion.Body>
-                          <ul>
-                            {item?.sub_categories &&
-                              item.sub_categories.map((sub_items, index) => (
-                                <li className="pb-2 font-18" key={index}>
-                                  <button
-                                    onClick={(e) => itemfilter(sub_items.id)}
-                                  >
-                                    {sub_items?.name}
-                                  </button>
-                                </li>
-                              ))}
-                          </ul>
-                        </Accordion.Body>
-                      ) : (
-                        ""
-                      )}
-                    </Accordion.Item>
-                  </Accordion>
-                ))}
+              <div className="accordion_focus catagory_side_nv rounded-1">
+                {categories?.map((item, index) => {
+                  return (
+                    <>
+                      <Accordion key={index}>
+                        <Accordion.Item eventKey="0">
+                          <Accordion.Header>{item.name}</Accordion.Header>
+                          {item?.sub_categories?.length ? (
+                            <Accordion.Body>
+                              <ul className="ps-3">
+                                {item?.sub_categories &&
+                                  item.sub_categories.map(
+                                    (sub_items, index) => (
+                                      <Link href={`/category/${item.id}`}>
+                                        <li
+                                          className="pb-2 font-18"
+                                          key={index}
+                                        >
+                                          <button
+                                            onClick={(e) =>
+                                              itemfilter(sub_items.id)
+                                            }
+                                          >
+                                            {sub_items?.name}
+                                          </button>
+                                        </li>
+                                      </Link>
+                                    )
+                                  )}
+                              </ul>
+                            </Accordion.Body>
+                          ) : (
+                            ""
+                          )}
+                        </Accordion.Item>
+                      </Accordion>
+                    </>
+                  );
+                })}
               </div>
             </div>
 

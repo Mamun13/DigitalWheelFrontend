@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { getStoragePath } from "../../utils/helpers";
 import VendorProduct from "../../components/vendorProduct/VendorProduct";
-import { fetchInventoriespreOrder } from "../../services/PreOrderServices";
+import { fetchVendorInventories } from "../../services/VendorServices";
 
 const index = ({ title, categoryId }) => {
   const [inventories, setInventories] = useState([]);
 
   // fetch
   useEffect(() => {
-    fetchInventoriespreOrder(categoryId, {
+    fetchVendorInventories(categoryId, {
       paginate: "no",
     }).then((response) => {
       if (response?.data) {

@@ -1,26 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { getStoragePath } from "../../utils/helpers";
 import VendorProduct from "../vendorProduct/VendorProduct";
-import { fetchInventoriespreOrder } from "../../services/PreOrderServices";
+import { fetchVendorInventories } from "../../services/VendorServices";
 
 const index = ({ title, categoryId }) => {
   const [inventories, setInventories] = useState([]);
 
   // fetch
+  // useEffect(() => {
+  //   fetchVendorInventories(categoryId, {
+  //     paginate: "no",
+  //   }).then((response) => {
+  //     if (response?.data) {
+  //       setInventories(response.data);
+  //     }
+  //   });
+  // }, [categoryId]);
+
+  const getData = async () => {
+    const response = await fetch("https://api.codersmind23.com/ecom/inventories");
+    const allproduct = await response.json();
+    // setInventories(allproduct); 
+    const featuredProducts = allproduct.filter(product => product.is_special_deal === "1");
+    setInventories(featuredProducts);
+  };
+
   useEffect(() => {
-    fetchInventoriespreOrder(categoryId, {
-      paginate: "no",
-    }).then((response) => {
-      if (response?.data) {
-        setInventories(response.data);
-      }
-    });
-  }, [categoryId]);
+    getData();
+  }, []);
+
+  console.log(inventories)
 
   return (
     <>
       <section className="vendor_part">
         <div className="container">
+          <div className="border-bottom border-secondary">
+            <p className="capitalize prosto_one_regular">featured product</p>
+          </div>
           <div className="row">
             {inventories.map((inventory, key) => {
               return (
@@ -45,7 +62,7 @@ const index = ({ title, categoryId }) => {
                                 `product-image/${inventory?.product?.image}`
                               )
                         }
-                        viewLink={`/vendorProduct/${inventory.id}`}
+                        viewLink={`/product/${inventory.id}`}
                       />
                     </div>
                   </div>

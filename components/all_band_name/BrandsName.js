@@ -21,7 +21,7 @@ const BrandsName = () => {
           {categories &&
             categories.map((category, key) => {
               return (
-                <p className="prosto_one_regular text_style text-capitalize fw-bold">
+                <p key={key} className="prosto_one_regular text_style text-capitalize fw-bold">
                   {category.name}
                 </p>
               );
@@ -31,7 +31,7 @@ const BrandsName = () => {
           {categories &&
             categories.map((category, key) => {
               return (
-                <p className="prosto_one_regular text_style text-capitalize fw-bold">
+                <p key={key} className="prosto_one_regular text_style text-capitalize fw-bold">
                   {category.name}
                 </p>
               );
@@ -41,7 +41,7 @@ const BrandsName = () => {
           {categories &&
             categories.map((category, key) => {
               return (
-                <p className="prosto_one_regular text_style text-capitalize fw-bold">
+                <p key={key} className="prosto_one_regular text_style text-capitalize fw-bold">
                   {category.name}
                 </p>
               );

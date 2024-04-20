@@ -14,8 +14,9 @@ import DemoSlider from "../../components/home/DemoSlider";
 import { fetchCombos } from "../../services/ComboServices";
 // import NewArrival from "../../components/newArrival/NewArrival";
 import NewArrivalProduct from "../../components/newArrivalProduct/NewArrivalProduct";
-import LatestTopProduct from "../../components/newArrivalProduct/LatestTopProduct";
+// import LatestTopProduct from "../../components/newArrivalProduct/LatestTopProduct";
 import BrandsName from "../../components/all_band_name/BrandsName";
+import FeaturedProduct from "../../components/featuredproduct/FeaturedProduct";
 
 const HomePage = () => {
   const [banners, setBanners] = useState([]);
@@ -63,7 +64,8 @@ const HomePage = () => {
 
       <CategoryShowcase />
 
-      <LatestTopProduct />
+      {/* <LatestTopProduct /> */}
+      <FeaturedProduct/>
       {banners && banners.length && (
         <AddBanner imagePath={banners?.[0]?.item_image} />
       )}

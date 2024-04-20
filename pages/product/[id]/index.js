@@ -188,7 +188,7 @@ const SingleInventoryPage = () => {
                 <h3 className="mt-5 prosto_one_regular display-6 fw-bolder text-capitalize">
                   {inventory?.title}
                 </h3>
-                <div className="d-flex justify-content-start align-items-center mb-3 mt-2">
+                {/* <div className="d-flex justify-content-start align-items-center mb-3 mt-2">
                   <StarRatings
                     rating={parseInt(inventory?.star_ratting || 0)}
                     starRatedColor="orange"
@@ -200,7 +200,7 @@ const SingleInventoryPage = () => {
                   <p className="text-secondary ps-2 fw-bold">
                     ( {inventory?.reviews_count} review )
                   </p>
-                </div>
+                </div> */}
                 <p className="font-lato font-20 text-dark mb-3">
                   {isRunningOffer ? (
                     <Fragment>
@@ -298,7 +298,7 @@ const SingleInventoryPage = () => {
               </div>
 
               {/*Timer*/}
-              {isRunningOffer && inventory?.offer_end && (
+              {/* {isRunningOffer && inventory?.offer_end && (
                 <div className="offer-countdown mb-4">
                   <div className="fs-6 mb-1">Hurry up! Offer is ongoing.</div>
                   <div
@@ -312,7 +312,7 @@ const SingleInventoryPage = () => {
                     <Timer startDate={null} endDate={inventory?.offer_end} />
                   </div>
                 </div>
-              )}
+              )} */}
               {/*
                         {/*Video*
                         {inventory?.product?.product_video_path && (

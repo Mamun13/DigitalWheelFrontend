@@ -113,7 +113,7 @@ const ProductCard = ({
       </div>
       <Card.Body className="prod-card-body">
         <Card.Title className="text-center text-capitalize font-18">
-          <Link href={`/vendorProduct/${id}`} className="prod-title" title={title}>
+          <Link href={viewLink} className="prod-title" title={title}>
             {title}
           </Link>
         </Card.Title>

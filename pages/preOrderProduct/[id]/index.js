@@ -100,7 +100,7 @@ const SingleInventoryPage = () => {
     const handleAddToCart = (event, inventory, buyNow = false) => {
         event.preventDefault();
 
-        try { 
+        try {
 
             if (!quantity) {
                 tostify(toast, 'warning', {
@@ -127,7 +127,6 @@ const SingleInventoryPage = () => {
                     ? getStoragePath(`inventory-image/${inventory?.image}`)
                     : getStoragePath(`product-image/${inventory?.product?.image}`),
                 variations: '',
-
                 variant_id: inventory.inventory_variants[0].variant.id,
                 variant_name: inventory.inventory_variants[0].variant.name,
                 variant_quantity: inventory.inventory_variants[0].variant_option.name
@@ -173,7 +172,7 @@ const SingleInventoryPage = () => {
 
                         <div className="col-lg-6 col-md-6 ps-5">
                             <div className="border-bottom">
-                                <h3 className="mt-5 color font-jost display-6 fw-bolder text-capitalize text-light">
+                                <h3 className="mt-5 color prosto_one_regular font-30 fw-bolder text-capitalize">
                                     {inventory?.title}
                                 </h3>
                                 <div className="d-flex justify-content-start align-items-center mb-3 mt-2">
@@ -189,7 +188,7 @@ const SingleInventoryPage = () => {
                                         ( {inventory?.reviews_count} review )
                                     </p>
                                 </div>
-                                <p className="font-lato font-20 mb-3 text-light">
+                                <p className="font-lato font-20 mb-3">
                                     {isRunningOffer ? (
                                         <Fragment>
                                             <del>
@@ -205,7 +204,6 @@ const SingleInventoryPage = () => {
                                     )}
                                 </p>
                             </div>
-                            
 
                             {inventory?.inventory_variants && (
                                 <div className="variation-infos">
@@ -234,7 +232,7 @@ const SingleInventoryPage = () => {
                                         <AiOutlineMinus className="text-dark minus-icon"/>
                                     </Button>
 
-                                    <h2 className="px-4 font-14 count-padding text-light">
+                                    <h2 className="px-4 font-14 count-padding">
                                         {quantity}
                                     </h2>
 

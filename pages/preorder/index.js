@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { getStoragePath } from "../../utils/helpers";
 import Preorder from "../../components/preOrder/PreOrder";
-import { fetchVendorInventories } from "../../services/VendorServices";
+import { fetchInventoriespreOrder } from "../../services/PreOrderServices";
 
 const index = ({ title, categoryId }) => {
   const [inventories, setInventories] = useState([]);
 
   // fetch
   useEffect(() => {
-    fetchVendorInventories(categoryId, {
-      paginate: "no",
+    fetchInventoriespreOrder(categoryId, {
+      paginate: "no", 
     }).then((response) => {
       if (response?.data) {
         setInventories(response.data);
@@ -48,7 +48,7 @@ const index = ({ title, categoryId }) => {
                                 `product-image/${inventory?.product?.image}`
                               )
                         }
-                        viewLink={`/vendorProduct/${inventory.id}`}
+                        viewLink={`/preorderProduct/${inventory.id}`}
                       />
                     </div>
                   </div>
