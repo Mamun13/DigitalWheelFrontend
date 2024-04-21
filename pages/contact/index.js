@@ -76,7 +76,7 @@ const Contact = () => {
                   Address
                 </h3>
                 <p className="font-16 font-jost mb-5 contact-address">
-                  Tejgaon Industrial Area, Dhaka-1208
+                  Mirpur 10, Dhaka
                 </p>
               </div>
             </Col>

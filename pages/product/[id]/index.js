@@ -268,7 +268,7 @@ const SingleInventoryPage = () => {
               </div>
 
               <div className="d-flex justify-content-start counter mt-4 mb-4">
-                {isLoggedIn() && (
+                {/* {isLoggedIn() && (
                   <div className="border rounded-1 border-success px-2">
                     <FaHeart
                       className={`mt-1 cursor-pointer favourite-icon ${
@@ -277,7 +277,7 @@ const SingleInventoryPage = () => {
                       onClick={(event) => handleFavourite(event)}
                     />
                   </div>
-                )}
+                )} */}
                 <div className="ms-2">
                   <button
                     type="button"
