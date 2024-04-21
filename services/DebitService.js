@@ -1,0 +1,21 @@
+import axios from "../utils/axios";
+import {tostify} from "../utils/helpers";
+import {toast} from "react-toastify";
+
+/**
+ *
+ * @returns {Promise<*>}
+ */
+export const CreditService = async (params = {}) => {
+    try {
+        return await axios.get(`/ecom/debit`, {
+            params: params
+        });
+    } catch (error) {
+        tostify(toast, 'error', error);
+    }
+}
+
+
+
+
