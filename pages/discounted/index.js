@@ -2,7 +2,7 @@ import React, {Fragment, useEffect, useState} from 'react'
 import ScrollToTopButton from '../../components/common/ScrollToTopButton'
 import {fetchDiscountedInventories} from "../../services/InventoryServices";
 import Image from "next/image";
-import ProductBanner from "../../public/product.png";
+// import ProductBanner from "../../public/product.png";
 import ProductCard from "../../components/common/ProductCard";
 import {getStoragePath, makeTitle} from "../../utils/helpers";
 import CustomPagination from "../../components/common/CustomPagination";
@@ -49,7 +49,7 @@ const DiscountedPage = () => {
 
             {/*Category Banner*/}
             <div className="product-banner">
-                <Image src={ProductBanner} alt="" className="product-banner"/>
+                {/* <Image src={ProductBanner} alt="" className="product-banner"/> */}
             </div>
 
             <div className="container">
