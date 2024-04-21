@@ -29,7 +29,7 @@ const index = ({ title, categoryId }) => {
     getData();
   }, []);
 
-  console.log(inventories)
+  // console.log(inventories)
 
   return (
     <>
@@ -41,8 +41,8 @@ const index = ({ title, categoryId }) => {
           <div className="row">
             {inventories.map((inventory, key) => {
               return (
-                <div className="col-lg-3">
-                  <div className="mt-0" key={key}>
+                <div className="col-lg-3" key={key}>
+                  <div className="mt-0">
                     <div className="my-3">
                       <VendorProduct
                         id={inventory.id}

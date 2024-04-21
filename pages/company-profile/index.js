@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
-import CompanyRev from "../../public/Factory.jpg";
+import CompanyRev from "../../public/vendor.jpg";
 import { Container, Row } from "react-bootstrap";
 import {
   fetchAboutInfo,

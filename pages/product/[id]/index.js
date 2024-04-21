@@ -131,9 +131,12 @@ const SingleInventoryPage = () => {
             ? getStoragePath(`inventory-image/${inventory?.image}`)
             : getStoragePath(`product-image/${inventory?.product?.image}`),
           variations: "",
-          variant_id: inventory.inventory_variants[0].variant.id,
-          variant_name: inventory.inventory_variants[0].variant.name,
-          variant_quantity: inventory.inventory_variants[0].variant_option.name,
+          // variant_id: inventory.inventory_variants[0].variant.id,
+          // variant_name: inventory.inventory_variants[0].variant.name,
+          // variant_quantity: inventory.inventory_variants[0].variant_option.name,
+          variant_id: inventory.inventory_variants.length > 0 ? inventory.inventory_variants[0].variant.id : null,
+          variant_name: inventory.inventory_variants.length > 0 ? inventory.inventory_variants[0].variant.name : null,
+          variant_quantity: inventory.inventory_variants.length > 0 ? inventory.inventory_variants[0].variant_option.name : null,
         })
       );
 
@@ -214,7 +217,7 @@ const SingleInventoryPage = () => {
                 </p>
               </div>
 
-              {inventory?.inventory_variants && (
+              {/* {inventory?.inventory_variants && (
                 <div className="variation-infos">
                   <table className="table table-bordered">
                     <tbody>
@@ -229,7 +232,8 @@ const SingleInventoryPage = () => {
                     </tbody>
                   </table>
                 </div>
-              )}
+              )} */}
+              
               
 
               <div className="d-flex justify-content-start align-items-center counter mt-3">

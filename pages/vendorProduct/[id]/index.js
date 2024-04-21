@@ -127,9 +127,12 @@ const SingleInventoryPage = () => {
                     ? getStoragePath(`inventory-image/${inventory?.image}`)
                     : getStoragePath(`product-image/${inventory?.product?.image}`),
                 variations: '',
-                variant_id: inventory.inventory_variants[0].variant.id,
-                variant_name: inventory.inventory_variants[0].variant.name,
-                variant_quantity: inventory.inventory_variants[0].variant_option.name
+                // variant_id: inventory.inventory_variants[0].variant.id,
+                // variant_name: inventory.inventory_variants[0].variant.name,
+                // variant_quantity: inventory.inventory_variants[0].variant_option.name
+                variant_id: inventory.inventory_variants.length > 0 ? inventory.inventory_variants[0].variant.id : null,
+          variant_name: inventory.inventory_variants.length > 0 ? inventory.inventory_variants[0].variant.name : null,
+          variant_quantity: inventory.inventory_variants.length > 0 ? inventory.inventory_variants[0].variant_option.name : null,
             }));
 
             tostify(toast, 'success', {
