@@ -89,7 +89,7 @@ export default function Header() {
                 <li className="pe-3">
                   <a
                     className="text-light"
-                    href="/docs/how-to-buy.pdf"
+                    href="#"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

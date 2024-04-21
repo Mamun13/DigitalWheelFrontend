@@ -14,7 +14,8 @@ import ChangePasswordTab from "../../components/my-account/ChangePasswordTab";
 import { makeTitle } from "../../utils/helpers";
 import Head from "next/head";
 import Withdraw from "../../components/my-account/Withdraw";
-import Deposit from "../../components/my-account/Deposit";
+// import Deposit from "../../components/my-account/Deposit";
+import Credit from "../../components/my-account/Credit";
 import TransactionHistory from "../../components/my-account/TransactionHistory";
 
 const MyAccountPage = () => {
@@ -261,7 +262,7 @@ const MyAccountPage = () => {
                       eventKey="deposit"
                       className="text-capitalize font-16 font-lato"
                     >
-                      <Deposit/>
+                      <Credit/>
                     </Tab.Pane>
                     <Tab.Pane
                       eventKey="withdraw"

@@ -222,7 +222,7 @@ const SingleInventoryPage = () => {
                         <tr key={key}>
                           <td width={250}>{item?.variant?.name}</td>
                           <td className="d-flex">
-                            {item?.variant_option?.name}
+                            {item?.variant_option?.name || ""}
                           </td>
                         </tr>
                       ))}
@@ -230,6 +230,7 @@ const SingleInventoryPage = () => {
                   </table>
                 </div>
               )}
+              
 
               <div className="d-flex justify-content-start align-items-center counter mt-3">
                 <p className="text-capitalize pe-3 font-lato">quantity :</p>
