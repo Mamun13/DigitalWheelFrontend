@@ -1,27 +1,25 @@
 import Row from "react-bootstrap/Row";
 import {Fragment, useEffect, useState} from "react";
-import {fetchOrders} from "../../services/OrderServices";
-import {currency, getOrderStatusName, getPaymentStatusName} from "../../utils/helpers";
+import {fetchDebits} from "../../services/DebitService";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const OrdersTab = ({orderStatus}) => {
+const Deposit = ({debitStatus}) => {
     const router = useRouter();
-    const [orders, setOrders] = useState([]);
+    const [debits, setDebits] = useState([]);
 
-    const fetchOrdersData = () => {
-        fetchOrders({
+    const fetchDebitsData = () => {
+        fetchDebits({
             paginate: 'yes'
         }).then((response) => {
             if (response?.data?.data) {
-                setOrders(response.data.data);
-                console.log(response.data.data)
+                setDebits(response.data.data);
             }
         });
     }
 
     useEffect(() => {
-        fetchOrdersData();
+        fetchDebitsData();
     }, []);
 
     const [showStatus, setShowStatus] = useState(true);
@@ -42,17 +40,7 @@ const OrdersTab = ({orderStatus}) => {
 
     return (
         <Fragment>
-           {orderStatus && orderStatus === 'success' && showStatus && (
-              <div className="mb-4 text-success order-success-message">
-                <h2>Thanks for placing your order.</h2>
-                <button
-                  className="close"
-                  onClick={handleCloseButtonClick}
-                >
-                  ×
-                </button>
-              </div>
-            )}
+           
             <Row>
 
                 <h1 className="text-capitalize font-32 fw-bolder prosto_one_regular pb-4">
@@ -63,29 +51,32 @@ const OrdersTab = ({orderStatus}) => {
                         <thead>
                         <tr>
                             <th scope="col" className="text-capitalize accordion">ID</th>
-                            <th scope="col" className="text-capitalize accordion">Order Date</th>
-                            <th scope="col" className="text-capitalize accordion">Payment Status</th>
-                            <th scope="col" className="text-capitalize accordion">Order Status</th>
-                            <th scope="col" className="text-capitalize accordion">Grand Total</th>
-                            <th scope="col" className="text-capitalize accordion">Actions</th>
+                            <th scope="col" className="text-capitalize accordion">Payment Type</th>
+                            <th scope="col" className="text-capitalize accordion">Cash Person</th>
+                            <th scope="col" className="text-capitalize accordion">Online Payment Mobile</th>
+                            <th scope="col" className="text-capitalize accordion">Transaction ID</th>
+                            <th scope="col" className="text-capitalize accordion">Bank Account</th>
+                            <th scope="col" className="text-capitalize accordion">Payment Date</th>
+                            <th scope="col" className="text-capitalize accordion">Payment Amount</th>
+                            <th scope="col" className="text-capitalize accordion">wallet Amount</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {orders &&
-                            orders.map((item, index) => (
+                        {debits &&
+                            debits.map((item, index) => (
                                 <tr key={index}>
-                                    <td className="order-list mt-3 text-capitalize">
-                                        {item.id}
-                                    </td>
-                                    <td>{item.order_date}</td>
-                                    <td>{getPaymentStatusName(item.payment_status_id)}</td>
-                                    <td>{getOrderStatusName(item.order_status_id)}</td>
-                                    <td>{currency(item.grand_total)}</td>
-                                    <td>
-                                        <Link href={`/my-account/order/${item.id}/invoice`} className="btn btn-danger btn-sm">
-                                            Invoice
-                                        </Link>
-                                    </td>
+                                    <td className="order-list mt-3 text-capitalize">{item.id}</td>
+                                    <td className="order-list mt-3 text-capitalize">{item.payment_type}</td>
+                                    <td className="order-list mt-3 text-capitalize">{item.cash_person_name}</td>
+                                    <td className="order-list mt-3 text-capitalize">{item.online_mobile}</td>
+                                    <td className="order-list mt-3 text-capitalize">{item.online_transaction_number}</td>
+                                    <td className="order-list mt-3 text-capitalize">{item.bank_account}</td>
+                                    <td className="order-list mt-3 text-capitalize">{item.voucher_date}</td>
+                                    <td className="order-list mt-3 text-capitalize">{item.payment_amount}</td>
+                                    <td className="order-list mt-3 text-capitalize">{item.wallet_amount}</td>
+                                    
+
+                                    
                                 </tr>
                             ))}
                         </tbody>
@@ -95,4 +86,4 @@ const OrdersTab = ({orderStatus}) => {
         </Fragment>
     )
 }
-export default OrdersTab
+export default Deposit

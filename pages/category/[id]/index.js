@@ -135,10 +135,14 @@ const CategoryPage = () => {
                                         <li
                                           className="pb-2 font-18"
                                           key={index}
+                                          // onClick={(e) =>
+                                          //   subactive()
+                                          // }
                                         >
                                           <button
                                             onClick={(e) =>
                                               itemfilter(sub_items.id)
+                                              // active()
                                             }
                                           >
                                             {sub_items?.name}

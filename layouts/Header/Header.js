@@ -6,14 +6,15 @@ import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { FaUserCircle, FaUser } from "react-icons/fa";
+import { BiUser } from "react-icons/bi";
 import { MdOutlineLogout } from "react-icons/md";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Image from "next/image";
-import Logo from "../../public/logo/LOGO.png";
+// import Logo from "../../public/logo/LOGO.png";
+ import Logo from "../../public/logo/whitelogo.png";
 import { BiChevronDown } from "react-icons/bi";
-import { CiViewList } from "react-icons/ci";
+import { LuPhoneForwarded  } from "react-icons/lu";
 
 import CartOverlys from "./CartOverlay";
 import { fetchCategories } from "../../services/CategoryServices";
@@ -82,7 +83,7 @@ export default function Header() {
     <Fragment>
       <header className="overbanner2">
         {/*Tobpar*/}
-        <section className="theme-bg">
+        {/* <section className="theme-bg">
           <Container className="">
             <div>
               <ul className="font-poppins manu-font-one text-white d-flex justify-content-end align-items-center py-1">
@@ -94,6 +95,16 @@ export default function Header() {
                     rel="noopener noreferrer"
                   >
                     How to buy
+                  </a>
+                </li>
+                <li className="pe-3">
+                  <a
+                    className="text-light"
+                    href="/b2b"
+                    target=""
+                    rel="noopener noreferrer"
+                  >
+                    B2B
                   </a>
                 </li>
 
@@ -149,98 +160,113 @@ export default function Header() {
               </ul>
             </div>
           </Container>
-        </section>
+        </section> */}
 
         {/*Logo and Search*/}
-
-        <Container>
-          <div className="d-flex justify-content-between align-items-center main-manu-item py-3">
-            <div className="">
-              <Link href="/">
-                <Image
-                  src={Logo}
-                  alt="Picture of the author"
-                  className="brand-logo"
-                />
-              </Link>
-            </div>
-            <div className="header-form">
-              <Form
-                action="/search"
-                method="get"
-                className="d-flex align-items-center justify-content-between form-item"
-              >
-                <Form.Control
-                  type="search"
-                  name="keyword"
-                  placeholder="Search..."
-                  className="me-2 ps-4 rounded-pill search-field border"
-                  aria-label="Search"
-                />
-              </Form>
-            </div>
-            <div className="cart_icon">
-              <CartOverlys />
-            </div>
-            {/* <div className="">
-              <div className="d-flex justify-content-between align-items-center">
-                {storedToken && (
-                    <Fragment>
-                      <DropdownButton
-                        id="dropdown-basic-button"
-                        className="user-icon border-end"
-                        title={
-                          <span className="manu-icon border-0">
-                            <FaUserCircle size={"25px"} />
-                          </span>
-                        }
-                      >
-                        <Dropdown.Item className="logoutBtn">
-                          <Link
-                            href="/my-account"
-                            className="d-flex align-items-center profile-btn text-capitalize"
-                          >
-                            <CiUser className="font-16 me-1" />
-                            <span className="font-16">account</span>
-                          </Link>
-                        </Dropdown.Item>
-                        <Dropdown.Item className="logoutBtn">
-                          <Link
-                            href="/"
-                            className="d-flex align-items-center profile-btn text-capitalize"
-                          >
-                            <MdOutlineLogout className="font-16 me-1" />
-                            <span
-                              className="font-16"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                logout();
-                              }}
-                            >
-                              logout
-                            </span>
-                          </Link>
-                        </Dropdown.Item>
-                      </DropdownButton>
-                    </Fragment>
-                  )}
-               
-
-                
+        <section className="theme-bg">
+          <Container>
+            <div className="d-flex justify-content-between align-items-center main-manu-item py-3">
+              <div className="">
+                <Link href="/">
+                  <Image
+                    src={Logo}
+                    alt="Picture of the author"
+                    className="brand-logo"
+                  />
+                </Link>
               </div>
-            </div> */}
-          </div>
-        </Container>
+              <div className="header-form">
+                <Form
+                  action="/search"
+                  method="get"
+                  className="d-flex align-items-center justify-content-between form-item"
+                >
+                  <Form.Control
+                    type="search"
+                    name="keyword"
+                    placeholder="Search..."
+                    className="me-2 ps-4 rounded search-field border"
+                    aria-label="Search"
+                  />
+                </Form>
+              </div>
 
-        <section className="bg-dark py-2">
-          <Navbar bg="dark" expand="md">
+              <div className="d-flex">
+                <div>
+                  <DropdownButton
+                    id="dropuser-button"
+                    className="me-3 account_button"
+                    title={
+                      <span className="manu-icon border-0 d-flex align-items-center">
+                        <BiUser
+                          size={"25px"}
+                          className="text-white user_icon"
+                        />
+                        <div>
+                          <p className="text-capitalize text-white ps-2 font-12 text-start">
+                            sign in
+                          </p>
+                          <p className="text-capitalize text-white ps-2">
+                            account
+                          </p>
+                        </div>
+                      </span>
+                    }
+                  >
+                    {reIsLoggedIn ? (
+                      <Fragment>
+                        <Dropdown.Item as={Link} href="/my-account">
+                          My Account
+                        </Dropdown.Item>
+                        {customerType === "1" && <Fragment></Fragment>}
+                        <Dropdown.Item as={Link} href="/vendor">
+                          Vendor
+                        </Dropdown.Item>
+                        <Dropdown.Item as={Link} href="/preorder">
+                          Pre-Order
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                          as={Link}
+                          href="/auth/logout"
+                          className=""
+                          onClick={(e) => {
+                            e.preventDefault();
+                            logout();
+                          }}
+                        >
+                          Logout
+                        </Dropdown.Item>
+                      </Fragment>
+                    ) : (
+                      <Fragment>
+                        <Dropdown.Item as={Link} href="/auth/login">
+                          Sign In
+                        </Dropdown.Item>
+                        <Dropdown.Item as={Link} href="/auth/register">
+                          Sign Up
+                        </Dropdown.Item>
+                      </Fragment>
+                    )}
+                  </DropdownButton>
+                </div>
+                <div className="cart_icon">
+                  <CartOverlys />
+                </div>
+              </div>
+             
+            </div>
+          </Container>
+        </section>
+
+        <section className="menu_items_list">
+          <Navbar expand="md">
             <Container>
               <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto  manu-font">
+                <Nav className="me-auto py-1 manu-font">
                   <Nav.Link
                     as={Link}
                     href="/"
-                    className="d-flex align-items-center all-side-icons manu-font me-4 my-2"
+                    className="d-flex align-items-center text-capitalize font-16 all-side-icons manu-font me-4 my-2"
                   >
                     home
                   </Nav.Link>
@@ -248,8 +274,8 @@ export default function Header() {
                   <NavDropdown
                     className="p-0 me-auto rounded-0"
                     title={
-                      <span className="text-white font-inter  py-3 d-flex align-items-center categories">
-                        CATEGORIES
+                      <span className="font-inter py-3 text-capitalize font-16 d-flex align-items-center categories">
+                        Caregories
                         <BiChevronDown size={"15px"} className="ms-2" />
                       </span>
                     }
@@ -269,7 +295,7 @@ export default function Header() {
                         <NavDropdown.Item key={key} className="m-0 p-0">
                           <Link
                             href={`/category/${category.id}`}
-                            className="cate-drop text-uppercase all-icons text-dark px-4 py-2 d-block font-inter"
+                            className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter"
                           >
                             {category.name}
                           </Link>
@@ -281,7 +307,7 @@ export default function Header() {
                   <NavDropdown
                     className="p-0 px-4 me-auto rounded-0"
                     title={
-                      <span className="text-white font-inter  py-3 d-flex align-items-center categories">
+                      <span className="font-inter py-3 d-flex align-items-center text-capitalize font-16 categories">
                         about us
                         <BiChevronDown size={"15px"} className="ms-2" />
                       </span>
@@ -291,48 +317,24 @@ export default function Header() {
                     <NavDropdown.Item className="m-0 p-0">
                       <Link
                         href="/company-profile"
-                        className="cate-drop text-uppercase all-icons text-dark px-4 py-2 d-block font-inter"
+                        className="cate-drop text-capitalize all-icons text-dark px-4 py-2 d-block font-inter"
                       >
                         Who we are
                       </Link>
                     </NavDropdown.Item>
                   </NavDropdown>
 
-                  {/* <NavDropdown
-                    className="p-0 rounded-0 about-btn"
-                    title={
-                      <span className="text-white font-inter px-4 py-3 d-flex align-items-center categories">
-                        about us <BiChevronDown className="ms-1" />
-                      </span>
-                    }
-                    id="navbarScrollingDropdown"
-                  >
-                    <NavDropdown.Item className="text-capitalize all-icons text-dark d-block">
-                      <Link
-                        href="/company-profile"
-                        className="cate-drop text-uppercase all-icons text-dark d-block font-inter"
-                      >
-                        Who we are
-                      </Link>
-                    </NavDropdown.Item>
-                    {/* <NavDropdown.Item className="text-capitalize all-icons text-dark px-4 py-2 d-block">
-                      <Link href="/board-of-directors" className="cate-drop">
-                        BOD & Leadership
-                      </Link>
-                    </NavDropdown.Item> 
-                  </NavDropdown> */}
-
                   <Nav.Link
                     as={Link}
                     href="/delivery-information"
-                    className="d-flex align-items-center all-side-icons me-4 font-14 my-2"
+                    className="d-flex align-items-center text-capitalize font-16 all-side-icons me-4 font-14 my-2"
                   >
-                    DELIVERY INFORMATION
+                    Delivery information 
                   </Nav.Link>
                   <Nav.Link
                     as={Link}
                     href="/contact"
-                    className="d-flex align-items-center all-side-icons font-14 my-2"
+                    className="d-flex align-items-center text-capitalize font-16 all-side-icons font-14 my-2"
                   >
                     contacts
                   </Nav.Link>
@@ -348,12 +350,12 @@ export default function Header() {
                   </div>
                 </div>*/}
               <div className="d-flex align-items-center">
-                <div className="me-2">
-                  <CiViewList color="white" size={"50px"} />
+                <div className="me-3">
+                  <LuPhoneForwarded  color="" size={"20px"} />
                 </div>
                 <div>
-                  <p className="text-light text-capitalize">contact</p>
-                  <p className="text-light text-capitalize">000111223344</p>
+                  <p className="text-capitalize">contact</p>
+                  <p className="text-capitalize">000111223344</p>
                 </div>
               </div>
               {/* </div>  */}

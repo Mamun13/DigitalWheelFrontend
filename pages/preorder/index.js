@@ -24,6 +24,9 @@ const index = ({ title, categoryId }) => {
         <img src="/vendor.jpg" className="vendor_img"/>
        </div>
         <div className="container">
+        <div>
+            <h1 className="text-capitalize prosto_one_regular text-center display-5 fw-bold pt-5 pb-4">pre-order</h1>
+          </div>
           <div className="row">
             {inventories.map((inventory, key) => {
               return (

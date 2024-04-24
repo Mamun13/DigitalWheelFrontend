@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { IoMdCart } from "react-icons/io";
+import { PiShoppingCartLight } from "react-icons/pi";
 import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
@@ -88,21 +88,28 @@ function CartOverlay() {
 
   return (
     <Fragment>
-      <Search />
+      {/* <Search /> */}
       <Button
         onClick={handleShow}
-        className={`floating-cart-btn off-canvas text-danger ${additionalClass}`}
+        className={`floating-cart-btn off-canvas text-danger dropuser-button ${additionalClass}`}
       >
-        <div className="d-flex">
-          <IoMdCart className="off-canvas-icon pe-0" />
-          <span
-            className="badge text-danger "
-            style={{ marginTop: "-10px", marginLeft: "-10px" }}
-          >
-            {cart?.items?.length}
-          </span>
+        <div className="d-flex align-items-center top_space">
+          <div className="d-flex">
+            <PiShoppingCartLight className="off-canvas-icon pe-0 text-white cart_icon" />
+            <span
+              className="badge text-danger "
+              style={{ marginTop: "4px", marginLeft: "-10px" }}
+            >
+              {cart?.items?.length}
+            </span>
+          </div>
+          <div className="">
+            <p className="text-capitalize text-white font-12 text-start">my</p>
+            <p className="text-white">Cart</p>
+          </div>
         </div>
       </Button>
+
       <Offcanvas show={show} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="text-uppercase text-secondary text-light">

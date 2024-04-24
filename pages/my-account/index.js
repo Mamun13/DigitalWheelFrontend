@@ -98,7 +98,7 @@ const MyAccountPage = () => {
                         wish list
                       </Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
+                    {/* <Nav.Item>
                       <Nav.Link
                         eventKey="upcoming_product"
                         className="text-capitalize rounded-0 text-dark"
@@ -113,7 +113,7 @@ const MyAccountPage = () => {
                       >
                         Upcoming Product
                       </Nav.Link>
-                    </Nav.Item>
+                    </Nav.Item> */}
                     <Nav.Item>
                       <Nav.Link
                         eventKey="order"

@@ -87,8 +87,7 @@ const BToB = () => {
                     <Row>
                         <Col lg={12}>
                             <div className="">
-                                <h2 className="text-center my-4 font-jost font-30 fw-bold text-secondary">B2B Business
-                                    Form </h2>
+                                <h2 className="text-center my-4 prosto_one_regular font-30 fw-bold text-secondary">vendor</h2>
                             </div>
                         </Col>
                         <Col lg={8} className="btob-forms">

@@ -254,17 +254,19 @@ header css starts
 }
 
 .theme-bg {
-  background-color: #1a4989;
+  background-color: var(--primary);
 }
 
 .manu-font {
   font-size: 14px;
   font-weight: 400;
-  color: #f38120;
+  color: #666;
   text-transform: uppercase;
   transition: all linear 0.3s;
 }
-
+.menu_items_list{
+  background-color: #f2f8fd;
+}
 .all-icons {
   display: block;
   color: #fff !important;
@@ -278,7 +280,7 @@ header css starts
 }
 
 .all-side-icons {
-  color: #fff !important;
+  color: #666 !important;
   transition: all linear 0.3s;
 }
 
@@ -290,14 +292,10 @@ header css starts
   font-size: 12px;
 }
 
-.cate-drop:hover {
-  color: #fff !important;
-}
-
-.all-icons.active {
+/* .all-icons.active {
   color: #f38120 !important;
   display: block;
-}
+} */
 
 .icon-top {
   margin-top: 5px;
@@ -313,7 +311,7 @@ header css starts
 
 .search-field {
   height: 50px;
-  width: 500px !important;
+  width: 600px !important;
   box-shadow: none !important;
   /* border-color: #fff !important; */
 }
@@ -373,7 +371,38 @@ button#dropdown-basic-button {
   border: none;
   transition: all linear 0.3s;
 }
+#dropuser-button {
+  border: 0px !important;
+  transition: all linear 0.3s;
+}
+#dropuser-button.show {
+  background: var(--primary);
+}
+#dropuser-button.show {
+  background: var(--primary);
+}
+#dropuser-button:hover {
+  background-color: var(--primary);
+}
 
+/* #dropuser-button.show .user_icon {
+  color: white !important;
+}
+
+#dropuser-button.show .text_one {
+  color: white !important;
+}
+
+#dropuser-button.show .text_two {
+  color: white !important;
+} */
+
+.dropuser-button {
+  transition: all linear 0.3s;
+}
+.dropuser-button:hover {
+  background-color: var(--primary);
+}
 .manu-icon {
   color: #666666 !important;
   background: transparent !important;
@@ -383,10 +412,6 @@ button#dropdown-basic-button {
 
 .manu-icon.show {
   background: none !important;
-}
-
-.manu-icon:hover {
-  color: #f38120 !important;
 }
 
 .dropdown-menu.show {
@@ -661,7 +686,7 @@ nav .nav-link {
 }
 
 .off-canvas-icon {
-  color: #fff;
+  /* color: #fff; */
   font-size: 25px;
   transition: all linear 0.3s;
 }
@@ -2024,9 +2049,25 @@ how to but part css start
   background: var(--primary) !important;
 }
 .cart_icon {
+  border-radius: 5px;
+  height: 54px;
+  transition: all linear 0.3s;
+}
+
+.cart_icon:hover {
   background-color: var(--primary);
-  padding: 5px 0px;
-  border-radius: 50px 0% 0% 50px;
+  color: #666;
+  border-radius: 5px;
+  height: 54px;
+}
+.cart_icon:hover .cart_icon {
+  color: #fff;
+}
+.cart_icon:hover .cart_text {
+  color: #fff;
+}
+.top_space{
+  margin-top: -7px;
 }
 .terms-banner-div {
   /* height: 300px;
@@ -2069,7 +2110,7 @@ how to but part css start
 }
 
 .contact-form-btn {
-  color: #666!important;
+  color: #666 !important;
   border: 1px solid #a3a3a3 !important;
   transition: all linear 0.3s;
 }
@@ -2703,8 +2744,6 @@ Responsive part end
   content: "";
   padding-left: 10px;
 }
-
-
 
 .footer-manu-item:last-child {
   border-right: 0 solid #000;

@@ -6,9 +6,9 @@ import {toast} from "react-toastify";
  *
  * @returns {Promise<*>}
  */
-export const fetchDebits = async (params = {}) => {
+export const fetchTransactions = async (params = {}) => {
     try {
-        return await axios.get(`/ecom/debits`, {
+        return await axios.get(`/ecom/all-transaction`, {
             params: params
         });
     } catch (error) {

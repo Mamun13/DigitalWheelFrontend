@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchCategories } from "../../services/CategoryServices";
+import { Container } from "react-bootstrap";
 
 const BrandsName = () => {
   const [categories, setCategories] = useState([]);
@@ -16,6 +17,9 @@ const BrandsName = () => {
 
   return (
     <>
+    <Container className="p-0">
+
+  
       <div className="marquee-cont">
         <div className="marquee-slider">
           {categories &&
@@ -27,6 +31,7 @@ const BrandsName = () => {
               );
             })}
         </div>
+
         <div className="marquee-slider">
           {categories &&
             categories.map((category, key) => {
@@ -48,6 +53,7 @@ const BrandsName = () => {
             })}
         </div>
       </div>
+      </Container>
     </>
   );
 };
