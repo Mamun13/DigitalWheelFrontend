@@ -3051,7 +3051,7 @@ Responsive part end
   transform: translateY(-50%);
   background-color: var(--primary) !important;
   z-index: 999;
-  padding: 16px 10px !important;
+  /* padding: 16px 10px !important; */
   box-shadow: 0 9px 25px 0 rgba(132, 128, 177, 0.28);
   transition: box-shadow 250ms ease-in-out !important;
 }

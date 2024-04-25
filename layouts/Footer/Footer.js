@@ -123,6 +123,11 @@ export default function Footer() {
                               my account
                             </Link>
                           </li>
+                          <li className="nav-item pb-2">
+                            <Link href="/vendor-request" className="nav-link-ifad">
+                            vendor request
+                            </Link>
+                          </li>
                         </ul>
                       </div>
                     </Col>

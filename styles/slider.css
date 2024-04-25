@@ -12,11 +12,11 @@
   height: 80px;
 }
 .hero_banner {
-  height: 100vh;
+  height: 78vh;
   width: 100%;
 }
 .hero_banner_img {
-  height: 100vh!important;
+  height: 75vh!important;
   width: 100%;
   object-fit: cover;
   background-size: auto;
