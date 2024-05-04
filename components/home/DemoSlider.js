@@ -54,7 +54,7 @@ const DemoSlider = () => {
                     {/* slider_details */}
                     <Carousel.Caption className="text-start w-50 d-flex align-items-center pb-0">
                       <div className="">
-                        <h1 className="font-40 text-capitalize text-white pt-0 test_animation fw-bold m-0 slider_title pb-4">
+                        <h1 className="font-32 text-capitalize text-white prosto_one_regular pt-0 test_animation fw-bold m-0 slider_title pb-4">
                           find everything for vabing
                         </h1>
                         <div className="test_des_animation">
@@ -85,50 +85,35 @@ const DemoSlider = () => {
                 alt=""
                 className="img-fluid hero_banner_img2"
               />
+              <div className="banner_cate_text">
+                <h4 className="font-20 prosto_one_regular pb-3">{cate_one[0]?.category_text}</h4>
+                <Link href={`/category/${cate_one[0]?.id}`} className="text-capitalize shop_button">shop</Link>
+              </div>
             </div>
           </Col>
           <Col lg={3} className="pe-0">
-            <div className="h-50 mb-2">
-              <Carousel fade>
-                {cate_one &&
-                  cate_one.map((banner, key) => (
-                    <Carousel.Item key={key}>
-                      <div className=" position-relative slider_overlay">
-                        <img
-                          src={getStoragePath(
-                            `category-image/${cate_one[1]?.image}`
-                          )}
-                          alt=""
-                          className="img-fluid h-50"
-                        />
-                      </div>
-                      <Carousel.Caption className="text-start font-24">
-                        E-Juice
-                      </Carousel.Caption>
-                    </Carousel.Item>
-                  ))}
-              </Carousel>
+            <div className="position-relative slider_overlay slider_margin">
+              <img
+                src={getStoragePath(`category-image/${cate_one[1]?.image}`)}
+                alt=""
+                className="img-fluid hero_banner_img3"
+              />
+              <div className="banner_cate_text2">
+                <h4 className="font-20 prosto_one_regular pb-3">{cate_one[1]?.category_text}</h4>
+                <Link href={`/category/${cate_one[1]?.id}`} className="text-capitalize shop_button">shop</Link>
+              </div>
             </div>
-            <div className="h-50">
-              <Carousel fade>
-                {cate_one &&
-                  cate_one.map((banner, key) => (
-                    <Carousel.Item key={key}>
-                      <div className=" position-relative slider_overlay">
-                        <img
-                          src={getStoragePath(
-                            `category-image/${cate_one[1]?.image}`
-                          )}
-                          alt=""
-                          className="img-fluid h-50"
-                        />
-                      </div>
-                      <Carousel.Caption className="text-start font-24">
-                        Hardwar/Devices
-                      </Carousel.Caption>
-                    </Carousel.Item>
-                  ))}
-              </Carousel>
+
+            <div className="position-relative slider_overlay">
+              <img
+                src={getStoragePath(`category-image/${cate_one[2]?.image}`)}
+                alt=""
+                className="img-fluid hero_banner_img3"
+              />
+              <div className="banner_cate_text2">
+                <h4 className="font-20 prosto_one_regular pb-3">{cate_one[2]?.category_text}</h4>
+                <Link href={`/category/${cate_one[2]?.id}`} className="text-capitalize shop_button">shop</Link>
+              </div>
             </div>
           </Col>
         </Row>

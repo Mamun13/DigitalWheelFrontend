@@ -15,8 +15,41 @@
   height: 78vh;
   width: 100%;
 }
+.banner_cate_text{
+  position: absolute;
+  color: #fff;
+  left: 5%;
+  bottom: 8%;
+  z-index: 9999999;
+}
+.banner_cate_text2{
+  position: absolute;
+  color: #fff;
+  left: 6%;
+  bottom: 12%;
+  z-index: 9999999;
+}
+.shop_button{
+  background-color: #1a4989;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all linear 0.3s;
+}
+.shop_button:hover{
+  background-color: #1653a8;
+  color: #fff;
+
+}
+.slider_margin{
+  margin-bottom: 12px;
+}
 .hero_banner_img2 {
-  height: 100%!important;
+  height: 75vh!important;
+  width: 100%;
+  object-fit: cover!important;
+}
+.hero_banner_img3 {
+  height: 36.5vh!important;
   width: 100%;
   object-fit: cover!important;
 }
@@ -119,7 +152,6 @@
 
 /*** Section Title ***/
 .slider_title {
-  font-family: 'Montserrat', sans-serif!important;
   line-height: 65px !important;
 }
 .section-title {

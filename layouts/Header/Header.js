@@ -248,35 +248,7 @@ export default function Header() {
                       </div>
                     </Fragment>
                   )}
-                  {/* <Link
-                    href="/auth/login"
-                    className="manu-icon border-0 d-flex align-items-center"
-                  >
-                    <BiUser size={"25px"} className="text-white user_icon" />
-                    <div>
-                      {reIsLoggedIn ? (
-                        <Fragment>
-                          <Link
-                            as={Link}
-                            href="/auth/logout"
-                            className="ps-2 text-light font-13"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              logout();
-                            }}
-                          >
-                            Logout
-                          </Link>
-                        </Fragment>
-                      ) : (
-                        <Fragment>
-                          <p className="text-capitalize text-white pe-3 ps-2 font-13 text-start">
-                            Log in
-                          </p>
-                        </Fragment>
-                      )}
-                    </div>
-                  </Link> */}
+                  
                 </div>
 
                 <div className="cart_icon">
