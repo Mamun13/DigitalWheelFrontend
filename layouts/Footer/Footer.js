@@ -7,7 +7,7 @@ import {
   FaLinkedinIn,
   FaYoutube,
   FaTwitter,
-  FaLink,
+  FaLink
 } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { fetchSocial } from "../../services/CommonServices";
@@ -34,7 +34,7 @@ export default function Footer() {
     instagram: (
       <AiOutlineInstagram size="25px" className="footer-soical-link ms-2" />
     ),
-    default: <FaLink size="25px" className="footer-soical-link ms-2" />,
+    default: <FaLink size="25px" className="footer-soical-link ms-2" />
   };
 
   return (
@@ -57,8 +57,34 @@ export default function Footer() {
                           />
                         </Link>
                         <p className="font-16">mirpur 10, dhaka</p>
-                        <p className="font-14">demo@gmail.com</p>
-                        
+                        <p className="font-14 ">demo@gmail.com</p>
+                        <div className="pt-3 ps-0">
+                          {socials?.map((social, index) => (
+                            <Link
+                              key={index}
+                              href={social?.item_link}
+                              target="_blank"
+                            >
+                              {
+                                linkIconMap[
+                                  social?.item_link.includes("facebook.com")
+                                    ? "facebook"
+                                    : social?.item_link.includes("linkedin.com")
+                                    ? "linkedin"
+                                    : social?.item_link.includes("twitter.com")
+                                    ? "twitter"
+                                    : social?.item_link.includes("youtube.com")
+                                    ? "youtube"
+                                    : social?.item_link.includes(
+                                        "instagram.com"
+                                      )
+                                    ? "instagram"
+                                    : "default"
+                                ]
+                              }
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     </Col>
                     <Col lg={3}>
@@ -109,8 +135,8 @@ export default function Footer() {
                         </h5>
                         <ul className="navbar-nav footer_manu_list">
                           <li className="nav-item pb-2">
-                            <Link href="/auth/login" className="nav-link-ifad">
-                              login
+                            <Link href="/my-account" className="nav-link-ifad">
+                              my account
                             </Link>
                           </li>
                           <li className="nav-item pb-2">
@@ -119,13 +145,19 @@ export default function Footer() {
                             </Link>
                           </li>
                           <li className="nav-item pb-2">
-                            <Link href="/my-account" className="nav-link-ifad">
-                              my account
+                            <Link
+                              href="/vendor-request"
+                              className="nav-link-ifad"
+                            >
+                              my cart
                             </Link>
                           </li>
                           <li className="nav-item pb-2">
-                            <Link href="/vendor-request" className="nav-link-ifad">
-                            vendor request
+                            <Link
+                              href="/vendor-request"
+                              className="nav-link-ifad"
+                            >
+                              vendor request
                             </Link>
                           </li>
                         </ul>
@@ -134,49 +166,12 @@ export default function Footer() {
                     <Col lg={3}>
                       <div className="text-light">
                         <h5 className="text-capitalize prosto_one_regular text-light mb-3">
-                          connect with us 
+                          payments
                         </h5>
-                        {socials?.map((social, index) => (
-                          <Link
-                            key={index}
-                            href={social?.item_link}
-                            target="_blank"
-                          >
-                            {
-                              linkIconMap[
-                                social?.item_link.includes("facebook.com")
-                                  ? "facebook"
-                                  : social?.item_link.includes("linkedin.com")
-                                  ? "linkedin"
-                                  : social?.item_link.includes("twitter.com")
-                                  ? "twitter"
-                                  : social?.item_link.includes("youtube.com")
-                                  ? "youtube"
-                                  : social?.item_link.includes("instagram.com")
-                                  ? "instagram"
-                                  : "default"
-                              ]
-                            }
-                          </Link>
-                        ))}
+                        <img src="/payment.png" className="img-fluid rounded footer_payment"/>
                       </div>
                     </Col>
-                    {/* <Col lg={3}>
-                      <div>
-                        <h5 className="text-capitalize prosto_one_regular text-light mb-3">
-                          subscribe
-                        </h5>
-                        <form>
-                          <div class="mb-3">
-                            <input type="email" class="form-control" id="" />
-                          </div>
-
-                          <button type="submit" class="btn btn-primary">
-                            Submit
-                          </button>
-                        </form>
-                      </div>
-                    </Col> */}
+                    
                   </Row>
                 </Container>
               </section>

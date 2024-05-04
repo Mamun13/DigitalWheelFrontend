@@ -17,42 +17,49 @@ const BrandsName = () => {
 
   return (
     <>
-    <Container className="p-0">
+      <Container fluid>
+        <div className="marquee-cont">
+          <div className="marquee-slider">
+            {categories &&
+              categories.map((category, key) => {
+                return (
+                  <p
+                    key={key}
+                    className="prosto_one_regular text_style text-capitalize fw-bold"
+                  >
+                    {category.name}
+                  </p>
+                );
+              })}
+          </div>
 
-  
-      <div className="marquee-cont">
-        <div className="marquee-slider">
-          {categories &&
-            categories.map((category, key) => {
-              return (
-                <p key={key} className="prosto_one_regular text_style text-capitalize fw-bold">
-                  {category.name}
-                </p>
-              );
-            })}
+          <div className="marquee-slider">
+            {categories &&
+              categories.map((category, key) => {
+                return (
+                  <p
+                    key={key}
+                    className="prosto_one_regular text_style text-capitalize fw-bold"
+                  >
+                    {category.name}
+                  </p>
+                );
+              })}
+          </div>
+          <div className="marquee-slider">
+            {categories &&
+              categories.map((category, key) => {
+                return (
+                  <p
+                    key={key}
+                    className="prosto_one_regular text_style text-capitalize fw-bold"
+                  >
+                    {category.name}
+                  </p>
+                );
+              })}
+          </div>
         </div>
-
-        <div className="marquee-slider">
-          {categories &&
-            categories.map((category, key) => {
-              return (
-                <p key={key} className="prosto_one_regular text_style text-capitalize fw-bold">
-                  {category.name}
-                </p>
-              );
-            })}
-        </div>
-        <div className="marquee-slider">
-          {categories &&
-            categories.map((category, key) => {
-              return (
-                <p key={key} className="prosto_one_regular text_style text-capitalize fw-bold">
-                  {category.name}
-                </p>
-              );
-            })}
-        </div>
-      </div>
       </Container>
     </>
   );

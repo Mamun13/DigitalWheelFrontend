@@ -103,10 +103,10 @@ function CartOverlay() {
               {cart?.items?.length}
             </span>
           </div>
-          <div className="">
+          {/* <div className="">
             <p className="text-capitalize text-white font-12 text-start">my</p>
             <p className="text-white">Cart</p>
-          </div>
+          </div> */}
         </div>
       </Button>
 

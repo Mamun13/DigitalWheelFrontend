@@ -59,7 +59,7 @@ const index = ({ title, categoryId }) => {
   return (
     <>
       <section className="vendor_part">
-        <div className="container fluid">
+        <div className="container-fluid">
           <div className="row">
           <Slider {...settings}>
             {sliced.map((inventory, key) => {

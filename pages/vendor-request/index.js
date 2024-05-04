@@ -90,7 +90,7 @@ const BToB = () => {
           <Row>
             <Col lg={12}>
               <div className="">
-                <h2 className="text-center my-4 prosto_one_regular font-30 fw-bold text-secondary">
+                <h2 className="text-center text-capitalize my-4 prosto_one_regular font-30 fw-bold text-secondary">
                   vendor
                 </h2>
               </div>
@@ -98,9 +98,9 @@ const BToB = () => {
             <Col lg={6} className="btob-forms">
             <div className="">
               <p className="float-left font-jost font-16 mb-4">
-                Dear customers&apos; <br></br>Please fill out this B2B form if
+                Dear customers&apos; <br></br>Please fill out this vendor request form if
                 you have any inquiries on bulk order for your business from
-                IFAD. Our responsible person will contact you as soon as
+                Adams Vibe. Our responsible person will contact you as soon as
                 possible on given contact detail.
               </p>
             </div>

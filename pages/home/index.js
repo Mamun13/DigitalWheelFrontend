@@ -25,7 +25,7 @@ const HomePage = () => {
 
   useEffect(() => {
     fetchCombos({
-      paginate: "no",
+      paginate: "no"
     }).then((response) => {
       if (response?.data) {
         setCombos(response.data);
@@ -35,7 +35,7 @@ const HomePage = () => {
 
   useEffect(() => {
     fetchCategories({
-      paginate: "no",
+      paginate: "no"
     }).then((response) => {
       if (response?.data) {
         setCategories(response.data);
@@ -65,7 +65,8 @@ const HomePage = () => {
       <CategoryShowcase />
 
       {/* <LatestTopProduct /> */}
-      <FeaturedProduct/>
+      <FeaturedProduct />
+
       {banners && banners.length && (
         <AddBanner imagePath={banners?.[0]?.item_image} />
       )}

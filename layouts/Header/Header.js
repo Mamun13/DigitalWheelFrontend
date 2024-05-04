@@ -12,9 +12,9 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Image from "next/image";
 // import Logo from "../../public/logo/LOGO.png";
- import Logo from "../../public/logo/whitelogo.png";
+import Logo from "../../public/logo/whitelogo.png";
 import { BiChevronDown } from "react-icons/bi";
-import { LuPhoneForwarded  } from "react-icons/lu";
+import { LuPhoneForwarded } from "react-icons/lu";
 
 import CartOverlys from "./CartOverlay";
 import { fetchCategories } from "../../services/CategoryServices";
@@ -42,7 +42,7 @@ export default function Header() {
     setStoredToken(localStorage?.getItem("token"));
 
     fetchCategories({
-      paginate: "no",
+      paginate: "no"
     }).then((response) => {
       if (response?.data) {
         setCategories(response.data);
@@ -193,67 +193,96 @@ export default function Header() {
 
               <div className="d-flex">
                 <div>
-                  <DropdownButton
-                    id="dropuser-button"
-                    className="me-3 account_button"
-                    title={
-                      <span className="manu-icon border-0 d-flex align-items-center">
+                  {reIsLoggedIn ? (
+                    <Fragment>
+                      <Link
+                        href="/auth/login"
+                        className="manu-icon border-0 d-flex  mt-3 align-items-center"
+                      >
                         <BiUser
                           size={"25px"}
                           className="text-white user_icon"
                         />
                         <div>
-                          <p className="text-capitalize text-white ps-2 font-12 text-start">
+                          <Link
+                            as={Link}
+                            href="/auth/logout"
+                            className="ps-2 text-light font-13"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              logout();
+                            }}
+                          >
+                            Logout
+                          </Link>
+                        </div>
+                      </Link>
+                    </Fragment>
+                  ) : (
+                    <Fragment>
+                      <div className="d-flex">
+                        <Link
+                          href="/auth/login"
+                          className="manu-icon border-0 d-flex align-items-center mt-3 me-3"
+                        >
+                          <BiUser
+                            size={"25px"}
+                            className="text-white user_icon"
+                          />
+                          <p className="text-white text-capitalize ps-2 fw-light font-13">
                             sign in
                           </p>
-                          <p className="text-capitalize text-white ps-2">
-                            account
-                          </p>
-                        </div>
-                      </span>
-                    }
-                  >
-                    {reIsLoggedIn ? (
-                      <Fragment>
-                        <Dropdown.Item as={Link} href="/my-account">
-                          My Account
-                        </Dropdown.Item>
-                        {customerType === "1" && <Fragment></Fragment>}
-                        <Dropdown.Item as={Link} href="/vendor">
-                          Vendor
-                        </Dropdown.Item>
-                        <Dropdown.Item as={Link} href="/preorder">
-                          Pre-Order
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                          as={Link}
-                          href="/auth/logout"
-                          className=""
-                          onClick={(e) => {
-                            e.preventDefault();
-                            logout();
-                          }}
+                        </Link>
+                        <Link
+                          href="/auth/register"
+                          className="manu-icon border-0 d-flex align-items-center mt-3 font-13"
                         >
-                          Logout
-                        </Dropdown.Item>
-                      </Fragment>
-                    ) : (
-                      <Fragment>
-                        <Dropdown.Item as={Link} href="/auth/login">
-                          Sign In
-                        </Dropdown.Item>
-                        <Dropdown.Item as={Link} href="/auth/register">
-                          Sign Up
-                        </Dropdown.Item>
-                      </Fragment>
-                    )}
-                  </DropdownButton>
+                          <BiUser
+                            size={"25px"}
+                            className="text-white user_icon"
+                          />
+                          <p className="text-white text-capitalize ps-2 fw-light">
+                            sign up
+                          </p>
+                        </Link>
+                      </div>
+                    </Fragment>
+                  )}
+                  {/* <Link
+                    href="/auth/login"
+                    className="manu-icon border-0 d-flex align-items-center"
+                  >
+                    <BiUser size={"25px"} className="text-white user_icon" />
+                    <div>
+                      {reIsLoggedIn ? (
+                        <Fragment>
+                          <Link
+                            as={Link}
+                            href="/auth/logout"
+                            className="ps-2 text-light font-13"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              logout();
+                            }}
+                          >
+                            Logout
+                          </Link>
+                        </Fragment>
+                      ) : (
+                        <Fragment>
+                          <p className="text-capitalize text-white pe-3 ps-2 font-13 text-start">
+                            Log in
+                          </p>
+                        </Fragment>
+                      )}
+                    </div>
+                  </Link> */}
                 </div>
+
                 <div className="cart_icon">
                   <CartOverlys />
                 </div>
               </div>
-             
             </div>
           </Container>
         </section>
@@ -329,7 +358,7 @@ export default function Header() {
                     href="/delivery-information"
                     className="d-flex align-items-center text-capitalize font-16 all-side-icons me-4 font-14 my-2"
                   >
-                    Delivery information 
+                    Delivery information
                   </Nav.Link>
                   <Nav.Link
                     as={Link}
@@ -341,21 +370,35 @@ export default function Header() {
                 </Nav>
               </Navbar.Collapse>
 
-              {/* <div className="d-flex align-items-center cart_icon_bg me-0">
-                <div className="me-3 d-flex align-items-center bg-light px-3 py-2 rounded-pill">
-                  <AiOutlineUser className="me-2" color="" size={"20px"} />
-                  <div className="d-flex align-items-center">
-                    <Link href="/auth/login">Login / </Link>
-                    <Link href="/auth/register"> Register</Link>
-                  </div>
-                </div>*/}
               <div className="d-flex align-items-center">
-                <div className="me-3">
-                  <LuPhoneForwarded  color="" size={"20px"} />
-                </div>
                 <div>
-                  <p className="text-capitalize">contact</p>
-                  <p className="text-capitalize">000111223344</p>
+                  <ul className="manu-font-one d-flex justify-content-end align-items-center py-1">
+                    {reIsLoggedIn ? (
+                      <Fragment>
+                        <li className="pe-3 login-modal">
+                          <Link href="/my-account" className="font-16">
+                            My Account
+                          </Link>
+                        </li>
+                        {customerType === "1" && (
+                          <Fragment>
+                            <li className="pe-3 login-modal">
+                              <Link href="/vendor" className="font-16">
+                                Vendor
+                              </Link>
+                            </li>
+                            <li className="pe-3 login-modal">
+                              <Link href="/preorder" className="font-16">
+                                Pre-order
+                              </Link>
+                            </li>
+                          </Fragment>
+                        )}
+                      </Fragment>
+                    ) : (
+                      ""
+                    )}
+                  </ul>
                 </div>
               </div>
               {/* </div>  */}

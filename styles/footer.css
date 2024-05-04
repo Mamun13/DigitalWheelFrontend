@@ -12,7 +12,14 @@
   margin-top: 19px;
   margin-left: -4px;
 }
-
+.footer_payment {
+  height: 135px!important;
+  width: auto;
+}
+svg.footer-soical-link.ms-2 {
+  height: 20px;
+  margin-left: 0px !important;
+}
 /* responsive part here */
 
 @media (max-width: 1200px) {

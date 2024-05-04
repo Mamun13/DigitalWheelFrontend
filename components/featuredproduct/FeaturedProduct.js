@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getStoragePath } from "../../utils/helpers";
 import VendorProduct from "../vendorProduct/VendorProduct";
 import { fetchVendorInventories } from "../../services/VendorServices";
+import { Container } from "react-bootstrap";
 
 const index = ({ title, categoryId }) => {
   const [inventories, setInventories] = useState([]);
@@ -33,15 +34,15 @@ const index = ({ title, categoryId }) => {
 
   return (
     <>
-      <section className="vendor_part">
-        <div className="container">
-          <div className="border-bottom border-secondary">
-            <p className="capitalize prosto_one_regular">featured product</p>
+      <section className="vendor_part_feature py-5">
+        <Container fluid className="featured_padd">
+          <div className="border-bottom border-white px-0">
+            <p className="capitalize prosto_one_regular text-light">featured product</p>
           </div>
           <div className="row">
-            {inventories.map((inventory, key) => {
+            {inventories.map((inventory, key) => {  
               return (
-                <div className="col-lg-3" key={key}>
+                <div className="col-lg-2 ps-1" key={key}>
                   <div className="mt-0">
                     <div className="my-3">
                       <VendorProduct
@@ -70,7 +71,7 @@ const index = ({ title, categoryId }) => {
               );
             })}
           </div>
-        </div>
+        </Container>
       </section>
     </>
   );

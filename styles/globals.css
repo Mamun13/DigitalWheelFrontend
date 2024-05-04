@@ -264,7 +264,7 @@ header css starts
   text-transform: uppercase;
   transition: all linear 0.3s;
 }
-.menu_items_list{
+.menu_items_list {
   background-color: #f2f8fd;
 }
 .all-icons {
@@ -833,7 +833,25 @@ banner css starts
   transform: translate(-50%);
   display: block;
 }
+.all_product_accordion button.accordion-button.collapsed {
+  background-color: #fff;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.all_product_accordion .accordion-body {
+  background-color: #fff;
+}
+.all_product_accordion .accordion-button:focus {
+  box-shadow: none !important;
+}
+.all_product_accordion .accordion-button:not(.collapsed) {
+  color: #fff;
+  background-color: var(--primary);
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
+    var(--bs-accordion-border-color);
+ 
 
+}
 .wavy-chips:hover {
   opacity: 1;
 }
@@ -853,8 +871,27 @@ banner css starts
   background-size: contain;
   background-position: center;
 }
+.vendor_part_feature {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.8) 0%,
+    rgba(26, 73, 137, 0.7) 0%,
+    rgba(0, 212, 255, 0.7) 100%
+  );
+}
+.vendor_part {
+  padding: 30px 0px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0.8) 0%,
+    rgba(26, 73, 137, 0.7) 0%,
+    rgba(0, 212, 255, 0.7) 100%
+  );
+}
 
-.vendor_part .slick-prev:before,
+/* .vendor_part .slick-prev:before,
 .vendor_part .slick-next:before {
   content: "" !important;
   display: block;
@@ -871,7 +908,7 @@ banner css starts
   padding: 5px 5px !important;
   transform: rotate(180deg);
   margin-left: 10px;
-}
+} */
 .categories .slick-prev:before {
   position: absolute;
   padding: 5px 5px !important;
@@ -1239,7 +1276,15 @@ Brands part starts
   /* background-color: #fff; */
   padding: 5px 5px !important;
 }
-
+.brands-part {
+  background: rgb(10, 64, 136);
+  background: linear-gradient(
+    90deg,
+    rgba(10, 64, 136, 0.4) 0%,
+    rgba(26, 73, 137, 1) 51%,
+    rgba(93, 93, 93, 0.7) 100%
+  );
+}
 .support-icons {
   font-size: 60px !important;
   margin-left: 50%;
@@ -2066,7 +2111,7 @@ how to but part css start
 .cart_icon:hover .cart_text {
   color: #fff;
 }
-.top_space{
+.top_space {
   margin-top: -7px;
 }
 .terms-banner-div {

@@ -3,7 +3,7 @@ import ScrollToTopButton from "../../../components/common/ScrollToTopButton";
 import { useRouter } from "next/router";
 import {
   fetchCategories,
-  fetchCategory,
+  fetchCategory
 } from "../../../services/CategoryServices";
 import { fetchInventoriesByCategory } from "../../../services/InventoryServices";
 import Link from "next/link";
@@ -31,7 +31,7 @@ const CategoryPage = () => {
   // fetch
   useEffect(() => {
     fetchCategories({
-      paginate: "no",
+      paginate: "no"
     }).then((response) => {
       if (response?.data) {
         setCategories(response.data);
@@ -49,6 +49,12 @@ const CategoryPage = () => {
       });
     }
   }, [id]);
+
+  const [tab, setTab] = useState("");
+
+  const handleTabChange = (t) => {
+    setTab(t);
+  };
 
   const fetchInventoriesByCategoryData = (id, params = {}) => {
     fetchInventoriesByCategory(id, params).then((response) => {
@@ -68,7 +74,7 @@ const CategoryPage = () => {
   useEffect(() => {
     if (id) {
       fetchInventoriesByCategoryData(id, {
-        paginate: "no",
+        paginate: "no"
       });
     }
   }, [id]);
@@ -78,7 +84,7 @@ const CategoryPage = () => {
     if (page && id) {
       fetchInventoriesByCategoryData(id, {
         page: page,
-        paginate: "yes",
+        paginate: "yes"
       });
     }
   }, [page]);
@@ -122,33 +128,32 @@ const CategoryPage = () => {
                 {categories?.map((item, index) => {
                   return (
                     <>
-                      <Accordion key={index}>
-                        <Accordion.Item eventKey="0">
-                          <Accordion.Header>{item.name}</Accordion.Header>
+                      <Accordion
+                        className="border-0 bg-transparent rounded-0 "
+                        key={index}
+                      >
+                        <Accordion.Item
+                          eventKey="0"
+                          className="bg-transparent rounded-0"
+                        >
+                          <Link href={`/category/${item.id}`}>
+                            <Accordion.Header>{item.name}</Accordion.Header>
+                          </Link>
                           {item?.sub_categories?.length ? (
                             <Accordion.Body>
-                              <ul className="ps-3">
+                              <ul>
                                 {item?.sub_categories &&
                                   item.sub_categories.map(
                                     (sub_items, index) => (
-                                      <Link href={`/category/${item.id}`}>
-                                        <li
-                                          className="pb-2 font-18"
-                                          key={index}
-                                          // onClick={(e) =>
-                                          //   subactive()
-                                          // }
+                                      <li className="pb-2 font-18" key={index}>
+                                        <button
+                                          onClick={(e) =>
+                                            itemfilter(sub_items.id)
+                                          }
                                         >
-                                          <button
-                                            onClick={(e) =>
-                                              itemfilter(sub_items.id)
-                                              // active()
-                                            }
-                                          >
-                                            {sub_items?.name}
-                                          </button>
-                                        </li>
-                                      </Link>
+                                          {sub_items?.name}
+                                        </button>
+                                      </li>
                                     )
                                   )}
                               </ul>
