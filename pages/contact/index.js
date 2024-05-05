@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -13,6 +13,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
 import { makeTitle, tostify } from "../../utils/helpers";
 import { sendContactForm } from "../../services/CommonServices";
+import { fetchContact } from "../../services/ContactServices";
 import Head from "next/head";
 
 const Contact = () => {
@@ -22,13 +23,13 @@ const Contact = () => {
     email: "",
     mobile: "",
     subject: "",
-    message: "",
+    message: ""
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
@@ -51,11 +52,22 @@ const Contact = () => {
         name: "",
         email: "",
         subject: "",
-        message: "",
+        message: ""
       });
     });
   };
 
+  const [contact, setContact] = useState([]);
+
+  // fetch
+  useEffect(() => {
+    fetchContact().then((response) => {
+      if (response?.data) {
+        setContact(response.data[0]?.contact_list);
+      }
+    });
+  }, []);
+  console.log(contact);
   return (
     <Fragment>
       <Head>
@@ -76,7 +88,7 @@ const Contact = () => {
                   Address
                 </h3>
                 <p className="font-16 font-jost mb-5 contact-address">
-                  Mirpur 10, Dhaka
+                  {contact[0]?.contact_address}
                 </p>
               </div>
             </Col>
@@ -89,7 +101,7 @@ const Contact = () => {
                   email
                 </h3>
                 <p className="font-16 font-jost mb-5 contact-address">
-                  demo@gmail.com
+                  {contact[0]?.contact_email}
                 </p>
               </div>
             </Col>
@@ -102,7 +114,7 @@ const Contact = () => {
                   phone
                 </h3>
                 <p className="font-16 font-jost mb-5 contact-address">
-                  09612114444
+                  {contact[0]?.contact_phone}
                 </p>
               </div>
             </Col>

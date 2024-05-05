@@ -196,7 +196,11 @@ export default function Header() {
                   {reIsLoggedIn ? (
                     <Fragment>
                       <Link
-                        href="/auth/login"
+                        href="/auth/logout"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          logout();
+                        }}
                         className="manu-icon border-0 d-flex  mt-3 align-items-center"
                       >
                         <BiUser
@@ -204,17 +208,7 @@ export default function Header() {
                           className="text-white user_icon"
                         />
                         <div>
-                          <Link
-                            as={Link}
-                            href="/auth/logout"
-                            className="ps-2 text-light font-13"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              logout();
-                            }}
-                          >
-                            Logout
-                          </Link>
+                          <p className="ps-2 text-light font-13">Logout</p>
                         </div>
                       </Link>
                     </Fragment>
@@ -248,7 +242,6 @@ export default function Header() {
                       </div>
                     </Fragment>
                   )}
-                  
                 </div>
 
                 <div className="cart_icon">

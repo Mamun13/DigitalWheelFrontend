@@ -94,6 +94,12 @@ const CategoryPage = () => {
     setFilteredinventory(items);
   };
 
+  const [activeAccordion, setActiveAccordion] = useState(null);
+  
+  const toggleAccordion = (index) => {
+    setActiveAccordion(activeAccordion === index ? null : index);
+  };
+
   return (
     <Fragment>
       <Head>
@@ -131,9 +137,11 @@ const CategoryPage = () => {
                       <Accordion
                         className="border-0 bg-transparent rounded-0 "
                         key={index}
+                        activeKey={activeAccordion === index ? item.id : null}
+                        onSelect={() => toggleAccordion(index)}
                       >
                         <Accordion.Item
-                          eventKey="0"
+                          eventKey={item.id}
                           className="bg-transparent rounded-0"
                         >
                           <Link href={`/category/${item.id}`}>

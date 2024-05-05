@@ -561,7 +561,7 @@ const LoginPage = () => {
                 <Link href="/auth/forgot-password">Forgot Password?</Link>
               </div>
 
-              <div class="d-flex mt-4 justify-content-center">
+              <div className="d-flex mt-4 justify-content-center">
                 <div className="d-flex justify-content-center">
                   <img
                     src="/google-login-btn-new.png"

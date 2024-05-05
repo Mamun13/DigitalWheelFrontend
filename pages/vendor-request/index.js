@@ -14,20 +14,25 @@ import Head from "next/head";
 
 const BToB = () => {
   const [formdata, setFormData] = useState({
-    country_name: "",
-    name: "",
-    product_name: "",
-    product_code: "",
-    product_quantity: "",
+    first_name: "",
+    last_name: "",
     contact_number: "",
     email_address: "",
+    nid_number: "",
+    nid_upload: "",
+    business_name: "",
+    business_location: "",
+    type_of_business: "",
+    tin_number: "",
+    bin_number: "",
+    doc_upload: ""
   });
   const [isVerified, setIsVerified] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
       ...formdata,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
@@ -40,40 +45,50 @@ const BToB = () => {
     // }
 
     const data = {
-      country_name: formdata.country_name,
-      name: formdata.name,
-      product_name: formdata.product_name,
-      product_code: formdata.product_code,
-      product_quantity: formdata.product_quantity,
+      first_name: formdata.first_name,
+      last_name: formdata.last_name,
       contact_number: formdata.contact_number,
       email_address: formdata.email_address,
+      nid_number: formdata.nid_number,
+      nid_upload: formdata.nid_upload,
+      business_name: formdata.business_name,
+      business_location: formdata.business_location,
+      type_of_business: formdata.type_of_business,
+      tin_number: formdata.tin_number,
+      bin_number: formdata.bin_number,
+      doc_upload: formdata.doc_upload
     };
 
     try {
       await axios
         .post(`${API_URL}/ecom/send-b2b-sale-form`, data, {
           headers: {
-            "Content-Type": "application/json",
-          },
+            "Content-Type": "application/json"
+          }
         })
         .then((response) => {
           tostify(toast, "success", response);
         });
 
       setFormData({
-        country_name: "",
-        name: "",
-        product_name: "",
-        product_code: "",
-        product_quantity: "",
+        first_name: "",
+        last_name: "",
         contact_number: "",
         email_address: "",
+        nid_number: "",
+        nid_upload: "",
+        business_name: "",
+        business_location: "",
+        type_of_business: "",
+        tin_number: "",
+        bin_number: "",
+        doc_upload: ""
       });
     } catch (error) {
       tostify(toast, "warning", error);
     }
   };
-
+  console.log(formdata);
   return (
     <Fragment>
       <Head>
@@ -91,45 +106,80 @@ const BToB = () => {
             <Col lg={12}>
               <div className="">
                 <h2 className="text-center text-capitalize my-4 prosto_one_regular font-30 fw-bold text-secondary">
-                  vendor
+                  Vendor
                 </h2>
               </div>
             </Col>
             <Col lg={6} className="btob-forms">
-            <div className="">
-              <p className="float-left font-jost font-16 mb-4">
-                Dear customers&apos; <br></br>Please fill out this vendor request form if
-                you have any inquiries on bulk order for your business from
-                Adams Vibe. Our responsible person will contact you as soon as
-                possible on given contact detail.
-              </p>
-            </div>
+              <div className="">
+                <p className="float-left font-jost font-16 mb-4">
+                  Dear customers&apos; <br></br>Please fill out this vendor
+                  request form if you have any inquiries on bulk order for your
+                  business from Adams Vibe. Our responsible person will contact
+                  you as soon as possible on given contact detail.
+                </p>
+              </div>
               <div data-aos="fade-up">
                 <Form onSubmit={handleSubmit}>
+                  <Row>
+                    <Col lg={6}>
+                      <Form.Group className="mb-3" controlId="">
+                        <Form.Label className="text-capitalize">
+                          first name
+                          <span className="text-danger">*</span>
+                        </Form.Label>
+                        <Form.Control
+                          name="first_name"
+                          type="text"
+                          placeholder="Enter country name"
+                          value={formdata.first_name}
+                          onChange={handleChange}
+                          className="rounded-0 btob-input"
+                        />
+                      </Form.Group>
+                    </Col>
+                    <Col lg={6}>
+                      <Form.Group className="mb-3" controlId="">
+                        <Form.Label className="text-capitalize">
+                          last name
+                          <span className="text-danger">*</span>
+                        </Form.Label>
+                        <Form.Control
+                          name="last_name"
+                          type="text"
+                          placeholder="Enter last name"
+                          value={formdata.last_name}
+                          onChange={handleChange}
+                          className="rounded-0 btob-input"
+                        />
+                      </Form.Group>
+                    </Col>
+                  </Row>
+
                   <Form.Group className="mb-3" controlId="">
                     <Form.Label className="text-capitalize">
-                      first name
+                      contact number
                       <span className="text-danger">*</span>
                     </Form.Label>
                     <Form.Control
-                      name="country_name"
+                      name="contact_number"
                       type="text"
                       placeholder="Enter country name"
-                      value={formdata.country_name}
+                      value={formdata.contact_number}
                       onChange={handleChange}
                       className="rounded-0 btob-input"
                     />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="">
                     <Form.Label className="text-capitalize">
-                      last name
+                      email address
                       <span className="text-danger">*</span>
                     </Form.Label>
                     <Form.Control
-                      name="country_name"
-                      type="text"
+                      name="email_address"
+                      type="email"
                       placeholder="Enter country name"
-                      value={formdata.country_name}
+                      value={formdata.email_address}
                       onChange={handleChange}
                       className="rounded-0 btob-input"
                     />
@@ -139,10 +189,10 @@ const BToB = () => {
                       NID<span className="text-danger">*</span>
                     </Form.Label>
                     <Form.Control
-                      name="product_code"
+                      name="nid_number"
                       type="number"
                       placeholder="Enter Product Code"
-                      value={formdata.product_code}
+                      value={formdata.nid_number}
                       onChange={handleChange}
                       className="rounded-0 btob-input mb-3"
                     />
@@ -154,10 +204,10 @@ const BToB = () => {
                       <span className="text-danger">*</span>
                     </Form.Label>
                     <Form.Control
-                      name="country_name"
+                      name="business_name"
                       type="text"
-                      placeholder="Enter country name"
-                      value={formdata.country_name}
+                      placeholder="Enter business name"
+                      value={formdata.business_name}
                       onChange={handleChange}
                       className="rounded-0 btob-input"
                     />
@@ -167,10 +217,10 @@ const BToB = () => {
                       Business Location <span className="text-danger">*</span>
                     </Form.Label>
                     <Form.Control
-                      name="name"
+                      name="business_location"
                       type="text"
-                      placeholder="Enter name"
-                      value={formdata.name}
+                      placeholder="Enter business location"
+                      value={formdata.business_location}
                       onChange={handleChange}
                       className="rounded-0 btob-input"
                     />
@@ -179,17 +229,13 @@ const BToB = () => {
                     <Form.Label>
                       Type of Busines<span className="text-danger">*</span>
                     </Form.Label>
-                    {/* <Form.Control
-                      name="product_name"
-                      type="text"
-                      placeholder="Enter Product Name"
-                      value={formdata.product_name}
-                      onChange={handleChange}
-                      className="rounded-0 btob-input"
-                    /> */}
+                    
                     <Form.Select
+                      name="type_of_business"
                       aria-label="Default select example"
                       className="rounded-0 btob-input"
+                      value={formdata.type_of_business}
+                      onChange={handleChange}
                     >
                       <option>Select menu</option>
                       <option value="Whole Seller">Whole Seller</option>
@@ -203,10 +249,10 @@ const BToB = () => {
                       Tin<span className="text-danger">*</span>
                     </Form.Label>
                     <Form.Control
-                      name="product_code"
+                      name="tin_number"
                       type="number"
                       placeholder="Enter Product Code"
-                      value={formdata.product_code}
+                      value={formdata.tin_number}
                       onChange={handleChange}
                       className="rounded-0 btob-input"
                     />
@@ -216,34 +262,15 @@ const BToB = () => {
                       Bin / Trade License<span className="text-danger">*</span>
                     </Form.Label>
                     <Form.Control
-                      name="product_code"
+                      name="bin_number"
                       type="number"
                       placeholder="Enter Product Code"
-                      value={formdata.product_code}
+                      value={formdata.bin_number}
                       onChange={handleChange}
                       className="rounded-0 btob-input mb-3"
                     />
                     <Form.Control type="file" multiple className="rounded-0" />
                   </Form.Group>
-
-                  {/* <Form.Group className="mb-3" controlId="">
-                    <Form.Label>
-                      Contact Number <span className="text-danger">*</span>
-                    </Form.Label>
-                    <Form.Control
-                      name="contact_number"
-                      type="number"
-                      placeholder="Enter Contact Number"
-                      value={formdata.contact_number}
-                      onChange={handleChange}
-                      className="rounded-0 btob-input"
-                    />
-                  </Form.Group> */}
-
-                  {/* <Form.Group className="mb-3" controlId="">
-                                    <ReCAPTCHA onVerify={setIsVerified} />
-                                </Form.Group> */}
-
                   <Button
                     type="submit"
                     className="btob-submit-btn rounded-0 mb-4 text-dark font-jost font-poppins"

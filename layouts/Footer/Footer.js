@@ -13,9 +13,20 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { fetchSocial } from "../../services/CommonServices";
 import { BiChevronDown } from "react-icons/bi";
 import { Col, Container, Row } from "react-bootstrap";
+import { fetchContact } from "../../services/ContactServices";
 
 export default function Footer() {
   const [socials, setSocials] = useState([]);
+  const [contact, setContact] = useState([]);
+
+  // fetch
+  useEffect(() => {
+    fetchContact().then((response) => {
+      if (response?.data) {
+        setContact(response.data[0]?.contact_list);
+      }
+    });
+  }, []);
 
   // fetch
   useEffect(() => {
@@ -56,8 +67,8 @@ export default function Footer() {
                             loading="lazy"
                           />
                         </Link>
-                        <p className="font-16">mirpur 10, dhaka</p>
-                        <p className="font-14 ">demo@gmail.com</p>
+                        <p className="font-16">{contact[0]?.contact_address}</p>
+                        <p className="font-14 ">{contact[0]?.contact_email}</p>
                         <div className="pt-3 ps-0">
                           {socials?.map((social, index) => (
                             <Link
