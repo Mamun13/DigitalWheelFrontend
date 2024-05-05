@@ -101,12 +101,19 @@ const ProductCard = ({
             alt={title}
           />
         </Link>
-        {salePrice && offerPrice && salePrice > offerPrice ? (
-          <div className="position-absolute offer-token text-center">
-            <span className="text-white veri-align fw-semibold font-14 pt-2">
-              -{calculateDiscount(salePrice, offerPrice)}%
-            </span>
-          </div>
+
+        {isRunningOffer ? (
+          <Fragment>
+            {salePrice && offerPrice && salePrice > offerPrice ? (
+              <div className="position-absolute offer-token text-center">
+                <span className="text-white veri-align fw-semibold font-14 pt-2">
+                  -{calculateDiscount(salePrice, offerPrice)}%
+                </span>
+              </div>
+            ) : (
+              ""
+            )}
+          </Fragment>
         ) : (
           ""
         )}

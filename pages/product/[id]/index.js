@@ -175,7 +175,7 @@ const SingleInventoryPage = () => {
       <Head>
         <title>{makeTitle(inventory?.title || "Product")}</title>
       </Head>
-      
+
       <section className="view-single-pro">
         {inventory?.product?.lifestyle_image && (
           <div className="product-banner">
@@ -271,7 +271,6 @@ const SingleInventoryPage = () => {
               </div>
 
               <div className="d-flex justify-content-start counter mt-4 mb-4">
-                
                 <div className="ms-2">
                   <button
                     type="button"
@@ -291,30 +290,35 @@ const SingleInventoryPage = () => {
                   </button>
                 </div>
               </div>
-
-              {inventory?.sale_price &&
-                inventory?.offer_price &&
-                inventory?.offer_price < inventory?.sale_price && (
-                  <div className="single_pro_offer">
-                    <img
-                      src="/offer_shape.png"
-                      alt=""
-                      className="single_pro_offer_img"
-                    />
-                    <div className="single_offer_text">
-                      <p className="text-uppercase fw-bold font-16 d-flex justify-content-center text-white m-0 p-0 offer_text_tab">
-                        save
-                      </p>
-                      <span className="text-white veri-align fw-semibold font-16">
-                        {calculateDiscount(
-                          inventory?.sale_price,
-                          inventory?.offer_price
-                        )}
-                        %
-                      </span>
-                    </div>
-                  </div>
-                )}
+              {isRunningOffer ? (
+                <Fragment>
+                  {inventory?.sale_price &&
+                    inventory?.offer_price &&
+                    inventory?.offer_price < inventory?.sale_price && (
+                      <div className="single_pro_offer">
+                        <img
+                          src="/offer_shape.png"
+                          alt=""
+                          className="single_pro_offer_img"
+                        />
+                        <div className="single_offer_text">
+                          <p className="text-uppercase fw-bold font-16 d-flex justify-content-center text-white m-0 p-0 offer_text_tab">
+                            save
+                          </p>
+                          <span className="text-white veri-align fw-semibold font-16">
+                            {calculateDiscount(
+                              inventory?.sale_price,
+                              inventory?.offer_price
+                            )}
+                            %
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                </Fragment>
+              ) : (
+                ""
+              )}
             </div>
 
             <ProductDescription inventory={inventory} className="mb-5 tabs" />
