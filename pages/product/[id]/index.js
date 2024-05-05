@@ -290,7 +290,8 @@ const SingleInventoryPage = () => {
                   </button>
                 </div>
               </div>
-              {isRunningOffer ? (
+
+              {/* {isRunningOffer ? (
                 <Fragment>
                   {inventory?.sale_price &&
                     inventory?.offer_price &&
@@ -318,7 +319,7 @@ const SingleInventoryPage = () => {
                 </Fragment>
               ) : (
                 ""
-              )}
+              )} */}
             </div>
 
             <ProductDescription inventory={inventory} className="mb-5 tabs" />

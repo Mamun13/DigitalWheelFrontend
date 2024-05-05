@@ -294,7 +294,7 @@ const SingleInventoryPage = () => {
                 </div>
               </div>
 
-              {inventory?.sale_price &&
+              {/* {inventory?.sale_price &&
                 inventory?.offer_price &&
                 inventory?.offer_price < inventory?.sale_price && (
                   <div className="single_pro_offer2">
@@ -316,7 +316,7 @@ const SingleInventoryPage = () => {
                       </span>
                     </div>
                   </div>
-                )}
+                )} */}
             </div>
 
             <ProductDescription inventory={inventory} className="mb-5 tabs" />
