@@ -118,8 +118,7 @@ const ProductCard = ({
           </Link>
         </Card.Title>
 
-        {/* {isRunningOffer ? ( */}
-        {offerPrice > 0 ? (
+        {isRunningOffer ? (
           <Fragment>
             <del>
               <Card.Text className="text-center text-capitalize">

@@ -118,26 +118,7 @@ const ProductCard = ({
           </Link>
         </Card.Title>
 
-        {/* {isRunningOffer ? (
-          <Fragment>
-            <del>
-              <Card.Text className="text-center text-capitalize">
-                Price: {salePrice} Tk.
-              </Card.Text>
-            </del>
-            <Card.Text className="text-center pb-2 text-capitalize">
-              offer Price: {offerPrice} Tk.
-            </Card.Text>
-          </Fragment>
-        ) : (
-          <Card.Text className="text-center pb-2 text-capitalize">
-            <br />
-            Price: {salePrice} Tk.
-          </Card.Text>
-        )} */}
-
-
-         {offerPrice > 0 ? (
+        {isRunningOffer ? (
           <Fragment>
             <del>
               <Card.Text className="text-center text-capitalize">
@@ -154,6 +135,8 @@ const ProductCard = ({
             Price: {salePrice} Tk.
           </Card.Text>
         )}
+
+
 
         {variants && (
           <Card.Text className="text-center pb-2 text-capitalize">
