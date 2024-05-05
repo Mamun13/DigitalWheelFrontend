@@ -86,9 +86,9 @@ export const fetchSearchInventories = async (params = {}) => {
  *
  * @returns {Promise<*>}
  */
-export const fetchInventory = async (id, params = {}) => {
+export const fetchPreorderInventory = async (id, params = {}) => {
     try {
-        return await axios.get(`/ecom/inventories/${id}/show`, {
+        return await axios.get(`/ecom/inventories/${id}/showPreOrder`, {
             params: params
         });
     } catch (error) {

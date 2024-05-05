@@ -1,10 +1,12 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { FaHeart } from "react-icons/fa";
+// import { FaHeart } from "react-icons/fa";
 import ImageSection from "../../../components/product/ImageSection";
 import ProductDescription from "../../../components/product/ProductDescription";
-import { fetchvendorInventory } from "../../../services/VendorServices";
+// import { fetchvendorInventory } from "../../../services/VendorServices";
+import { fetchPreorderInventory } from "../../../services/PreOrderServices";
+
 import { useRouter } from "next/router";
-import StarRatings from "react-star-ratings";
+// import StarRatings from "react-star-ratings";
 import moment from "moment";
 import {
   syncWishlist,
@@ -18,7 +20,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_CART_ITEM } from "../../../store/slices/CartSlice";
 import { randomInt } from "next/dist/shared/lib/bloom-filter/utils";
-import Timer from "../../../components/common/Timer";
+// import Timer from "../../../components/common/Timer";
 import Head from "next/head";
 import { BsCartCheck, BsFillCartXFill } from "react-icons/bs";
 
@@ -54,7 +56,7 @@ const SingleInventoryPage = () => {
 
   useEffect(() => {
     if (id) {
-      fetchvendorInventory(id).then((response) => {
+      fetchPreorderInventory(id).then((response) => {
         if (response?.data) {
           const inventory = response.data;
 
@@ -175,7 +177,7 @@ const SingleInventoryPage = () => {
   const calculateDiscount = (sale, offer) => {
     return Math.round(((sale - offer) / sale) * 100);
   };
-  
+
   return (
     <Fragment>
       <Head>
@@ -207,7 +209,7 @@ const SingleInventoryPage = () => {
                   {inventory?.title}
                 </h3>
                 
-                <p className="font-lato font-20 mb-3">
+                <p className="font-lato font-20 text-dark mb-3">
                   {isRunningOffer ? (
                     <Fragment>
                       <del>Price: {inventory?.sale_price} Tk.</del>
@@ -273,16 +275,7 @@ const SingleInventoryPage = () => {
               </div>
 
               <div className="d-flex justify-content-start counter mt-4 mb-4">
-                {isLoggedIn() && (
-                  <div className="border border-success px-2">
-                    <FaHeart
-                      className={`mt-1 cursor-pointer favourite-icon ${
-                        isWishlist ? "favourite-icon-onclick" : "favourite-icon"
-                      }`}
-                      onClick={(event) => handleFavourite(event)}
-                    />
-                  </div>
-                )}
+                
                 <div className="ms-2">
                   <button
                     type="button"
@@ -306,14 +299,14 @@ const SingleInventoryPage = () => {
               {inventory?.sale_price &&
                 inventory?.offer_price &&
                 inventory?.offer_price < inventory?.sale_price && (
-                  <div className="single_pro_offer">
+                  <div className="single_pro_offer3">
                     <img
                       src="/offer_shape.png"
                       alt=""
-                      className="single_pro_offer_img"
+                      className="single_pro_offer_img3"
                     />
-                    <div className="single_offer_text">
-                      <p className="text-uppercase fw-bold font-16 d-flex justify-content-center text-white m-0 p-0 offer_text_tab">
+                    <div className="single_offer_text3">
+                      <p className="text-uppercase fw-bold font-16 d-flex justify-content-center text-white m-0 p-0 offer_text_tab3">
                         save
                       </p>
                       <span className="text-white veri-align fw-semibold font-16">
@@ -326,7 +319,6 @@ const SingleInventoryPage = () => {
                     </div>
                   </div>
                 )}
-              
             </div>
 
             <ProductDescription inventory={inventory} className="mb-5 tabs" />

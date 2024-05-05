@@ -1,10 +1,10 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { FaHeart } from "react-icons/fa";
+// import { FaHeart } from "react-icons/fa";
 import ImageSection from "../../../components/product/ImageSection";
 import ProductDescription from "../../../components/product/ProductDescription";
 import { fetchvendorInventory } from "../../../services/VendorServices";
 import { useRouter } from "next/router";
-import StarRatings from "react-star-ratings";
+// import StarRatings from "react-star-ratings";
 import moment from "moment";
 import {
   syncWishlist,
@@ -18,7 +18,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_CART_ITEM } from "../../../store/slices/CartSlice";
 import { randomInt } from "next/dist/shared/lib/bloom-filter/utils";
-import Timer from "../../../components/common/Timer";
+// import Timer from "../../../components/common/Timer";
 import Head from "next/head";
 import { BsCartCheck, BsFillCartXFill } from "react-icons/bs";
 

@@ -1,39 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { getStoragePath } from "../../utils/helpers";
-import Preorder from "../../components/preOrder/PreOrder";
+import VendorProduct from "../../components/vendorProduct/VendorProduct";
+import { fetchVendorInventories } from "../../services/VendorServices";
 import { fetchInventoriespreOrder } from "../../services/PreOrderServices";
 
 const index = ({ title, categoryId }) => {
-  const [inventories, setInventories] = useState([]);
+  const [preOrder, setPreOrder] = useState([]);
 
   // fetch
   useEffect(() => {
     fetchInventoriespreOrder(categoryId, {
-      paginate: "no", 
+      paginate: "no",
     }).then((response) => {
       if (response?.data) {
-        setInventories(response.data);
+        setPreOrder(response.data);
       }
     });
   }, [categoryId]);
-
+console.log(preOrder)
   return (
     <>
-      <section className="vendor_part_preorder">
+      <section className="vendor_part_product">
        <div>
         <img src="/vendor.jpg" className="vendor_img"/>
        </div>
         <div className="container">
-        <div>
-            <h1 className="text-capitalize prosto_one_regular text-center display-5 fw-bold pt-5 pb-4">pre-order</h1>
+          <div>
+            <h1 className="text-capitalize prosto_one_regular text-center display-5 fw-bold pt-5 pb-4">Pre-Order</h1>
           </div>
           <div className="row">
-            {inventories.map((inventory, key) => {
+            {preOrder.map((inventory, key) => {
               return (
                 <div className="col-lg-3" key={key}>
                   <div className="mt-0">
                     <div className="my-3">
-                      <Preorder
+                      <VendorProduct
                         id={inventory.id}
                         categoryId={inventory?.product.category_id}
                         title={inventory.title}
@@ -53,7 +54,7 @@ const index = ({ title, categoryId }) => {
                         }
                         viewLink={`/preorderProduct/${inventory.id}`}
                       />
-                    </div>
+                    </div> 
                   </div>
                 </div>
               );

@@ -6,7 +6,7 @@ export default function Document() {
 			<Head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="manifest" href="/manifest.json" />
+        {/* <link rel="manifest" href="/manifest.json" /> */}
         {/* <!-- Required meta tags for responsive --> */}
         <meta
           name="viewport"

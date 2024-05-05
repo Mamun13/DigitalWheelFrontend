@@ -1898,61 +1898,7 @@ const CheckoutPage = () => {
                 </div>
               </div>
 
-              {/* <div className="">
-                <p className="text-capitalize py-3 font-16 fw-bold">
-                  Company Information:
-                </p>
-                <div className="row">
-                  <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1">
-                      TIN:
-                    </b>
-                    <p className="text-capitalize text-center pb-2">
-                      117029919179
-                    </p>
-                  </Col>
-                  <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1">
-                      BIN:
-                    </b>
-                    <p className="text-capitalize text-center pb-2">
-                      000079132-0403
-                    </p>
-                  </Col>
-                  <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1">
-                      Trade License:
-                    </b>
-                    <p className="text-capitalize text-center pb-2">
-                      TRAD/DESCC/216136/2019
-                    </p>
-                  </Col>
-                </div>
-              </div> */}
-
-              {/* <div className="">
-                <p className="text-capitalize py-3 font-16 fw-bold">
-                  Bank Account Info:
-                </p>
-                <div className="row">
-                  <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1">
-                      Acc Name:
-                    </b>
-                    <p className="text-capitalize text-center pb-2">
-                      Ifad Multi Products Limited
-                    </p>
-                  </Col>
-                  <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1">
-                      Acc No:
-                    </b>
-                    <p className="text-capitalize text-center pb-2">
-                      00233011222
-                    </p>
-                  </Col>
-                </div>
-              </div> */}
+            
             </Col>
           </Row>
         </Container>

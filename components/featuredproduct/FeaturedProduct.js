@@ -19,7 +19,7 @@ const index = ({ title, categoryId }) => {
   // }, [categoryId]);
 
   const getData = async () => {
-    const response = await fetch("https://api.codersmind23.com/ecom/inventories");
+    const response = await fetch("https://api.adamsvibe.com/ecom/inventories");
     const allproduct = await response.json();
     // setInventories(allproduct); 
     const featuredProducts = allproduct.filter(product => product.is_special_deal === "1");

@@ -53,7 +53,7 @@ const index = ({ title, categoryId }) => {
                         }
                         viewLink={`/vendorProduct/${inventory.id}`}
                       />
-                    </div>
+                    </div> 
                   </div>
                 </div>
               );

@@ -91,7 +91,7 @@ const ProductDescription = ({ inventory }) => {
 						{inventory?.product?.product_long_desc}
 					</div>
 				</Tab> */}
-          <Tab
+          {/* <Tab
             eventKey="review"
             title="Customer Review"
             className="pb-5 font-lato"
@@ -153,7 +153,7 @@ const ProductDescription = ({ inventory }) => {
 														  style={{height: "150px"}}
 														  onChange={(event) => handleChange(event)}>{formData?.comments}</textarea>
 												<label htmlFor="floatingTextarea2">Comments</label>
-											</div>*/}
+											</div>
                         <button
                           type="submit"
                           className="btn btn-primary submit-btn rounded-0 mt-3 px-5 py-2"
@@ -171,7 +171,7 @@ const ProductDescription = ({ inventory }) => {
                 </div>
               </div>
             </div>
-          </Tab>
+          </Tab> */}
         </Tabs>
       </Fragment>
     )

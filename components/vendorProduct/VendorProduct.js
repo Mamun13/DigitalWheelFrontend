@@ -180,6 +180,8 @@ const ProductCard = ({
           >
             add to cart
           </button>
+
+          
         </div>
       </Card.Body>
     </Card>
