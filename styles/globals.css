@@ -1185,6 +1185,53 @@ banner css starts
   font-size: 18px;
   margin-top: -10px !important;
 }
+.offer_text2 {
+  position: absolute;
+  top: 43px;
+  left: 5%;
+  height: 60px;
+  width: 60px;
+}
+
+.round_offer .offer_percent2 {
+  position: absolute;
+  margin-top: -6px !important;
+  padding-left: 18px;
+}
+
+.single_pro_offer2 {
+  position: absolute;
+  left: 74%;
+  bottom: 5px;
+}
+
+.single_pro_offer_img2 {
+  top: 0;
+  right: 0;
+  height: 70px;
+}
+
+.single_offer_text2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.save_offer2 {
+  font-size: 18px;
+}
+
+.save_offer_percent2 {
+  font-size: 18px;
+  margin-top: -10px !important;
+}
 
 /*===============
  combo-pack css ends
@@ -2902,7 +2949,8 @@ Responsive part end
   max-width: 800px;
   margin: auto;
   padding: 30px;
-  border: 1px solid #eee;
+  background: #fff;
+  border: 1px solid #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   font-size: 16px;
   line-height: 24px;
@@ -3056,6 +3104,11 @@ Responsive part end
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+}
+.invoice_card {
+  width: 150px !important;
+  margin-left: 50%;
+  transform: translate(-50%);
 }
 
 @media screen and (min-width: 992px) {

@@ -171,7 +171,7 @@ const SingleInventoryPage = () => {
       });
     }
   };
-  
+
   const calculateDiscount = (sale, offer) => {
     return Math.round(((sale - offer) / sale) * 100);
   };
@@ -273,16 +273,7 @@ const SingleInventoryPage = () => {
               </div>
 
               <div className="d-flex justify-content-start counter mt-4 mb-4">
-                {isLoggedIn() && (
-                  <div className="border border-success px-2">
-                    <FaHeart
-                      className={`mt-1 cursor-pointer favourite-icon ${
-                        isWishlist ? "favourite-icon-onclick" : "favourite-icon"
-                      }`}
-                      onClick={(event) => handleFavourite(event)}
-                    />
-                  </div>
-                )}
+                
                 <div className="ms-2">
                   <button
                     type="button"
@@ -306,14 +297,14 @@ const SingleInventoryPage = () => {
               {inventory?.sale_price &&
                 inventory?.offer_price &&
                 inventory?.offer_price < inventory?.sale_price && (
-                  <div className="single_pro_offer">
+                  <div className="single_pro_offer2">
                     <img
                       src="/offer_shape.png"
                       alt=""
-                      className="single_pro_offer_img"
+                      className="single_pro_offer_img2"
                     />
-                    <div className="single_offer_text">
-                      <p className="text-uppercase fw-bold font-16 d-flex justify-content-center text-white m-0 p-0 offer_text_tab">
+                    <div className="single_offer_text2">
+                      <p className="text-uppercase fw-bold font-16 d-flex justify-content-center text-white m-0 p-0 offer_text_tab2">
                         save
                       </p>
                       <span className="text-white veri-align fw-semibold font-16">
