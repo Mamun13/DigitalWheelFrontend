@@ -24,7 +24,7 @@ const ProductCard = ({
   viewLink,
   cssClasses,
   isTimer,
-  variants,
+  variants
 }) => {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -65,12 +65,12 @@ const ProductCard = ({
           variations: "",
           variant_id: variants?.[0]?.variant?.id,
           variant_name: variants?.[0]?.variant?.name,
-          variant_quantity: variants?.[0]?.variant_option?.name,
+          variant_quantity: variants?.[0]?.variant_option?.name
         })
       );
 
       tostify(toast, "success", {
-        message: "Added to Cart",
+        message: "Added to Cart"
       });
 
       if (buyNow) {
@@ -80,7 +80,7 @@ const ProductCard = ({
       }
     } catch (err) {
       tostify(toast, "warning", {
-        message: err.message,
+        message: err.message
       });
     }
   };
@@ -136,7 +136,7 @@ const ProductCard = ({
           </Card.Text>
         )} */}
 
-{offerPrice > 0 ? (
+        {offerPrice > 0 ? (
           <Fragment>
             <del>
               <Card.Text className="text-center text-capitalize">
@@ -181,11 +181,6 @@ const ProductCard = ({
             add to cart
           </button>
         </div>
-        {/* {isTimer && isRunningOffer && (
-                    <div style={{padding: "10px 0 0", textAlign: "center", fontWeight: "bold"}}>
-                        <Timer startDate={offerStart} endDate={offerEnd} />
-                    </div>
-                )} */}
       </Card.Body>
     </Card>
   );

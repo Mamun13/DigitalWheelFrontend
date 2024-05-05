@@ -571,7 +571,7 @@ const LoginPage = () => {
                     alt="google-login-btn"
                   />
                 </div>
-                <div className="ms-2 d-flex justify-content-center">
+                {/* <div className="ms-2 d-flex justify-content-center">
                   <img
                     src="/facebook-login-btn-new.png"
                     className="facebook-login-btn"
@@ -579,7 +579,7 @@ const LoginPage = () => {
                     onClick={(event) => handleFacebookLogin(event)}
                     alt="facebook-login-btn"
                   />
-                </div>
+                </div> */}
               </div>
             </Col>
           </Form>

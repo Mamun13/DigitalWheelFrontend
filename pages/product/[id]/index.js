@@ -8,7 +8,7 @@ import StarRatings from "react-star-ratings";
 import moment from "moment";
 import {
   syncWishlist,
-  wishlistStatus,
+  wishlistStatus
 } from "../../../services/WishlistServices";
 import { getStoragePath, makeTitle, tostify } from "../../../utils/helpers";
 import { toast } from "react-toastify";
@@ -87,7 +87,7 @@ const SingleInventoryPage = () => {
 
   const handleFavourite = () => {
     syncWishlist({
-      inventory_id: inventory?.id,
+      inventory_id: inventory?.id
     }).then((response) => {
       if (response?.data) {
         tostify(toast, "success", response);
@@ -105,7 +105,7 @@ const SingleInventoryPage = () => {
     try {
       if (!quantity) {
         tostify(toast, "warning", {
-          message: "Quantity shouldn't empty!",
+          message: "Quantity shouldn't empty!"
         });
         return false;
       }
@@ -134,14 +134,23 @@ const SingleInventoryPage = () => {
           // variant_id: inventory.inventory_variants[0].variant.id,
           // variant_name: inventory.inventory_variants[0].variant.name,
           // variant_quantity: inventory.inventory_variants[0].variant_option.name,
-          variant_id: inventory.inventory_variants.length > 0 ? inventory.inventory_variants[0].variant.id : null,
-          variant_name: inventory.inventory_variants.length > 0 ? inventory.inventory_variants[0].variant.name : null,
-          variant_quantity: inventory.inventory_variants.length > 0 ? inventory.inventory_variants[0].variant_option.name : null,
+          variant_id:
+            inventory.inventory_variants.length > 0
+              ? inventory.inventory_variants[0].variant.id
+              : null,
+          variant_name:
+            inventory.inventory_variants.length > 0
+              ? inventory.inventory_variants[0].variant.name
+              : null,
+          variant_quantity:
+            inventory.inventory_variants.length > 0
+              ? inventory.inventory_variants[0].variant_option.name
+              : null
         })
       );
 
       tostify(toast, "success", {
-        message: "Added to Cart",
+        message: "Added to Cart"
       });
 
       setQuantity(1);
@@ -153,9 +162,12 @@ const SingleInventoryPage = () => {
       }
     } catch (err) {
       tostify(toast, "warning", {
-        message: err.message,
+        message: err.message
       });
     }
+  };
+  const calculateDiscount = (sale, offer) => {
+    return Math.round(((sale - offer) / sale) * 100);
   };
 
   return (
@@ -163,6 +175,7 @@ const SingleInventoryPage = () => {
       <Head>
         <title>{makeTitle(inventory?.title || "Product")}</title>
       </Head>
+      
       <section className="view-single-pro">
         {inventory?.product?.lifestyle_image && (
           <div className="product-banner">
@@ -191,19 +204,7 @@ const SingleInventoryPage = () => {
                 <h3 className="mt-5 prosto_one_regular display-6 fw-bolder text-capitalize">
                   {inventory?.title}
                 </h3>
-                {/* <div className="d-flex justify-content-start align-items-center mb-3 mt-2">
-                  <StarRatings
-                    rating={parseInt(inventory?.star_ratting || 0)}
-                    starRatedColor="orange"
-                    numberOfStars={5}
-                    starDimension="20px"
-                    starSpacing="1px"
-                    name="rating"
-                  />
-                  <p className="text-secondary ps-2 fw-bold">
-                    ( {inventory?.reviews_count} review )
-                  </p>
-                </div> */}
+
                 <p className="font-lato font-20 text-dark mb-3">
                   {isRunningOffer ? (
                     <Fragment>
@@ -217,7 +218,7 @@ const SingleInventoryPage = () => {
                 </p>
               </div>
 
-              {/* {inventory?.inventory_variants && (
+              {inventory?.inventory_variants && (
                 <div className="variation-infos">
                   <table className="table table-bordered">
                     <tbody>
@@ -232,9 +233,7 @@ const SingleInventoryPage = () => {
                     </tbody>
                   </table>
                 </div>
-              )} */}
-              
-              
+              )}
 
               <div className="d-flex justify-content-start align-items-center counter mt-3">
                 <p className="text-capitalize pe-3 font-lato">quantity :</p>
@@ -272,16 +271,7 @@ const SingleInventoryPage = () => {
               </div>
 
               <div className="d-flex justify-content-start counter mt-4 mb-4">
-                {/* {isLoggedIn() && (
-                  <div className="border rounded-1 border-success px-2">
-                    <FaHeart
-                      className={`mt-1 cursor-pointer favourite-icon ${
-                        isWishlist ? "favourite-icon-onclick" : "favourite-icon"
-                      }`}
-                      onClick={(event) => handleFavourite(event)}
-                    />
-                  </div>
-                )} */}
+                
                 <div className="ms-2">
                   <button
                     type="button"
@@ -302,50 +292,29 @@ const SingleInventoryPage = () => {
                 </div>
               </div>
 
-              {/*Timer*/}
-              {/* {isRunningOffer && inventory?.offer_end && (
-                <div className="offer-countdown mb-4">
-                  <div className="fs-6 mb-1">Hurry up! Offer is ongoing.</div>
-                  <div
-                    className="fs-2 fw-light border-2 border-warning d-inline-block px-3 py-2 text-center"
-                    style={{
-                      padding: "10px 0 0",
-                      textAlign: "left",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    <Timer startDate={null} endDate={inventory?.offer_end} />
+              {inventory?.sale_price &&
+                inventory?.offer_price &&
+                inventory?.offer_price < inventory?.sale_price && (
+                  <div className="single_pro_offer">
+                    <img
+                      src="/offer_shape.png"
+                      alt=""
+                      className="single_pro_offer_img"
+                    />
+                    <div className="single_offer_text">
+                      <p className="text-uppercase fw-bold font-16 d-flex justify-content-center text-white m-0 p-0 offer_text_tab">
+                        save
+                      </p>
+                      <span className="text-white veri-align fw-semibold font-16">
+                        {calculateDiscount(
+                          inventory?.sale_price,
+                          inventory?.offer_price
+                        )}
+                        %
+                      </span>
+                    </div>
                   </div>
-                </div>
-              )} */}
-              {/*
-                        {/*Video*
-                        {inventory?.product?.product_video_path && (
-                            <div className="product-video mb-4">
-                                <ReactPlayer
-                                    controls={true}
-                                    url={getStoragePath('product-video/' + inventory.product.product_video_path)}
-                                />
-                            </div>
-                        )}
-
-                        {/*Brochure*
-                        {inventory?.product?.product_brochure && (
-                            <div className="product-brochure mb-5">
-                                <a href={getStoragePath('product-brochure/' + inventory.product.product_brochure)}
-                                   className="btn btn-outline-dark rounded-0 w-50" target="_blank">
-                                    <div className="d-flex flex-column justify-content-center">
-                                        <div className="mb-1 p-1">
-                                            <img src="https://cdn-icons-png.flaticon.com/512/543/543829.png"
-                                                 width={35} className="d-inline" alt="icon"/>
-                                        </div>
-                                        <span className="fs-5">Product Brochure</span>
-                                    </div>
-                                </a>
-                            </div>
-                        )}
-
-                        */}
+                )}
             </div>
 
             <ProductDescription inventory={inventory} className="mb-5 tabs" />

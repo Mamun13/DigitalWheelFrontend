@@ -23,7 +23,7 @@ const DemoSlider = () => {
     });
   }, []);
 
-  console.log(cate_one);
+
   // fetch
   useEffect(() => {
     fetchBanners().then((response) => {

@@ -19,7 +19,7 @@ const index = ({ title, categoryId }) => {
 
   return (
     <>
-      <section className="vendor_part">
+      <section className="vendor_part_product">
        <div>
         <img src="/vendor.jpg" className="vendor_img"/>
        </div>

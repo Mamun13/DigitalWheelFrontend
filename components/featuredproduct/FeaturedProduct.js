@@ -30,7 +30,7 @@ const index = ({ title, categoryId }) => {
     getData();
   }, []);
 
-  // console.log(inventories)
+ 
 
   return (
     <>
