@@ -24,6 +24,7 @@ function RegisterPage() {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [referral, setReferral] = useState("");
   const [agree, setAgree] = useState(false);
 
   const [code, setCode] = useState("88");
@@ -54,9 +55,10 @@ function RegisterPage() {
       {
         name: name,
         email: email,
-        phone_number: code + "" + phone,
+        phone_number: phone,
         password: password,
         password_confirmation: confirmPassword,
+        referral: referral,
         agree: agree
       },
       setErrors
@@ -173,9 +175,9 @@ function RegisterPage() {
                           <option value="88">BD</option>
                         </select>
                       </InputGroup.Text>
-                      <InputGroup.Text className="bg-transparent rounded-0 px-2">
+                      {/* <InputGroup.Text className="bg-transparent rounded-0 px-2">
                         {code}
-                      </InputGroup.Text>
+                      </InputGroup.Text> */}
                     </Fragment>
                     <Form.Control
                       type="text"
@@ -229,6 +231,20 @@ function RegisterPage() {
                   {errors?.password && (
                     <small className="text-danger">{errors.password}</small>
                   )}
+                </Form.Group>
+                <Form.Group className="mb-3">
+                  <Form.Label>
+                    Referral
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="referral"
+                    value={referral}
+                    onChange={(e) => setReferral(e.target.value)}
+                    placeholder="Enter referral"
+                    className="rounded-0 login-form"
+                    // required={true}
+                  />
                 </Form.Group>
                 <Form.Group className="mb-3 text-secondary d-flex">
                   <Form.Check
