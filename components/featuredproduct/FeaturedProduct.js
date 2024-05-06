@@ -36,13 +36,15 @@ const index = ({ title, categoryId }) => {
     <>
       <section className="vendor_part_feature py-5">
         <Container fluid className="featured_padd">
-          <div className="border-bottom border-white px-0">
-            <p className="capitalize prosto_one_regular text-light">featured product</p>
+          <div className="border-bottom border-secondary px-0">
+            <p className="capitalize prosto_one_regular font-30">
+              featured product
+            </p>
           </div>
           <div className="row">
             {inventories.map((inventory, key) => {  
               return (
-                <div className="col-lg-2 ps-1" key={key}>
+                <div className="col-lg-3 ps-1" key={key}>
                   <div className="mt-0">
                     <div className="my-3">
                       <VendorProduct

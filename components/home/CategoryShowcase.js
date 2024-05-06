@@ -21,31 +21,36 @@ const CategoryShowcase = () => {
   return (
     <Fragment>
       <section className="categories">
-        <div className="container p-0">
-          <h1 className="font-30 text-center prosto_one_regular pt-3 pb-3 mt-3 mb-3 home-cat-title">
+        <div className="container-fluid">
+          {/* <h1 className="font-30 text-center prosto_one_regular pt-3 pb-3 mt-3 mb-3 home-cat-title">
             Categories
-          </h1>
+          </h1> */}
           <div className="row">
             {categories &&
               categories.map((category, key) => {
                 return (
-                  <div className="col-lg-2" key={key}>
-                    <Link href={`/category/${category.id}`}>
-                      <div className="position-relative mb-3 mx-2 img-demo">
+                  <div className="col-lg-3 px-2" key={key}>
+                      <div className="position-relative mb-3 img-demo">
                         <img
                           src={getStoragePath(
                             `category-image/${category.image}`
                           )}
                           alt={category.name}
-                          className="category-img-one p-3 rounded-pill"
+                          className="category-img-one"
                         />
                         <div className="wavy-chips position-absolute">
-                          <p className="position-absolute category-title text-center text-capitalize text-light font-20 fw-bold">
-                            {category.name}
-                          </p>
+                            <p className=" position-absolute category-title text-capitalize prosto_one_regular text-light font-20">
+                              {category.name}
+                            </p>
+                           
+                            <Link href={`/category/${category.id}`} className="px-2 text-light font-mont category_link">
+                              <div className="position-absolute category_button d-flex justify-content-center align-items-center">
+                                  Shop now
+                              </div>
+                            </Link>
                         </div>
+
                       </div>
-                    </Link>
                   </div>
                 );
               })}

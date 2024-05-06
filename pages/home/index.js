@@ -17,6 +17,8 @@ import NewArrivalProduct from "../../components/newArrivalProduct/NewArrivalProd
 // import LatestTopProduct from "../../components/newArrivalProduct/LatestTopProduct";
 import BrandsName from "../../components/all_band_name/BrandsName";
 import FeaturedProduct from "../../components/featuredproduct/FeaturedProduct";
+import DeliveryInformation from "../../components/home/DeliveryInformation";
+import AddvertBanner from "../../components/home/AddvertBanner";
 
 const HomePage = () => {
   const [banners, setBanners] = useState([]);
@@ -57,37 +59,18 @@ const HomePage = () => {
       <Head>
         <title>Home | Digital Wheel</title>
       </Head>
-
       <DemoSlider />
-
-      {combos > 0 ? <ComboProductScroll title="Combo Pack" /> : ""}
-
-      <CategoryShowcase />
-
-      {/* <LatestTopProduct /> */}
       <FeaturedProduct />
-
-      {banners && banners.length && (
-        <AddBanner imagePath={banners?.[0]?.item_image} />
-      )}
+      {combos > 0 ? <ComboProductScroll title="Combo Pack" /> : ""}
+      <CategoryShowcase />
+      <AddvertBanner/>
       <BrandsName />
       <NewArrivalProduct />
-      {/* {categories.map((category, key) => {
-        return (
-          <CategoryProductScroll
-            key={key}
-            title={category.name}
-            categoryId={category.id}
-          />
-        );
-      })} */}
-
       {banners && banners.length > 1 && (
         <AddBanner imagePath={banners?.[1]?.item_image} />
       )}
-
       <BrandSection />
-
+      <DeliveryInformation/>
       <ScrollToTopButton />
     </Fragment>
   );

@@ -38,7 +38,7 @@ const DemoSlider = () => {
       <section className="hero_banner">
         {/* <Container> */}
         <Row>
-          <Col lg={6} className="p-0">
+          <Col lg={6} md={6} className="p-0">
             <Carousel fade>
               {banners &&
                 banners.map((banner, key) => (
@@ -78,7 +78,7 @@ const DemoSlider = () => {
                 ))}
             </Carousel>
           </Col>
-          <Col lg={3} className="pe-0">
+          <Col lg={3} md={3} className="pe-0">
             <div className="position-relative slider_overlay">
               <img
                 src={getStoragePath(`category-image/${cate_one[0]?.image}`)}
@@ -91,7 +91,7 @@ const DemoSlider = () => {
               </div>
             </div>
           </Col>
-          <Col lg={3} className="pe-0">
+          <Col lg={3} md={3} className="pe-0">
             <div className="position-relative slider_overlay slider_margin">
               <img
                 src={getStoragePath(`category-image/${cate_one[1]?.image}`)}

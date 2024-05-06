@@ -809,29 +809,55 @@ banner css starts
 =================*/
 
 .category-img-one {
-  height: auto;
+  height: 310px;
   width: 100%;
   object-fit: cover !important;
+  transform: scale(1);
+  transition: all linear 0.5s;
+}
+.img-demo:hover .category-img-one{
+  transform: scale(1.1);
 }
 
 .wavy-chips {
-  background: rgba(221, 176, 26, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   height: 100%;
   width: 100%;
   top: 0;
-  opacity: 0;
-  border-radius: 50%;
   transition: all linear 0.3s;
 }
 
 .category-title {
   width: 300px;
-  top: 45%;
-  left: 0;
+  left: 5%;
+  bottom: 20%;
   z-index: 1;
-  margin-left: 50%;
-  transform: translate(-50%);
+  /* margin-left: 50%;
+  transform: translate(-50%); */
   display: block;
+}
+.category_button {
+  background-color: var(--primary);
+  height: 35px;
+  width: 150px;
+  right: 0%;
+  bottom: 0%;
+  z-index: 1;
+  display: block;
+  transition: all linear 0.3s;
+  clip-path: polygon(17% 0, 100% 0, 100% 100%, 0 100%);
+  -moz-backface-visibility: polygon(17% 0, 100% 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(17% 0, 100% 0, 100% 100%, 0 100%);
+  transition: all linear 0.3s;
+}
+.category_button:hover {
+  background-color: #ad2e2e;
+}
+.img-demo {
+  overflow: hidden;
+}
+.category_link {
+  padding: 8px 30px;
 }
 .all_product_accordion button.accordion-button.collapsed {
   background-color: #fff;
@@ -849,11 +875,6 @@ banner css starts
   background-color: var(--primary);
   box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
     var(--bs-accordion-border-color);
- 
-
-}
-.wavy-chips:hover {
-  opacity: 1;
 }
 
 .categories ul.slick-dots {
@@ -872,13 +893,16 @@ banner css starts
   background-position: center;
 }
 .vendor_part_feature {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 0.8) 0%,
-    rgba(26, 73, 137, 0.7) 0%,
-    rgba(0, 212, 255, 0.7) 100%
-  );
+  background-color: #e4e4e4;
+}
+.featured_text::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 100%;
+  background: red;
 }
 .vendor_part {
   padding: 30px 0px;
@@ -942,6 +966,233 @@ banner css starts
 
 /*===============
  category css ends
+=================*/
+/*===============
+ add banner css start
+=================*/
+.elementor-element .elementor-widget-container {
+  transition: background .3s, border .3s, border-radius .3s, box-shadow .3s, transform var(--e-transform-transition-duration, .4s);
+}
+.bwp-policy.default {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.second_add {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.third_add {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.add_section{
+  margin-top: 130px;
+}
+.bwp-policy.default:before {
+  position: absolute;
+  content: "";
+  background: #1f2425;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  clip-path: polygon(0 0, 86% 0, 100% 40%, 100% 100%, 0 100%);
+}
+.second_add:before {
+  position: absolute;
+  content: "";
+  background: #ff9600;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  clip-path: polygon(0 0, 86% 0, 100% 40%, 100% 100%, 0 100%);
+}
+.third_add:before {
+  position: absolute;
+  content: "";
+  background: #0e55d8;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  clip-path: polygon(0 0, 86% 0, 100% 40%, 100% 100%, 0 100%);
+}
+.addvert_image{
+bottom: 0%;
+left: -2%;
+}
+
+.addvert_image:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(2px, 0, 0);
+  }
+}
+.addvert_image2{
+  bottom: 0%;
+  left: 6%;
+  }
+.addvert_image2:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(2px, 0, 0);
+  }
+}
+.addvert_image3{
+  bottom: 0%;
+  left: 6%;
+  }
+.addvert_image3:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(2px, 0, 0);
+  }
+}
+
+.add_image_div{
+  width: 140px;
+}
+.add_text{
+  width:70%;
+
+}
+.add_banner_overlay::after{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #0000005b;
+}
+.add_banner_link{
+  color: #fff;
+  top: 42%;
+  left: 38%;
+  transform: translate(50%);
+  font-family: "Montserrat", sans-serif !important;
+  z-index: 1;
+}
+
+
+/* CSS */
+.button-48 {
+  appearance: none;
+  background-color: #d0e3f8;
+  border: 2px solid var(--primary) !important;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.5em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1.5em 2.2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(0.694, 0, 0.335, 1),
+    background-color 100ms cubic-bezier(0.694, 0, 0.335, 1),
+    color 100ms cubic-bezier(0.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-48:before {
+  animation: opacityFallbackOut 0.5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: var(--primary);
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+    -webkit-clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+.button-48:hover {
+  color: #ffffff !important;
+}
+.button-48:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button-48:after {
+  background-color: #ffffff;
+}
+
+.button-48 span {
+  z-index: 1;
+  position: relative;
+}
+
+
+/*===============
+ add banner css ends
 =================*/
 
 /*===============
@@ -1261,8 +1512,6 @@ banner css starts
   width: 100%;
   height: 100%;
 }
-
-
 
 /*===============
  combo-pack css ends
@@ -2306,7 +2555,9 @@ button.navbar-toggler {
     height: 45px;
     width: 45px;
   }
-
+  .search-field {
+    width: 300px;
+  }
   .offer_text {
     top: 45px;
     left: -1%;
@@ -3040,8 +3291,6 @@ Responsive part end
   border-top: 2px solid #eee;
   font-weight: bold;
 }
-
-
 
 .offer_round_shape {
   position: absolute;
