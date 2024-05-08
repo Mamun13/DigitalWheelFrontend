@@ -30,7 +30,7 @@ const CategoryShowcase = () => {
               categories.map((category, key) => {
                 return (
                   <div className="col-lg-3 px-2" key={key}>
-                      <div className="position-relative mb-3 img-demo">
+                      <div className="position-relative mb-3 img-demo shadow">
                         <img
                           src={getStoragePath(
                             `category-image/${category.image}`

@@ -10,7 +10,7 @@ const DeliveryInformation = () => {
 				<Container>
 					<div className="row">
 						<div className="col-lg-3 col-md-3 col-sm-6">
-							<div className="support-div mb-4 border rounded">
+							<div className="support-div border rounded">
 								<div className="py-4 shadow rounded">
 									<MdOutlineVerifiedUser className="support-icons mnicons"/>
 									<p className="text-capitalize text-center font-16 fw-semibold">
@@ -20,7 +20,7 @@ const DeliveryInformation = () => {
 							</div>
 						</div>
 						<div className="col-lg-3 col-md-3 col-sm-6">
-							<div className="support-div mb-4 border rounded ">
+							<div className="support-div border rounded ">
 								<div className="py-4 shadow rounded">
 									<RiServiceLine className="support-icons"/>
 									<p className="text-capitalize text-center font-16 fw-semibold">
@@ -30,7 +30,7 @@ const DeliveryInformation = () => {
 							</div>
 						</div>
 						<div className="col-lg-3 col-md-3 col-sm-6 ">
-							<div className="support-div mb-4 border rounded ">
+							<div className="support-div border rounded ">
 								<div className="py-4 shadow rounded">
 									<BsTruck className="support-icons"/>
 									<p className="text-capitalize text-center font-16 fw-semibold">
@@ -40,7 +40,7 @@ const DeliveryInformation = () => {
 							</div>
 						</div>
 						<div className="col-lg-3 col-md-3 col-sm-6 ">
-							<div className="support-div mb-4 border rounded">
+							<div className="support-div border rounded">
 								<div className="py-4 shadow rounded">
 									<IoIosPricetags className="support-icons"/>
 									<p className="text-capitalize text-center font-16 fw-semibold">

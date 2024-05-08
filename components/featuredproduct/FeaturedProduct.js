@@ -34,9 +34,9 @@ const index = ({ title, categoryId }) => {
 
   return (
     <>
-      <section className="vendor_part_feature py-5">
+      <section className="vendor_part_feature pb-5">
         <Container fluid className="featured_padd">
-          <div className="border-bottom border-secondary px-0">
+          <div className="px-0">
             <p className="capitalize prosto_one_regular font-30">
               featured product
             </p>
