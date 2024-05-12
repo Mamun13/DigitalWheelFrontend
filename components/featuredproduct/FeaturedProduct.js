@@ -30,7 +30,24 @@ const index = ({ title, categoryId }) => {
     getData();
   }, []);
 
- 
+
+  const initialCardCount = 4;
+  const additionalCardCount = 4;
+  const [visibleCards, setVisibleCards] = useState(initialCardCount);
+  const totalCards = inventories.length;
+  console.log(totalCards)
+  
+  const loadMore = () => {
+    const newVisibleCards = visibleCards + additionalCardCount;
+    setVisibleCards(
+      newVisibleCards > totalCards ? totalCards : newVisibleCards
+    );
+  };
+
+  const showLess = () => {
+    setVisibleCards(initialCardCount);
+  };
+
 
   return (
     <>
@@ -42,7 +59,7 @@ const index = ({ title, categoryId }) => {
             </p>
           </div>
           <div className="row">
-            {inventories.map((inventory, key) => {  
+            {inventories.slice(0, visibleCards).map((inventory, key) => {  
               return (
                 <div className="col-lg-3 ps-1" key={key}>
                   <div className="mt-0">
@@ -72,6 +89,29 @@ const index = ({ title, categoryId }) => {
                 </div>
               );
             })}
+            {visibleCards < totalCards ? (
+              visibleCards === initialCardCount ? (
+                <div className="d-flex justify-content-center mt-3 mb-3">
+                  <button type="submit" onClick={loadMore} className="requestBtn border-0">
+                    More Services
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <div className="d-flex justify-content-center mt-3 mb-3">
+                     <button type="submit" onClick={loadMore} className="requestBtn border-0">
+                     More Services
+                     </button>
+                  </div>
+                </>
+              )
+            ) : (
+                <div className="d-flex justify-content-center mt-3 mb-3">
+                  <button type="submit" onClick={showLess} className="requestBtn border-0">
+                  Less Services
+                  </button>
+                </div>
+            )}
           </div>
         </Container>
       </section>
