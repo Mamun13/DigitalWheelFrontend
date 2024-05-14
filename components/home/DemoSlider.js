@@ -58,7 +58,7 @@ const DemoSlider = () => {
                           find everything for vabing
                         </h1>
                         <div className="test_des_animation">
-                          <p className="text-light pb-4">
+                          <p className="text-light slider_descrip pb-2">
                             Sell globally in minutes with localized currencies
                             languages, and experie in every market. only a
                             variety of vaping products
@@ -79,7 +79,7 @@ const DemoSlider = () => {
             </Carousel>
           </Col>
           <Col lg={3} md={3} className="pe-0">
-            <div className="position-relative slider_overlay">
+            <div className="position-relative slider_overlay mobile_dis_off">
               <img
                 src={getStoragePath(`category-image/${cate_one[0]?.image}`)}
                 alt=""
@@ -92,7 +92,7 @@ const DemoSlider = () => {
             </div>
           </Col>
           <Col lg={3} md={3} className="pe-0">
-            <div className="position-relative slider_overlay slider_margin">
+            <div className="position-relative slider_overlay slider_margin mobile_dis_off">
               <img
                 src={getStoragePath(`category-image/${cate_one[1]?.image}`)}
                 alt=""
@@ -104,7 +104,7 @@ const DemoSlider = () => {
               </div>
             </div>
 
-            <div className="position-relative slider_overlay">
+            <div className="position-relative slider_overlay mobile_dis_off">
               <img
                 src={getStoragePath(`category-image/${cate_one[2]?.image}`)}
                 alt=""

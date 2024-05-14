@@ -22,23 +22,19 @@ svg.footer-soical-link.ms-2 {
 }
 /* responsive part here */
 
-@media (max-width: 1200px) {
-}
-@media (max-width: 992px) {
-}
+
 @media (max-width: 768px) {
   .footer-manu-item {
     border: 0px solid transparent !important;
   }
   .footer_manu_list {
-    display: -webkit-inline-box !important;
     padding-top: 10px;
     padding-bottom: 10px;
   }
 }
 @media (max-width: 576px) {
   .footer-soical-link {
-    font-size: 16px !important;
+    font-size: 14px !important;
   }
   .footer-manu-item {
     border-right: 2px solid #b3b3b3;
