@@ -167,12 +167,14 @@ overlay part start
 }
 
 .overlay-content-itema {
+  text-transform: capitalize;
+  text-align: left;
   color: #c5c5c5;
   transition: all linear 0.3s;
 }
 
 .overlay-content-itema:hover {
-  color: #f38120 !important;
+  color: var(--primary) !important;
 }
 
 /* Style the open button */

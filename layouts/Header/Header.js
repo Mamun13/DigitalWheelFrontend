@@ -14,7 +14,7 @@ import Image from "next/image";
 // import Logo from "../../public/logo/LOGO.png";
 import Logo from "../../public/logo/whitelogo.png";
 import { BiChevronDown } from "react-icons/bi";
-import { LuPhoneForwarded } from "react-icons/lu";
+import { BiAlignLeft } from "react-icons/bi";
 
 import CartOverlys from "./CartOverlay";
 import { fetchCategories } from "../../services/CategoryServices";
@@ -155,7 +155,7 @@ export default function Header() {
         </section> */}
 
         {/*Logo and Search*/}
-        <section className="theme-bg">
+        <section className="theme-bg mobile_menu_hide">
           <Container>
             <div className="d-flex justify-content-between align-items-center main-manu-item py-3">
               <div className="">
@@ -364,7 +364,7 @@ export default function Header() {
         </section>
 
         {/* for responsive screen */}
-        {/* <section className="bg-dark btn-hover overlay-div">
+        <section className="bg-dark btn-hover overlay-div">
           <Navbar bg="dark" expand="lg">
             <Container className="px-0" fluid>
               <div className="col-lg-3 col-md-3 me-0" href="#">
@@ -406,7 +406,7 @@ export default function Header() {
               </div>
             </Container>
           </Navbar>
-        </section> */}
+        </section>
       </header>
     </Fragment>
   );
