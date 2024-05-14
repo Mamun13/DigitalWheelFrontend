@@ -46,16 +46,20 @@ const AgeVerification = () => {
       {isVisible && (
         <div className={styles.overlayVisible}>
           <div className={styles.overlayContent}>
-            {!showMessage && (
-              <>
-                <h2>Are you over 18?</h2>
-                <button onClick={handleConfirm}>Yes</button>
-                <button onClick={handleDeny}>No</button>
-              </>
-            )}
-            {showMessage && (
-              <p className={styles.message}>Please visit when you are 18</p>
-            )}
+            <div className="">
+              {!showMessage && (
+                <>
+                  <h2 className={styles.age_varification}>Are you over 18 years old?</h2>
+                  <p className="pb-3">The content of this website cannot be shown unless you verify your age.Please 
+                    verify that you are over 18 to see this page.</p>
+                  <button onClick={handleConfirm} className={styles.agreebtn}>I'M OVER 18</button>
+                  <button onClick={handleDeny} className={styles.agreebtn}>EXIT</button>
+                </>
+              )}
+              {showMessage && (
+                <p className={styles.message}>Please visit when you are 18</p>
+              )}
+            </div>
           </div>
         </div>
       )}

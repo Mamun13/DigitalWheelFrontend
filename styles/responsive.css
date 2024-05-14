@@ -9,7 +9,7 @@
         width: 300px !important;
       }
       .tab_screen_menu{
-        font-size: 13px;
+        font-size: 13px!important;
         color: #333;
       }
     .add_section{
@@ -47,5 +47,8 @@
       }
       .hero_banner_img {
         height: 60vh!important;
+      }
+      .footer_payment {
+        height: 110px!important;
       }
 }

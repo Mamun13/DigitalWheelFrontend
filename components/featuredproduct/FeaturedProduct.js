@@ -137,7 +137,7 @@ const index = ({ title, categoryId }) => {
       <section className="vendor_part_feature_responsive pb-5">
         <Container fluid className="featured_padd">
           <div className="px-0">
-            <p className="capitalize prosto_one_regular font-30">
+            <p className="capitalize prosto_one_regular font-30 pt-3">
               featured product
             </p>
           </div>

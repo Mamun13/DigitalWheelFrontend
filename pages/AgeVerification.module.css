@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #333; /* Semi-transparent black background */
+  background-color: #0000009d; /* Semi-transparent black background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,9 +17,13 @@
 
 
 .overlayContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
   background-color: #fff; /* Light background for better readability */
-  padding: 20px;
-  border-radius: 5px;
+  padding: 40px;
+  /* border-radius: 5px; */
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
   z-index: 10000; /* Ensure content is on top of the overlay */
@@ -48,4 +52,31 @@
 .message {
   /* Style for the message displayed when user denies being over 18 */
   color: red; /* Consider a more user-friendly color */
+}
+.age_varification{
+  position: relative;
+  font-size: 30px;
+  font-weight: 600;
+}
+.age_varification::after{
+  position: absolute;
+  content: "";
+  left: 50%;
+  transform: translate(-50%);
+  bottom: -5px;
+  height: 1px;
+  width: 70px;
+  background-color: #000;
+}
+.agreebtn{
+  font-family: "Montserrat", sans-serif !important;
+  letter-spacing: 2px;
+  font-size: 12px;
+  border-radius: 0px!important;
+  background-color: #000;
+  color: #fff;
+  transition: all linear0.3s;
+}
+.agreebtn:hover{
+  background-color: #bd0028!important;
 }
