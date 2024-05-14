@@ -4,6 +4,7 @@ import '../styles/main.css';
 import '../styles/footer.css';
 import '../styles/TopManu.css';
 import '../styles/slider.css';
+import '../styles/responsive.css';
 import '../styles/productname.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'tailwindcss/tailwind.css'

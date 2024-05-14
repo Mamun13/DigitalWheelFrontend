@@ -8,7 +8,7 @@ const AddvertBanner = () => {
             <Container fluid>
                 <Row>
                     
-                <Col lg={4}>
+                <Col lg={4} md={6} className='for_res_banner'>
                         <div className='elementor-widget-container'>
                             <div className='third_add2 style1 p-3'>
                                <div className='d-flex '>
@@ -23,7 +23,7 @@ const AddvertBanner = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col lg={4}>
+                    <Col lg={4} md={6} className='for_res_banner'>
                         <div className='elementor-widget-container'>
                             <div className='second_add style1 p-3'>
                                <div className='d-flex '>
@@ -38,7 +38,7 @@ const AddvertBanner = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col lg={4}>
+                    <Col lg={4} md={6} className='for_res_banner'>
                         <div className='elementor-widget-container'>
                             <div className='third_add style1 p-3'>
                                <div className='d-flex '>

@@ -10,8 +10,8 @@ const DeliveryInformation = () => {
 				<Container>
 					<div className="row">
 						<div className="col-lg-3 col-md-3 col-sm-6">
-							<div className="support-div border rounded">
-								<div className="py-4 shadow rounded">
+							<div className="support-div border rounded d-flex justify-content-center align-items-center">
+								<div className="py-4 rounded">
 									<MdOutlineVerifiedUser className="support-icons mnicons"/>
 									<p className="text-capitalize text-center font-16 fw-semibold">
 										100% percent secured
@@ -20,8 +20,8 @@ const DeliveryInformation = () => {
 							</div>
 						</div>
 						<div className="col-lg-3 col-md-3 col-sm-6">
-							<div className="support-div border rounded ">
-								<div className="py-4 shadow rounded">
+							<div className="support-div border rounded d-flex justify-content-center align-items-center">
+								<div className="p-3 rounded">
 									<RiServiceLine className="support-icons"/>
 									<p className="text-capitalize text-center font-16 fw-semibold">
 										24 hours / 7days support
@@ -30,8 +30,8 @@ const DeliveryInformation = () => {
 							</div>
 						</div>
 						<div className="col-lg-3 col-md-3 col-sm-6 ">
-							<div className="support-div border rounded ">
-								<div className="py-4 shadow rounded">
+							<div className="support-div border rounded d-flex justify-content-center align-items-center">
+								<div className="py-4 rounded">
 									<BsTruck className="support-icons"/>
 									<p className="text-capitalize text-center font-16 fw-semibold">
 										On Time Delivery
@@ -40,8 +40,8 @@ const DeliveryInformation = () => {
 							</div>
 						</div>
 						<div className="col-lg-3 col-md-3 col-sm-6 ">
-							<div className="support-div border rounded">
-								<div className="py-4 shadow rounded">
+							<div className="support-div border rounded d-flex justify-content-center align-items-center">
+								<div className="py-4 rounded">
 									<IoIosPricetags className="support-icons"/>
 									<p className="text-capitalize text-center font-16 fw-semibold">
 										best price guaranteed

@@ -1,0 +1,30 @@
+@media (max-width: 1400px) {
+    
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .add_section{
+        margin-top: 100px;
+        margin-bottom: 0px;
+    }
+    .for_res_banner{
+         margin-bottom: 70px;
+    }
+    .vendor_part_feature{
+        display: none;
+    }
+    .vendor_part_feature_responsive{
+        display: block;
+      }
+      .support-icons {
+        font-size: 45px !important;
+      }
+      .button-48 {
+        padding: 1.0em 2.2em;
+    }
+    .add_banner_link_res{
+        font-size: 20px!important;
+    }
+}

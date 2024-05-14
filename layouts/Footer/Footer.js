@@ -57,7 +57,7 @@ export default function Footer() {
               <section className="my-5">
                 <Container>
                   <Row>
-                    <Col lg={3}>
+                    <Col lg={3} md={3}>
                       <div className="footer_text_color">
                         <Link href="/" target="_blank">
                           <img
@@ -98,7 +98,7 @@ export default function Footer() {
                         </div>
                       </div>
                     </Col>
-                    <Col lg={3}>
+                    <Col lg={3} md={3}>
                       <div>
                         <h5 className="text-capitalize prosto_one_regular text-light">
                           legal terms
@@ -139,7 +139,7 @@ export default function Footer() {
                         </ul>
                       </div>
                     </Col>
-                    <Col lg={3}>
+                    <Col lg={3} md={3}>
                       <div>
                         <h5 className="text-capitalize prosto_one_regular text-light mb-3">
                           accounts
@@ -174,7 +174,7 @@ export default function Footer() {
                         </ul>
                       </div>
                     </Col>
-                    <Col lg={3}>
+                    <Col lg={3} md={3}>
                       <div className="text-light">
                         <h5 className="text-capitalize prosto_one_regular text-light mb-3">
                           payments

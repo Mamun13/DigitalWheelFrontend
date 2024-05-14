@@ -348,8 +348,8 @@ export default function Header() {
                         {customerType === "1" && (
                           <Fragment>
                             <li className="pe-3 login-modal">
-                              <Link href="/vendor" className="font-16">
-                                Vendor
+                              <Link href="/vendor" className="font-16 text-capitalize">
+                                in stock
                               </Link>
                             </li>
                             <li className="pe-3 login-modal">

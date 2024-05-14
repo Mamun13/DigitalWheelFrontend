@@ -896,6 +896,9 @@ banner css starts
 /* .vendor_part_feature {
   background-color: #e4e4e4;
 } */
+.vendor_part_feature_responsive{
+  display: none;
+}
 .featured_text::after {
   position: absolute;
   content: "";
@@ -1649,7 +1652,12 @@ Brands part starts
   transform: translate(-50%);
   color: green;
 }
-
+.support-div{
+  height: 150px;
+  background-color: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 /* ===============
 Brands part ends
 ================== */
@@ -2145,8 +2153,8 @@ product part css start
 
 .submit-btn:disabled {
   color: #fff !important;
-  border: 1px solid #f38120 !important;
-  background: #f38120 !important;
+  border: 1px solid var(--primary) !important;
+  background: var(--primary) !important;
   cursor: not-allowed;
 }
 
@@ -2589,11 +2597,11 @@ button.navbar-toggler {
     object-fit: cover !important;
   }
 
-  .footer_manu_list {
+  /* .footer_manu_list {
     display: -webkit-inline-box !important;
     padding-top: 10px;
     padding-bottom: 10px;
-  }
+  } */
 }
 
 @media (max-width: 767px) {
@@ -3186,7 +3194,8 @@ Responsive part end
 }
 
 .auth-bottom-link a {
-  color: #f38120;
+  font-weight: 600;
+  color: var(--primary);
 }
 
 .auth-bottom-link a:hover {

@@ -22,7 +22,7 @@ const AddBanner = ({imagePath}) => {
 						<div className="position-absolute add_banner_link">
 							
 							
-						<h3 className="text-center font-24 pb-2 text-capitalize prosto_one_regular">{advertBanner[1]?.item_name}</h3>
+						<h3 className="text-center font-24 pb-2 text-capitalize prosto_one_regular add_banner_link_res">{advertBanner[1]?.item_name}</h3>
 							<div className="d-flex justify-content-center">
 								{advertBanner[1]?.item_link && (
 									<Link href={advertBanner[1].item_link} className="button-48 ms-2" role="button">
