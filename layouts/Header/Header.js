@@ -260,7 +260,7 @@ export default function Header() {
                   <Nav.Link
                     as={Link}
                     href="/"
-                    className="d-flex align-items-center text-capitalize font-16 all-side-icons manu-font me-4 my-2"
+                    className="d-flex align-items-center text-capitalize font-16 all-side-icons manu-font me-4 my-2 tab_screen_menu"
                   >
                     home
                   </Nav.Link>
@@ -268,7 +268,7 @@ export default function Header() {
                   <NavDropdown
                     className="p-0 me-auto rounded-0"
                     title={
-                      <span className="font-inter py-3 text-capitalize font-16 d-flex align-items-center categories">
+                      <span className="font-inter py-3 text-capitalize font-16 d-flex align-items-center categories tab_screen_menu">
                         Caregories
                         <BiChevronDown size={"15px"} className="ms-2" />
                       </span>
@@ -289,7 +289,7 @@ export default function Header() {
                         <NavDropdown.Item key={key} className="m-0 p-0">
                           <Link
                             href={`/category/${category.id}`}
-                            className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter"
+                            className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
                           >
                             {category.name}
                           </Link>
@@ -301,7 +301,7 @@ export default function Header() {
                   <NavDropdown
                     className="p-0 px-4 me-auto rounded-0"
                     title={
-                      <span className="font-inter py-3 d-flex align-items-center text-capitalize font-16 categories">
+                      <span className="font-inter py-3 d-flex align-items-center text-capitalize font-16 categories tab_screen_menu">
                         about us
                         <BiChevronDown size={"15px"} className="ms-2" />
                       </span>
@@ -311,7 +311,7 @@ export default function Header() {
                     <NavDropdown.Item className="m-0 p-0">
                       <Link
                         href="/company-profile"
-                        className="cate-drop text-capitalize all-icons text-dark px-4 py-2 d-block font-inter"
+                        className="cate-drop text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
                       >
                         Who we are
                       </Link>
@@ -321,14 +321,14 @@ export default function Header() {
                   <Nav.Link
                     as={Link}
                     href="/delivery-information"
-                    className="d-flex align-items-center text-capitalize font-16 all-side-icons me-4 font-14 my-2"
+                    className="d-flex align-items-center text-capitalize font-16 all-side-icons me-4 font-14 my-2 tab_screen_menu"
                   >
                     Delivery information
                   </Nav.Link>
                   <Nav.Link
                     as={Link}
                     href="/contact"
-                    className="d-flex align-items-center text-capitalize font-16 all-side-icons font-14 my-2"
+                    className="d-flex align-items-center text-capitalize font-16 all-side-icons font-14 my-2 tab_screen_menu"
                   >
                     contacts
                   </Nav.Link>
@@ -341,19 +341,19 @@ export default function Header() {
                     {reIsLoggedIn ? (
                       <Fragment>
                         <li className="pe-3 login-modal">
-                          <Link href="/my-account" className="font-16">
+                          <Link href="/my-account" className="font-16 tab_screen_menu">
                             My Account
                           </Link>
                         </li>
                         {customerType === "1" && (
                           <Fragment>
                             <li className="pe-3 login-modal">
-                              <Link href="/vendor" className="font-16 text-capitalize">
+                              <Link href="/vendor" className="font-16 text-capitalize tab_screen_menu">
                                 in stock
                               </Link>
                             </li>
                             <li className="pe-3 login-modal">
-                              <Link href="/preOrder" className="font-16">
+                              <Link href="/preOrder" className="font-16 tab_screen_menu">
                                 Pre-order
                               </Link>
                             </li>

@@ -5,6 +5,13 @@
 
 }
 @media (min-width: 768px) and (max-width: 992px) {
+    .search-field {
+        width: 300px !important;
+      }
+      .tab_screen_menu{
+        font-size: 13px;
+        color: #333;
+      }
     .add_section{
         margin-top: 100px;
         margin-bottom: 0px;
@@ -27,4 +34,18 @@
     .add_banner_link_res{
         font-size: 20px!important;
     }
+    .hero_banner {
+        height: 60vh;
+        width: 100%;
+    }
+
+    .hero_banner_img2 {
+        height: 60vh!important;
+      }
+      .hero_banner_img3 {
+        height: 28.8vh!important;
+      }
+      .hero_banner_img {
+        height: 60vh!important;
+      }
 }
