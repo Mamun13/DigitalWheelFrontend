@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getStoragePath } from "../../utils/helpers";
 import VendorProduct from "../vendorProduct/VendorProduct";
 import { fetchVendorInventories } from "../../services/VendorServices";
-import { Container } from "react-bootstrap";
+import { Col, Container } from "react-bootstrap";
 
 const index = ({ title, categoryId }) => {
   const [inventories, setInventories] = useState([]);
@@ -71,14 +71,14 @@ const index = ({ title, categoryId }) => {
       <section className="vendor_part_feature pb-5">
         <Container fluid className="featured_padd">
           <div className="px-0">
-            <p className="capitalize prosto_one_regular font-30">
+            <p className="capitalize prosto_one_regular font-30 feature_text">
               featured product
             </p>
           </div>
           <div className="row">
             {inventories.slice(0, visibleCards).map((inventory, key) => {  
               return (
-                <div className="col-lg-3 col-md-4 ps-1" key={key}>
+                <div className="col-lg-3 col-md-4 col-sm-6 ps-1" key={key}>
                   <div className="mt-0">
                     <div className="my-3">
                       <VendorProduct
@@ -144,7 +144,7 @@ const index = ({ title, categoryId }) => {
           <div className="row">
             {inventories.slice(0, visibleCards2).map((inventory, key) => {  
               return (
-                <div className="col-lg-3 col-md-4 ps-1" key={key}>
+                 <div className="col-lg-3 col-md-4 col-sm-6 ps-1" key={key}>
                   <div className="mt-0">
                     <div className="my-3">
                       <VendorProduct
@@ -169,7 +169,7 @@ const index = ({ title, categoryId }) => {
                       />
                     </div>
                   </div>
-                </div>
+                 </div>
               );
             })}
             {visibleCards2 < totalCards2 ? (

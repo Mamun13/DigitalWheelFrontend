@@ -69,15 +69,7 @@ export default function Header() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   if (isLoggedIn()) {
-  //     setReIsLoggedIn(isLoggedIn());
-  //     const responseData = JSON.parse(localStorage.getItem("responseData")); // Fetch response data from localStorage
-  //     if (responseData?.data?.customer?.customer_type === "1") {
-  //       setCustomerType(1);
-  //     }
-  //   }
-  // }, []);
+ 
 
   return (
     <Fragment>

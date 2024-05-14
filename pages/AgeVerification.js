@@ -48,9 +48,9 @@ const AgeVerification = () => {
           <div className={styles.overlayContent}>
             <div className="">
               {!showMessage && (
-                <>
+                <> 
                   <h2 className={styles.age_varification}>Are you over 18 years old?</h2>
-                  <p className="pb-3">The content of this website cannot be shown unless you verify your age.Please 
+                  <p className={styles.age_vari_des}>The content of this website cannot be shown unless you verify your age.Please 
                     verify that you are over 18 to see this page.</p>
                   <button onClick={handleConfirm} className={styles.agreebtn}>I'M OVER 18</button>
                   <button onClick={handleDeny} className={styles.agreebtn}>EXIT</button>

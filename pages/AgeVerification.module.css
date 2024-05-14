@@ -48,7 +48,9 @@
   background-color: #333; /* Darker color on hover/focus */
   color: #fff;
 }
-
+.age_vari_des{
+  padding-bottom: 10px;
+}
 .message {
   /* Style for the message displayed when user denies being over 18 */
   color: red; /* Consider a more user-friendly color */

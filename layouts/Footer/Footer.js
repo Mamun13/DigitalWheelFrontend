@@ -57,7 +57,7 @@ export default function Footer() {
               <section className="my-5">
                 <Container>
                   <Row>
-                    <Col lg={3} md={3}>
+                    <Col lg={3} md={3} sm={6}>
                       <div className="footer_text_color">
                         <Link href="/" target="_blank">
                           <img
@@ -67,43 +67,46 @@ export default function Footer() {
                             loading="lazy"
                           />
                         </Link>
-                        <p className="font-16">{contact[0]?.contact_address}</p>
-                        <p className="font-14 ">{contact[0]?.contact_email}</p>
-                        <div className="pt-3 ps-0">
-                          {socials?.map((social, index) => (
-                            <Link
-                              key={index}
-                              href={social?.item_link}
-                              target="_blank"
-                            >
-                              {
-                                linkIconMap[
-                                  social?.item_link.includes("facebook.com")
-                                    ? "facebook"
-                                    : social?.item_link.includes("linkedin.com")
-                                    ? "linkedin"
-                                    : social?.item_link.includes("twitter.com")
-                                    ? "twitter"
-                                    : social?.item_link.includes("youtube.com")
-                                    ? "youtube"
-                                    : social?.item_link.includes(
-                                        "instagram.com"
-                                      )
-                                    ? "instagram"
-                                    : "default"
-                                ]
-                              }
-                            </Link>
-                          ))}
+                        <div className="footer_logo_part">
+                          <p className="font-16">{contact[0]?.contact_address}</p>
+                          <p className="font-14 ">{contact[0]?.contact_email}</p>
+                          <div className="pt-3 ps-0 footer_social_icon">
+                            {socials?.map((social, index) => (
+                              <Link
+                                key={index}
+                                href={social?.item_link}
+                                target="_blank"
+                              >
+                                {
+                                  linkIconMap[
+                                    social?.item_link.includes("facebook.com")
+                                      ? "facebook"
+                                      : social?.item_link.includes("linkedin.com")
+                                      ? "linkedin"
+                                      : social?.item_link.includes("twitter.com")
+                                      ? "twitter"
+                                      : social?.item_link.includes("youtube.com")
+                                      ? "youtube"
+                                      : social?.item_link.includes(
+                                          "instagram.com"
+                                        )
+                                      ? "instagram"
+                                      : "default"
+                                  ]
+                                }
+                              </Link>
+                            ))}
+                          </div>
                         </div>
+                        
                       </div>
                     </Col>
-                    <Col lg={3} md={3}>
+                    <Col lg={3} md={3} sm={6}>
                       <div>
-                        <h5 className="text-capitalize prosto_one_regular text-light">
+                        <h5 className="text-capitalize legal_terms prosto_one_regular text-light">
                           legal terms
                         </h5>
-                        <ul className="mt-3">
+                        <ul className="mt-3 legal_terms_list">
                           <li className="nav-item pb-2">
                             <Link
                               href="/privacy-policy"
@@ -139,9 +142,9 @@ export default function Footer() {
                         </ul>
                       </div>
                     </Col>
-                    <Col lg={3} md={3}>
+                    <Col lg={3} md={3} sm={6}>
                       <div>
-                        <h5 className="text-capitalize prosto_one_regular text-light mb-3">
+                        <h5 className="text-capitalize accounts_part prosto_one_regular text-light mb-3 pt-4">
                           accounts
                         </h5>
                         <ul className="navbar-nav footer_manu_list">
@@ -174,12 +177,14 @@ export default function Footer() {
                         </ul>
                       </div>
                     </Col>
-                    <Col lg={3} md={3}>
-                      <div className="text-light">
-                        <h5 className="text-capitalize prosto_one_regular text-light mb-3">
-                          payments
-                        </h5>
-                        <img src="/payment.png" className="img-fluid rounded footer_payment"/>
+                    <Col lg={3} md={3} sm={6}>
+                      <div className="text-light pt-4 payment_part">
+                        <div>
+                          <h5 className="text-capitalize payment_text prosto_one_regular text-light mb-3">
+                            payments
+                          </h5>
+                          <img src="/payment.png" className="img-fluid rounded footer_payment payment_img"/>
+                        </div>
                       </div>
                     </Col>
                     
