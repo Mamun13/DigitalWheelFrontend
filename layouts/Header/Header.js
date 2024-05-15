@@ -345,7 +345,7 @@ export default function Header() {
                               </Link>
                             </li>
                             <li className="pe-3 login-modal">
-                              <Link href="/preOrder" className="font-16 tab_screen_menu">
+                              <Link href="/pre_order" className="font-16 tab_screen_menu">
                                 Pre-order
                               </Link>
                             </li>
