@@ -58,6 +58,12 @@
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
+  .mobile_menu_hide{
+    display: none!important;
+  }
+  .menu_items_list{
+    display: none;
+  }
   .mobile_dis_off {
     display: none;
   }
@@ -207,5 +213,12 @@
   .mobile_menu_hide{
     display: none!important;
   }
-  
+  .menu_items_list{
+    display: none;
+  }
+  .overlay-div {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 58px;
+  }
 }

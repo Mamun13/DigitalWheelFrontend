@@ -17,10 +17,28 @@ const index = ({ title, categoryId }) => {
       }
     });
   }, [categoryId]);
-console.log(preOrder)
+
+  const initialCardCount = 12;
+  const additionalCardCount = 8;
+  const [visibleCards, setVisibleCards] = useState(initialCardCount);
+  const totalCards = preOrder.length;
+  console.log(totalCards)
+  
+  const loadMore = () => {
+    const newVisibleCards = visibleCards + additionalCardCount;
+    setVisibleCards(
+      newVisibleCards > totalCards ? totalCards : newVisibleCards
+    );
+  };
+
+  const showLess = () => {
+    setVisibleCards(initialCardCount);
+  };
+  
+
   return (
     <>
-      <section className="vendor_part_product">
+      <section className="vendor_part_product pb-5">
        <div>
         <img src="/vendor.jpg" className="vendor_img"/>
        </div>
@@ -60,6 +78,32 @@ console.log(preOrder)
               );
             })}
           </div>
+
+         
+
+          {visibleCards < totalCards ? (
+              visibleCards === initialCardCount ? (
+                <div className="d-flex justify-content-center mt-3">
+                  <button type="submit" onClick={loadMore} className="requestBtn border-0">
+                    More Services
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <div className="d-flex justify-content-center mt-3">
+                     <button type="submit" onClick={loadMore} className="requestBtn border-0">
+                     More Services
+                     </button>
+                  </div>
+                </>
+              )
+            ) : (
+                <div className="d-flex justify-content-center mt-3">
+                  <button type="submit" onClick={showLess} className="requestBtn border-0">
+                  Less Services
+                  </button>
+                </div>
+            )}
         </div>
       </section>
     </>

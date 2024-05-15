@@ -364,45 +364,19 @@ export default function Header() {
         </section>
 
         {/* for responsive screen */}
-        <section className="bg-dark btn-hover overlay-div">
-          <Navbar bg="dark" expand="lg">
+        <section className="theme-bg overlay-div">
+          <Navbar  expand="lg">
             <Container className="px-0" fluid>
-              <div className="col-lg-3 col-md-3 me-0" href="#">
-                <NavDropdown
-                  className="p-0 me-auto rounded-0 w-100"
-                  title={
-                    <span className="text-white font-inter px-4 py-3 d-flex align-items-center categories">
-                      <BiAlignLeft size={"15px"} className="me-2" />
-                      CATEGORIES
-                    </span>
-                  }
-                  id="navbarScrollingDropdown"
-                >
-                  <NavDropdown.Item className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter">
-                    <Link href={`/combo`} className="cate-drop">
-                      Combo Pack
-                    </Link>
-                  </NavDropdown.Item>
-
-                  {categories.map((category, key) => {
-                    return (
-                      <NavDropdown.Item
-                        key={key}
-                        className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter"
-                      >
-                        <Link
-                          href={`/category/${category.id}`}
-                          className="cate-drop"
-                        >
-                          {category.name}
-                        </Link>
-                      </NavDropdown.Item>
-                    );
-                  })}
-                </NavDropdown>
+              <div className="col-lg-3 col-md-3 me-0">
+                <Link as={Link} href="/">
+                  <img src="/logo/whitelogo.png" alt="" className="img-fluid mobile_res_logo"/>
+                </Link>
               </div>
-              <div className="col-lg-9" href="#">
-                <Overlay />
+              <div className="col-lg-9">
+                <div className="d-flex align-items-center">
+                  <Overlay />
+                  <CartOverlys />
+                </div>
               </div>
             </Container>
           </Navbar>
