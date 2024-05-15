@@ -46,7 +46,7 @@ const index = ({ title, categoryId }) => {
             <h1 className="text-capitalize prosto_one_regular text-center display-5 fw-bold pt-5 pb-4">vendor</h1>
           </div>
           <div className="row">
-            {inventories.map((inventory, key) => {
+            {inventories.slice(0, visibleCards).map((inventory, key) => {
               return (
                 <div className="col-lg-3 col-md-4 col-sm-6" key={key}>
                   <div className="mt-0">
