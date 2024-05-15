@@ -82,7 +82,7 @@ const ProductDescription = ({ inventory }) => {
             title="Description"
             className="pb-5 ps-0 border-0 font-lato"
           >
-            <p className="font-16 font-lato border-top pt-2 border-warning text-justify">
+            <p className="font-16 font-lato border-top pt-2 border-dark text-justify">
               {inventory?.product?.product_short_desc}
             </p>
           </Tab>
