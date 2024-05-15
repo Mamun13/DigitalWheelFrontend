@@ -4,10 +4,23 @@ import Link from "next/link";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { BiChevronDown } from "react-icons/bi";
 import { fetchCategories } from "../../services/CategoryServices";
+import Accordion from 'react-bootstrap/Accordion';
+import { isLoggedIn, logout } from "../../utils/auth";
+import { useRouter } from "next/router";
+
 
 function Overlay() {
   const [categories, setCategories] = useState([]);
   const [storedToken, setStoredToken] = useState();
+  const [reIsLoggedIn, setReIsLoggedIn] = useState(false);
+  const [customerType, setCustomerType] = useState(null);
+
+
+  useEffect(() => {
+    if (isLoggedIn()) {
+      setReIsLoggedIn(isLoggedIn());
+    }
+  }, []);
 
   useEffect(() => {
     setStoredToken(localStorage?.getItem("token"));
@@ -19,6 +32,25 @@ function Overlay() {
         setCategories(response.data);
       }
     });
+  }, []);
+
+  useEffect(() => {
+    // Get the data from localStorage
+    const localStorageData = localStorage.getItem("persist:root");
+
+    if (localStorageData) {
+      // Parse the JSON string to an object
+      const parsedData = JSON.parse(localStorageData);
+
+      // Access the auth object and parse it if it exists
+      const authData = parsedData.auth ? JSON.parse(parsedData.auth) : null;
+
+      if (authData) {
+        // Access and store the customer_type data
+        const customerType = authData.customer_type;
+        setCustomerType(customerType);
+      }
+    }
   }, []);
 
   const overlayRef = useRef();
@@ -35,7 +67,7 @@ function Overlay() {
     <Fragment>
       <div className="main">
         <button onClick={openSearch} className="open-button">
-          <AiOutlineBars className="font-30 overlay-icon me-4" />
+          <AiOutlineBars className="font-30 overlay-icon me-3" />
         </button>
       </div>
 
@@ -44,7 +76,7 @@ function Overlay() {
           &times;
         </button>
         <div className="overlay-content text-uppercase font-24 fw-semibold">
-          <ul className="lh-lg font-20 text-start ps-4">
+          <ul className="lh-lg font-20 text-start px-5">
             <li >
               <Link
                 href="/"
@@ -54,60 +86,43 @@ function Overlay() {
                 home
               </Link>
             </li>
-            <li>
-                <NavDropdown
-                    className="p-0 me-auto rounded-0"
-                    title={
-                      <span className="font-inter overlay-content-itema text-capitalize font-16 d-flex align-items-center categories tab_screen_menu">
-                        Caregories
-                        <BiChevronDown size={"15px"} className="ms-2" />
-                      </span>
-                    }
-                    id="navbarScrollingDropdown"
-                  >
-                    {/* <NavDropdown.Item className="m-0 p-0">
-                      <Link
-                        href={`/combo`}
-                        className="cate-drop text-uppercase all-icons text-dark px-4 py-2 d-block font-inter"
-                      >
-                        Combo Pack
-                      </Link>
-                    </NavDropdown.Item> */}
-
-                    {categories.map((category, key) => {
-                      return (
-                        <NavDropdown.Item key={key} className="m-0 p-0">
-                          <Link
-                            href={`/category/${category.id}`}
-                            className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
-                          >
-                            {category.name}
-                          </Link>
-                        </NavDropdown.Item>
-                      );
-                    })}
-                  </NavDropdown>
+            <li className="mb-3">
+              <Accordion className="">
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header>Categories</Accordion.Header>
+                    <Accordion.Body>
+                      {categories.map((category, key) => {
+                        return (
+                          <NavDropdown.Item key={key} className="m-0 p-0">
+                                      <Link
+                                        href={`/category/${category.id}`}
+                                        className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
+                                      >
+                                        {category.name}
+                                      </Link>
+                                    </NavDropdown.Item>
+                                  );
+                                })} 
+                    </Accordion.Body>
+                </Accordion.Item>
+                
+              </Accordion>
             </li>
-            <li>
-              <NavDropdown
-                className="p-0 me-auto rounded-0"
-                title={
-                  <span className="font-inter overlay-content-itema d-flex align-items-center text-capitalize font-16 categories tab_screen_menu">
-                    about us
-                    <BiChevronDown size={"15px"} className="ms-2" />
-                  </span>
-                }
-                id="navbarScrollingDropdown"
-              >
-                <NavDropdown.Item className="m-0 p-0">
-                  <Link
-                    href="/company-profile"
-                    className="cate-drop text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
-                  >
-                    Who we are
-                  </Link>
-                </NavDropdown.Item>
-              </NavDropdown>
+            <li >
+              <Accordion className="">
+                <Accordion.Item eventKey="1">
+                  <Accordion.Header>About us</Accordion.Header>
+                    <Accordion.Body>
+                      <Link
+                          href="/company-profile"
+                          className="cate-drop text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
+                        >
+                          Who we are
+                        </Link>        
+                    </Accordion.Body>
+                </Accordion.Item>
+                
+              </Accordion>
             </li>
             <li>
               <Link
@@ -127,6 +142,64 @@ function Overlay() {
                 contacts
               </Link>
             </li>
+            {reIsLoggedIn ? (
+              <>
+                <li className="pe-3 login-modal">
+                  <Link href="/my-account" className="overlay-content-itema">
+                    My Account
+                  </Link>
+                </li>
+                  {customerType === "1" && (
+                          <Fragment>
+                            <li className="pe-3 login-modal">
+                              <Link href="/vendor" className="overlay-content-itema">
+                                in stock
+                              </Link>
+                            </li>
+                            <li className="pe-3 login-modal">
+                              <Link href="/preOrder" className="overlay-content-itema">
+                                Pre-order
+                              </Link>
+                            </li>
+                          </Fragment>
+                        )}
+                <li onClick={closeSearch} >
+                  <Link
+                    href="/auth/logout"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      logout();
+                    }}
+                    className="overlay-content-itema"
+                  >
+                    log out
+                  </Link>
+                </li>
+              </>
+            ) : ( 
+              <>
+                <li>
+                  <Link
+                    href="/auth/login"
+                    onClick={closeSearch}
+                    className="overlay-content-itema"
+                  >
+                    sign in
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/auth/register"
+                    onClick={closeSearch}
+                    className="overlay-content-itema"
+                  >
+                    sign up
+                  </Link>
+                </li>
+              </>
+            )}
+            
+           
           </ul>
         </div>
       </div>
