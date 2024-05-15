@@ -114,7 +114,7 @@ const CategoryPage = () => {
                 `category-image/${category?.lifestyle_image}`
               )}
               alt="category-image"
-              className="product-banner"
+              className="product_category_banner"
             />
           </div>
         )}
