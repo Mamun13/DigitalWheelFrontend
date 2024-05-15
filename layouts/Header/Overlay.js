@@ -87,8 +87,8 @@ function Overlay() {
               </Link>
             </li>
             <li className="mb-3">
-              <Accordion className="">
-                <Accordion.Item eventKey="0">
+              <Accordion>
+                <Accordion.Item eventKey="0" className="rounded-bottom">
                   <Accordion.Header>Categories</Accordion.Header>
                     <Accordion.Body>
                       {categories.map((category, key) => {
@@ -96,6 +96,7 @@ function Overlay() {
                           <NavDropdown.Item key={key} className="m-0 p-0">
                                       <Link
                                         href={`/category/${category.id}`}
+                                        onClick={closeSearch}
                                         className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
                                       >
                                         {category.name}
@@ -105,16 +106,13 @@ function Overlay() {
                                 })} 
                     </Accordion.Body>
                 </Accordion.Item>
-                
-              </Accordion>
-            </li>
-            <li >
-              <Accordion className="">
-                <Accordion.Item eventKey="1">
+
+                <Accordion.Item eventKey="1" className="mt-3 rounded-top">
                   <Accordion.Header>About us</Accordion.Header>
                     <Accordion.Body>
                       <Link
                           href="/company-profile"
+                          onClick={closeSearch}
                           className="cate-drop text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
                         >
                           Who we are
@@ -124,6 +122,23 @@ function Overlay() {
                 
               </Accordion>
             </li>
+            {/* <li >
+              <Accordion className="">
+                <Accordion.Item eventKey="1">
+                  <Accordion.Header>About us</Accordion.Header>
+                    <Accordion.Body>
+                      <Link
+                          href="/company-profile"
+                          onClick={closeSearch}
+                          className="cate-drop text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
+                        >
+                          Who we are
+                        </Link>        
+                    </Accordion.Body>
+                </Accordion.Item>
+                
+              </Accordion>
+            </li> */}
             <li>
               <Link
                 href="/delivery-information"
