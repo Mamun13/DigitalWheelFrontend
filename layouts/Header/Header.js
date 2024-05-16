@@ -219,6 +219,7 @@ export default function Header() {
                             sign in
                           </p>
                         </Link>
+
                         <Link
                           href="/auth/register"
                           className="manu-icon border-0 d-flex align-items-center mt-3 font-13"
@@ -278,13 +279,13 @@ export default function Header() {
 
                     {categories.map((category, key) => {
                       return (
-                        <NavDropdown.Item key={key} className="m-0 p-0">
-                          <Link
-                            href={`/category/${category.id}`}
-                            className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
+                        <NavDropdown.Item key={key} href={`/category/${category.id}`} className="m-0 p-0">
+                          <span
+                            // href={`/category/${category.id}`}
+                            className=" text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
                           >
                             {category.name}
-                          </Link>
+                          </span>
                         </NavDropdown.Item>
                       );
                     })}
@@ -300,13 +301,12 @@ export default function Header() {
                     }
                     id="navbarScrollingDropdown"
                   >
-                    <NavDropdown.Item className="m-0 p-0">
-                      <Link
-                        href="/company-profile"
+                    <NavDropdown.Item  href="/company-profile" className="m-0 p-0">
+                      <span
                         className="cate-drop text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
                       >
                         Who we are
-                      </Link>
+                      </span>
                     </NavDropdown.Item>
                   </NavDropdown>
 
@@ -368,7 +368,7 @@ export default function Header() {
           <Navbar  expand="lg">
             <Container className="px-0" fluid>
               <div className="col-lg-3 col-md-3 me-0">
-                <Link as={Link} href="/">
+                <Link  href="/">
                   <img src="/logo/whitelogo.png" alt="" className="img-fluid mobile_res_logo"/>
                 </Link>
               </div>
