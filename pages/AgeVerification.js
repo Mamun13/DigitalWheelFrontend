@@ -57,7 +57,7 @@ const AgeVerification = () => {
                 </>
               )}
               {showMessage && (
-                <p className={styles.message}>Please visit when you are 18</p>
+                <p className={styles.message}>Please visit when you are 21</p>
               )}
             </div>
           </div>

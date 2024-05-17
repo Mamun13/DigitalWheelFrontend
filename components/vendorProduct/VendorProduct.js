@@ -143,7 +143,7 @@ const ProductCard = ({
           </Card.Text>
         )}
 
-        {variants && (
+        {/* {variants && (
           <Card.Text className="text-center pb-2 text-capitalize">
             {variants.map((item, index) => (
               <Fragment key={index}>
@@ -152,7 +152,7 @@ const ProductCard = ({
               </Fragment>
             ))}
           </Card.Text>
-        )}
+        )} */}
 
         <div className="d-flex justify-content-center">
           <button

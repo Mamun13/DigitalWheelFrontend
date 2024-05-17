@@ -60,6 +60,7 @@ const HomePage = () => {
         <title>Home | Digital Wheel</title>
       </Head>
       <DemoSlider />
+      {/* <vendorOver */}
       <FeaturedProduct />
       {combos > 0 ? <ComboProductScroll title="Combo Pack" /> : ""}
       <CategoryShowcase />

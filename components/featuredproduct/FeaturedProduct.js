@@ -35,7 +35,7 @@ const index = ({ title, categoryId }) => {
   const additionalCardCount = 4;
   const [visibleCards, setVisibleCards] = useState(initialCardCount);
   const totalCards = inventories.length;
-  console.log(totalCards)
+  
   
   const loadMore = () => {
     const newVisibleCards = visibleCards + additionalCardCount;
@@ -176,14 +176,14 @@ const index = ({ title, categoryId }) => {
               visibleCards2 === initialCardCount2 ? (
                 <div className="d-flex justify-content-center mt-3 mb-3">
                   <button type="submit" onClick={loadMore2} className="requestBtn border-0">
-                    More Services
+                    More Product
                   </button>
                 </div>
               ) : (
                 <>
                   <div className="d-flex justify-content-center mt-3 mb-3">
                      <button type="submit" onClick={loadMore2} className="requestBtn border-0">
-                     More Services
+                     More Product
                      </button>
                   </div>
                 </>
@@ -191,7 +191,7 @@ const index = ({ title, categoryId }) => {
             ) : (
                 <div className="d-flex justify-content-center mt-3 mb-3">
                   <button type="submit" onClick={showLess2} className="requestBtn border-0">
-                  Less Services
+                    Less Product
                   </button>
                 </div>
             )}

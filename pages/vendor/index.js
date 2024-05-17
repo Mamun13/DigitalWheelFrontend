@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getStoragePath } from "../../utils/helpers";
 import VendorProduct from "../../components/vendorProduct/VendorProduct";
 import { fetchVendorInventories } from "../../services/VendorServices";
+import ScrollToTopButton from "../../components/common/ScrollToTopButton";
 
 const index = ({ title, categoryId }) => {
   const [inventories, setInventories] = useState([]);
@@ -38,13 +39,15 @@ const index = ({ title, categoryId }) => {
   return (
     <>
       <section className="vendor_part_product pb-5">
-       <div>
-        <img src="/vendor.jpg" className="vendor_img"/>
-       </div>
-        <div className="container">
-          <div>
-            <h1 className="text-capitalize prosto_one_regular text-center display-5 fw-bold pt-5 pb-4">vendor</h1>
+        <div className="position-relative vendor_banner_over">
+          <img src="/vendor.jpg" className=" vendor_img"/>
+          <div className="in_stock_text">
+            <h1 className="text-capitalize prosto_one_regular text-light display-5 fw-bold">in stock</h1>
           </div>
+        </div>
+
+        <div className="container">
+          
           <div className="row">
             {inventories.slice(0, visibleCards).map((inventory, key) => {
               return (
@@ -82,14 +85,14 @@ const index = ({ title, categoryId }) => {
               visibleCards === initialCardCount ? (
                 <div className="d-flex justify-content-center mt-3 mb-3">
                   <button type="submit" onClick={loadMore} className="requestBtn border-0">
-                    More Services
+                    More Products
                   </button>
                 </div>
               ) : (
                 <>
                   <div className="d-flex justify-content-center mt-3 mb-3">
                      <button type="submit" onClick={loadMore} className="requestBtn border-0">
-                     More Services
+                     More Products
                      </button>
                   </div>
                 </>
@@ -97,12 +100,14 @@ const index = ({ title, categoryId }) => {
             ) : (
                 <div className="d-flex justify-content-center mt-3 mb-3">
                   <button type="submit" onClick={showLess} className="requestBtn border-0">
-                  Less Services
+                  Less Products
                   </button>
                 </div>
             )}
         </div>
+
       </section>
+      <ScrollToTopButton />
     </>
   );
 };
