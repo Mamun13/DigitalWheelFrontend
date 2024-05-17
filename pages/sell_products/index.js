@@ -281,10 +281,8 @@ const BToB = () => {
                       onChange={handleChange}
                     >
                       <option>Select method</option>
-                      <option value="Whole Seller">EBL</option>
-                      <option value="Retailer">DBBL</option>
-                      <option value="Dristibutor">Bikash</option>
-                      <option value="Importer">Rocket</option>
+                      <option value="Whole Seller">in stock</option>
+                      <option value="Retailer">pre-order</option>
                     </Form.Select>
                   </Form.Group>
 
