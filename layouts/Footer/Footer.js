@@ -144,7 +144,7 @@ export default function Footer() {
                     </Col>
                     <Col lg={3} md={3} sm={6}>
                       <div>
-                        <h5 className="text-capitalize accounts_part prosto_one_regular text-light mb-3 pt-4">
+                        <h5 className="text-capitalize accounts_part prosto_one_regular text-light mb-3">
                           accounts
                         </h5>
                         <ul className="navbar-nav footer_manu_list">
@@ -178,7 +178,7 @@ export default function Footer() {
                       </div>
                     </Col>
                     <Col lg={3} md={3} sm={6}>
-                      <div className="text-light pt-4 payment_part">
+                      <div className="text-light payment_part">
                         <div>
                           <h5 className="text-capitalize payment_text prosto_one_regular text-light mb-3">
                             payments

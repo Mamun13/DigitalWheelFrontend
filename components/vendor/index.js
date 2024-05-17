@@ -3,6 +3,7 @@ import { getStoragePath } from "../../utils/helpers";
 import VendorProduct from "../vendorProduct/VendorProduct";
 import { fetchInventoriespreOrder } from "../../services/PreOrderServices";
 
+
 const index = ({ title, categoryId }) => {
   const [inventories, setInventories] = useState([]);
 
@@ -57,6 +58,7 @@ const index = ({ title, categoryId }) => {
             })}
           </div>
         </div>
+        
       </section>
     </>
   );

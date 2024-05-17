@@ -349,6 +349,11 @@ export default function Header() {
                                 Pre-order
                               </Link>
                             </li>
+                            <li className="pe-3 login-modal">
+                              <Link href="/sell_products" className="font-16 text-capitalize tab_screen_menu">
+                                sell products
+                              </Link>
+                            </li>
                           </Fragment>
                         )}
                       </Fragment>

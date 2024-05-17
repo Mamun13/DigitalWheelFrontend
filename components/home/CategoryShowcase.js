@@ -3,6 +3,7 @@ import Link from "next/link";
 // import Slider from "react-slick";
 import { fetchCategories } from "../../services/CategoryServices";
 import { getStoragePath } from "../../utils/helpers";
+import Slider from "react-slick";
 
 const CategoryShowcase = () => {
   const [categories, setCategories] = useState([]);
@@ -18,6 +19,43 @@ const CategoryShowcase = () => {
     });
   }, []);
 
+  
+  var settings = {
+    dots: true,
+    arrow: true,
+    infinite: true,
+    speed: 1000,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <Fragment>
       <section className="categories">
@@ -26,6 +64,7 @@ const CategoryShowcase = () => {
             Categories
           </h1> */}
           <div className="row">
+          <Slider {...settings}>
             {categories &&
               categories.map((category, key) => {
                 return (
@@ -54,6 +93,7 @@ const CategoryShowcase = () => {
                   </div>
                 );
               })}
+              </Slider>
           </div>
         </div>
       </section>

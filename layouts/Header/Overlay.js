@@ -176,6 +176,11 @@ function Overlay() {
                                 Pre-order
                               </Link>
                             </li>
+                            <li className="pe-3 login-modal">
+                              <Link href="/sell_products" className="overlay-content-itema">
+                                Sell Products
+                              </Link>
+                            </li>
                           </Fragment>
                         )}
                 <li onClick={closeSearch} >

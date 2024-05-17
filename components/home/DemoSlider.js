@@ -78,7 +78,7 @@ const DemoSlider = () => {
                 ))}
             </Carousel>
           </Col>
-          <Col lg={3} md={3} className="pe-0">
+          <Col lg={3} md={3} className="pe-0"> 
             <div className="position-relative slider_overlay mobile_dis_off">
               <img
                 src={getStoragePath(`category-image/${cate_one[0]?.image}`)}
