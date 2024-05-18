@@ -127,7 +127,7 @@ const  ProductCard = ({
 
         {isRunningOffer ? (
           <Fragment>
-            <div className="d-flex">
+            <div className="d-flex justify-content-center pb-2">
               <del>
                 <Card.Text className="text-center res_price_tag text-capitalize">
                 {salePrice} 
@@ -145,7 +145,7 @@ const  ProductCard = ({
         ) : (
           <Card.Text className="text-center res_price_tag pb-2 text-capitalize">
             {/* <br /> */}
-            Price: {salePrice} Tk.
+            {salePrice} Tk.
           </Card.Text>
         )}
 
