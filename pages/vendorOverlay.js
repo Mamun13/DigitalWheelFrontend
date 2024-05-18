@@ -83,7 +83,7 @@ const AgeVerification = () => {
             <Col lg={6} md={3} className="ps-0">
               <div className="position-relative v_overlay2 extra_space">
                 <img
-                  src="./v_overlay.jpg"
+                  src="./v_overlay2.jpeg"
                   alt=""
                   className="img-fluid v_overlay_img2"
                 />
@@ -99,7 +99,7 @@ const AgeVerification = () => {
 
               <div className="position-relative v_overlay2">
                 <img
-                  src="./v_overlay.jpg"
+                  src="./v_overlay3.jpeg"
                   alt=""
                   className="img-fluid v_overlay_img2"
                 />
