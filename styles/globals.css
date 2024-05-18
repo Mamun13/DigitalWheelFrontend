@@ -140,7 +140,7 @@ tr {
 vendor popup part start
 ================*/
 .v_overlay_img{
-  height: 52vh!important;
+  height: 49vh!important;
   width: 100%;
   object-fit: cover!important;
 }
@@ -154,7 +154,7 @@ vendor popup part start
   background: rgba(0, 0, 0, 0.507);
 }
 .v_overlay_img2{
-  height: 25vh!important;
+  height: 23.4vh!important;
   width: 100%;
   object-fit: cover!important;
 }
