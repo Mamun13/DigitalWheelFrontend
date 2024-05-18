@@ -1,40 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { getStoragePath } from "../../utils/helpers";
 import VendorProduct from "../vendorProduct/VendorProduct";
-import { fetchVendorInventories } from "../../services/VendorServices";
+import { fetchFeaturedProduct } from "../../services/FeatureServices";
 import { Col, Container } from "react-bootstrap";
 
 const index = ({ title, categoryId }) => {
-  const [inventories, setInventories] = useState([]);
+  const [featureinventories, setFeatureInventories] = useState([]);
 
   // fetch
-  // useEffect(() => {
-  //   fetchVendorInventories(categoryId, {
-  //     paginate: "no",
-  //   }).then((response) => {
-  //     if (response?.data) {
-  //       setInventories(response.data);
-  //     }
-  //   });
-  // }, [categoryId]);
-
-  const getData = async () => {
-    const response = await fetch("https://api.adamsvibe.com/ecom/inventories");
-    const allproduct = await response.json();
-    // setInventories(allproduct); 
-    const featuredProducts = allproduct.filter(product => product.is_special_deal === "1");
-    setInventories(featuredProducts);
-  };
-
   useEffect(() => {
-    getData();
-  }, []);
+    fetchFeaturedProduct(categoryId, {
+      paginate: "no",
+    }).then((response) => {
+      if (response?.data) {
+        setFeatureInventories(response.data);
+      }
+    });
+  }, [categoryId]);
+
+  // const getData = async () => {
+  //   const response = await fetch("https://api.adamsvibe.com/ecom/inventories"); 
+  //   const allproduct = await response.json();
+  //   // setInventories(allproduct); 
+  //   const featuredProducts = allproduct.filter(product => product.is_special_deal === "1");
+  //   setInventories(featuredProducts);
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
 
-  const initialCardCount = 4;
-  const additionalCardCount = 4;
+  const initialCardCount = 6;
+  const additionalCardCount = 6;
   const [visibleCards, setVisibleCards] = useState(initialCardCount);
-  const totalCards = inventories.length;
+  const totalCards = featureinventories.length;
   
   
   const loadMore = () => {
@@ -51,7 +51,7 @@ const index = ({ title, categoryId }) => {
   const initialCardCount2 = 3;
   const additionalCardCount2 = 3;
   const [visibleCards2, setVisibleCards2] = useState(initialCardCount2);
-  const totalCards2 = inventories.length;
+  const totalCards2 = featureinventories.length;
   console.log(totalCards2)
   
   const loadMore2 = () => {
@@ -75,12 +75,12 @@ const index = ({ title, categoryId }) => {
               featured product
             </p>
           </div>
-          <div className="row">
-            {inventories.slice(0, visibleCards).map((inventory, key) => {  
+          <div className="row ven_phn_div">
+            {featureinventories.slice(0, visibleCards).map((inventory, key) => {  
               return (
-                <div className="col-lg-3 col-md-4 col-sm-6 ps-1" key={key}>
+                <div className="col-lg-2 col-md-3 col-sm-4 ven_phn_div_card" key={key}>
                   <div className="mt-0">
-                    <div className="my-3">
+                    <div className="my-3 my-sm-2">
                       <VendorProduct
                         id={inventory.id}
                         categoryId={inventory?.product.category_id}
@@ -142,7 +142,7 @@ const index = ({ title, categoryId }) => {
             </p>
           </div>
           <div className="row">
-            {inventories.slice(0, visibleCards2).map((inventory, key) => {  
+            {featureinventories.slice(0, visibleCards2).map((inventory, key) => {  
               return (
                  <div className="col-lg-3 col-md-4 col-sm-6 ps-1" key={key}>
                   <div className="mt-0">

@@ -175,7 +175,7 @@ vendor popup part start
   background-color: #8EC5FC;
 background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 
-  height: 350px;
+  height: auto;
   width: 600px;
   top: 18%;
   margin-left: 50%;
@@ -2281,7 +2281,7 @@ vendor part css start
 }
 .vendor_img {
   width: 100% !important ;
-  height: 300px;
+  height: 200px;
   object-fit: cover;
 }
 .vendor_banner_over::after {
@@ -2289,7 +2289,7 @@ vendor part css start
   content: "";
   top: 0;
   left: 0;
-  height: 300px;
+  height: 200px;
   width: 100% !important ;
   background-color: rgba(0, 0, 0, 0.5);
   

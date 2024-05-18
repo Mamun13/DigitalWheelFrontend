@@ -47,7 +47,7 @@ const AgeVerification = () => {
   return (
     <>
       {isVisible && (
-        <div className="vendor_popup p-3">
+        <div className="vendor_popup shadow p-3">
 
           <div className=" d-flex flex-column">
             <div>
@@ -61,10 +61,10 @@ const AgeVerification = () => {
             </div>
             <div className="">
               <Row>
-                <Col lg={6} md={6} sm={12}>
+                <Col lg={6} md={6} sm={12} className="pe-lg-0">
                   <div className="position-relative v_overlay">
                     <img
-                      src="./v_overlay.jpg"
+                      src="./sell.jpg"
                       alt=""
                       className="img-fluid v_overlay_img"
                     />
@@ -85,7 +85,7 @@ const AgeVerification = () => {
                   <div className="overlay_for_phn">
                     <div className="position-relative v_overlay2 extra_space">
                       <img
-                        src="./v_overlay2.jpeg"
+                        src="./in_stock.jpg"
                         alt=""
                         className="img-fluid v_overlay_img2"
                       />
@@ -104,7 +104,7 @@ const AgeVerification = () => {
 
                     <div className="position-relative v_overlay2">
                       <img
-                        src="./v_overlay3.jpeg"
+                        src="./preorder.jpg"
                         alt=""
                         className="img-fluid v_overlay_img2"
                       />

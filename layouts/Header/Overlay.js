@@ -172,7 +172,7 @@ function Overlay() {
                               </Link>
                             </li>
                             <li className="pe-3 login-modal">
-                              <Link href="/preOrder" className="overlay-content-itema">
+                              <Link href="/pre_order" className="overlay-content-itema">
                                 Pre-order
                               </Link>
                             </li>

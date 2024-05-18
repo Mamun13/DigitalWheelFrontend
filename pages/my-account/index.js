@@ -17,6 +17,8 @@ import Withdraw from "../../components/my-account/Withdraw";
 
 import TransactionHistory from "../../components/my-account/TransactionHistory";
 import Deposit from "../../components/my-account/Deposit";
+import { isLoggedIn, logout } from "../../utils/auth";
+import VendorOverlay from "../vendorOverlay.js";
 
 const MyAccountPage = () => {
   const router = useRouter();
@@ -24,12 +26,20 @@ const MyAccountPage = () => {
 
   const [activeKey, setActiveKey] = useState("account-info");
   const [customerType, setCustomerType] = useState(null);
+  
+	const [reIsLoggedIn, setReIsLoggedIn] = useState(false);
 
   useEffect(() => {
     if (tab) {
       setActiveKey(tab);
     }
   }, [tab]);
+  useEffect(() => {
+	  if (isLoggedIn()) {
+		setReIsLoggedIn(isLoggedIn());
+	  }
+	}, []);
+	
 
   useEffect(() => {
     // Get the data from localStorage
@@ -56,6 +66,7 @@ const MyAccountPage = () => {
       <Head>
         <title>Account</title>
       </Head>
+      {customerType === "1" && (<VendorOverlay/>)}
       <section>
         <Container>
           <Col className="mt-5">
@@ -277,6 +288,7 @@ const MyAccountPage = () => {
           </Col>
         </Container>
       </section>
+
     </Fragment>
   );
 };

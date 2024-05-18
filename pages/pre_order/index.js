@@ -19,40 +19,40 @@ const index = ({ title, categoryId }) => {
     });
   }, [categoryId]);
 
-  const initialCardCount = 12;
-  const additionalCardCount = 8;
-  const [visibleCards, setVisibleCards] = useState(initialCardCount);
-  const totalCards = preOrder.length;
-  console.log(totalCards)
+  // const initialCardCount = 12;
+  // const additionalCardCount = 8;
+  // const [visibleCards, setVisibleCards] = useState(initialCardCount);
+  // const totalCards = preOrder.length;
+  // console.log(totalCards)
   
-  const loadMore = () => {
-    const newVisibleCards = visibleCards + additionalCardCount;
-    setVisibleCards(
-      newVisibleCards > totalCards ? totalCards : newVisibleCards
-    );
-  };
+  // const loadMore = () => {
+  //   const newVisibleCards = visibleCards + additionalCardCount;
+  //   setVisibleCards(
+  //     newVisibleCards > totalCards ? totalCards : newVisibleCards
+  //   );
+  // };
 
-  const showLess = () => {
-    setVisibleCards(initialCardCount);
-  };
+  // const showLess = () => {
+  //   setVisibleCards(initialCardCount);
+  // };
   
 
   return (
     <>
       <section className="vendor_part_product pb-5">
       <div className="position-relative vendor_banner_over">
-          <img src="/vendor.jpg" className="vendor_img"/>
+          <img src="/vendor.png" className=" vendor_img"/>
           <div className="in_stock_text">
-            <h1 className="text-capitalize prosto_one_regular text-light display-5 fw-bold">pre-order</h1>
+            <h1 className="text-capitalize prosto_one_regular text-light display-5 fw-bold breadcrumb_title">pre-order</h1>
           </div>
         </div>
 
         <div className="container">
          
-          <div className="row">
-            {preOrder.slice(0, visibleCards).map((inventory, key) => {
+          <div className="row ven_phn_div">
+            {preOrder.map((inventory, key) => {
               return (
-                <div className="col-lg-3" key={key}>
+                <div className="col-lg-2 col-md-3 col-sm-4 ven_phn_div_card" key={key}>
                   <div className="mt-0">
                     <div className="my-3">
                       <VendorProduct
@@ -84,29 +84,29 @@ const index = ({ title, categoryId }) => {
 
          
 
-          {visibleCards < totalCards ? (
-              visibleCards === initialCardCount ? (
-                <div className="d-flex justify-content-center mt-3">
-                  <button type="submit" onClick={loadMore} className="requestBtn border-0">
-                    More Products
-                  </button>
-                </div>
-              ) : (
-                <>
+            {/* {visibleCards < totalCards ? (
+                visibleCards === initialCardCount ? (
                   <div className="d-flex justify-content-center mt-3">
-                     <button type="submit" onClick={loadMore} className="requestBtn border-0">
-                     More Products
-                     </button>
+                    <button type="submit" onClick={loadMore} className="requestBtn border-0">
+                      More Products
+                    </button>
                   </div>
-                </>
-              )
-            ) : (
-                <div className="d-flex justify-content-center mt-3">
-                  <button type="submit" onClick={showLess} className="requestBtn border-0">
-                  Less Products
-                  </button>
-                </div>
-            )}
+                ) : (
+                  <>
+                    <div className="d-flex justify-content-center mt-3">
+                      <button type="submit" onClick={loadMore} className="requestBtn border-0">
+                      More Products
+                      </button>
+                    </div>
+                  </>
+                )
+              ) : (
+                  <div className="d-flex justify-content-center mt-3">
+                    <button type="submit" onClick={showLess} className="requestBtn border-0">
+                    Less Products
+                    </button>
+                  </div>
+              )} */}
         </div>
       </section>
       <ScrollToTopButton/>
