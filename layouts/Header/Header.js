@@ -253,7 +253,7 @@ export default function Header() {
                   <Nav.Link
                     as={Link}
                     href="/"
-                    className="d-flex align-items-center text-capitalize font-16 all-side-icons manu-font me-4 my-2 tab_screen_menu"
+                    className="d-flex align-items-center text-capitalize font-16 all-side-icons manu-font me-3 my-2 tab_screen_menu"
                   >
                     home
                   </Nav.Link>
@@ -263,7 +263,7 @@ export default function Header() {
                     title={
                       <span className="font-inter py-3 text-capitalize font-16 d-flex align-items-center categories tab_screen_menu">
                         Caregories
-                        <BiChevronDown size={"15px"} className="ms-2" />
+                        <BiChevronDown size={"15px"} className="ms-1" />
                       </span>
                     }
                     id="navbarScrollingDropdown"
@@ -292,11 +292,11 @@ export default function Header() {
                   </NavDropdown>
 
                   <NavDropdown
-                    className="p-0 px-4 me-auto rounded-0"
+                    className="p-0 px-3 me-auto rounded-0"
                     title={
                       <span className="font-inter py-3 d-flex align-items-center text-capitalize font-16 categories tab_screen_menu">
                         about us
-                        <BiChevronDown size={"15px"} className="ms-2" />
+                        <BiChevronDown size={"15px"} className="ms-1" />
                       </span>
                     }
                     id="navbarScrollingDropdown"
@@ -313,7 +313,7 @@ export default function Header() {
                   <Nav.Link
                     as={Link}
                     href="/delivery-information"
-                    className="d-flex align-items-center text-capitalize font-16 all-side-icons me-4 font-14 my-2 tab_screen_menu"
+                    className="d-flex align-items-center text-capitalize font-16 all-side-icons me-3 font-14 my-2 tab_screen_menu"
                   >
                     Delivery information
                   </Nav.Link>

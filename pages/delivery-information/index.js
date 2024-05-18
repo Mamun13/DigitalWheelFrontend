@@ -54,7 +54,7 @@ const DeliverInformationPage = () => {
                                 </div>
                             </div>
                         </Col>
-                        <Col xs={12} md={10} xxl={9} className="delivery-details">
+                        <Col xs={12} md={10} xxl={9} className="delivery-details mb-5 mb-sm-4">
                             {parse(item?.item_long_desc)}
                         </Col>
                     </Row>
