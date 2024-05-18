@@ -3,6 +3,7 @@
 @media (min-width: 993px) and (max-width: 1200px) {
 }
 @media (min-width: 768px) and (max-width: 992px) {
+
   .search-field {
     width: 300px !important;
   }
@@ -33,18 +34,18 @@
     font-size: 20px !important;
   }
   .hero_banner {
-    height: 60vh;
+    height: 36vh;
     width: 100%;
   }
 
   .hero_banner_img2 {
-    height: 60vh !important;
+    height: 35vh !important;
   }
   .hero_banner_img3 {
-    height: 28.8vh !important;
+    height: 17vh !important;
   }
   .hero_banner_img {
-    height: 60vh !important;
+    height: 35vh !important;
   }
   .footer_payment {
     height: 110px !important;
@@ -111,7 +112,7 @@
 
 
   .vendor_popup {
-    height: 350px;
+    height: auto;
     width: 315px;
   }
   .overlay_for_phn {
@@ -135,29 +136,51 @@
   left: 10%;
   bottom: 12%;
 }
+
+.buy-add-btn{
+  font-size: 13px!important;
+}
+.buy-now{
+  font-size: 13px!important;
+}
+.prod-title{
+  font-size: 15px!important;
+}
+.res_price_tag{
+  font-size: 13px!important;
+}
+.vendor_img {
+  height: 150px;
+}
+.vendor_banner_over::after {
+  height: 150px;
+}
+.breadcrumb_title{
+  font-size: 30px!important;
+}
 }
 
 @media (max-width: 575px) {
   .vendor_popup {
-    height: 350px;
+    height: auto;
     width: 315px;
   }
   .overlay_for_phn {
     display: flex;
   }
   .v_overlay_img {
-    height: 20vh !important;
+    height: 18vh !important;
     margin-bottom: 15px;
   }
   .v_overlay_img2 {
-    height: 19vh !important;
+    height: 15vh !important;
     width: 100%;
     -o-object-fit: cover !important;
     object-fit: cover !important;
   }
   .extra_space {
     margin-bottom: 0px;
-    margin-right: 15px;
+    margin-right: 10px;
   }
 .ven_overlay_text{
   font-size: 16px!important;
@@ -166,7 +189,9 @@
   left: 10%;
   bottom: 12%;
 }
-
+.vendor_popup {
+  top: 26%;
+}
   .mobile_dis_off {
     display: none;
   }
@@ -293,5 +318,48 @@
   svg.footer-soical-link.ms-2 {
     margin-left: 50% !important;
     transform: translate(-50%);
+  }
+  .ven_phn_div{
+    display: flex;
+    flex-direction: row;
+  }
+  .ven_phn_div_card{
+    width: 50%!important;
+  }
+  .buy-add-btn{
+    font-size: 12px!important;
+  }
+  .buy-now{
+    font-size: 12px!important;
+  }
+  .prod-title{
+    font-size: 14px!important;
+  }
+  .res_price_tag{
+    font-size: 12px!important;
+  }
+  .prod-title{
+    height: 14px;
+  }
+  .vendor_img {
+    height: 100px;
+  }
+  .vendor_banner_over::after {
+    height: 100px;
+  }
+  .breadcrumb_title{
+    font-size: 15px!important;
+  }
+}
+
+@media (max-width: 350px){
+  .buy-add-btn{
+    font-size: 10px!important;
+  }
+  .buy-now{
+    font-size: 10px!important;
+  }
+  .res_price_tag{
+    font-size: 11px!important;
   }
 }

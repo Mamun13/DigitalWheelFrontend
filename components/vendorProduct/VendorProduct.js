@@ -9,7 +9,7 @@ import { randomInt } from "next/dist/shared/lib/bloom-filter/utils";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 
-const ProductCard = ({
+const  ProductCard = ({
   id,
   categoryId,
   title,
@@ -127,18 +127,24 @@ const ProductCard = ({
 
         {isRunningOffer ? (
           <Fragment>
-            <del>
-              <Card.Text className="text-center text-capitalize">
-                Price: {salePrice} Tk.
+            <div className="d-flex">
+              <del>
+                <Card.Text className="text-center res_price_tag text-capitalize">
+                {salePrice} 
+                </Card.Text>
+              </del>
+              <Card.Text className="text-center res_price_tag text-capitalize">
+              / {offerPrice} Tk.
               </Card.Text>
-            </del>
-            <Card.Text className="text-center pb-2 text-capitalize">
+            </div>
+            
+            {/* <Card.Text className="text-center pb-2 text-capitalize">
               offer Price: {offerPrice} Tk.
-            </Card.Text>
+            </Card.Text> */}
           </Fragment>
         ) : (
-          <Card.Text className="text-center pb-2 text-capitalize">
-            <br />
+          <Card.Text className="text-center res_price_tag pb-2 text-capitalize">
+            {/* <br /> */}
             Price: {salePrice} Tk.
           </Card.Text>
         )}
@@ -157,17 +163,17 @@ const ProductCard = ({
         <div className="d-flex justify-content-center">
           <button
             type="button"
-            className="btn btn-success buy-now rounded-0 text-capitalize px-2 font-14 me-2 font-lato"
+            className="btn btn-success buy-now rounded-1 text-capitalize px-2 font-14 me-2 font-lato"
             onClick={(event) => handleAddToCart(event, true)}
           >
-            buy now
+            buy
           </button>
           <button
             type="button"
-            className="btn btn-warning buy-add-btn rounded-0 text-capitalize px-2 font-14 font-lato"
+            className="btn btn-warning buy-add-btn rounded-1 text-capitalize px-2 font-14 font-lato"
             onClick={(event) => handleAddToCart(event)}
           >
-            add to cart
+            add cart
           </button>
 
           
