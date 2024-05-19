@@ -3229,11 +3229,11 @@ Responsive part end
   white-space: normal;
   display: -moz-box;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  /* -webkit-line-clamp: 1; */
   -webkit-box-orient: vertical;
   /* overflow: hidden; */
   text-overflow: ellipsis;
-  font-size: 14px;
+  font-size: 13px;
   height: 25px;
 }
 
