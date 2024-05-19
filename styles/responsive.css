@@ -69,6 +69,10 @@
   .vendor_popup {
     top: 32%;
   }
+  .prod-title{
+    font-size: 13px!important;
+    height: 25px;
+  }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .mobile_menu_hide {
@@ -157,6 +161,10 @@
 }
 .breadcrumb_title{
   font-size: 30px!important;
+}
+.prod-title{
+  font-size: 12px!important;
+  height: 25px;
 }
 }
 
@@ -339,7 +347,8 @@
     font-size: 12px!important;
   }
   .prod-title{
-    height: 14px;
+    font-size: 12px!important;
+    height: 25px;
   }
   .vendor_img {
     height: 100px;
