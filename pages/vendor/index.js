@@ -3,6 +3,7 @@ import { getStoragePath } from "../../utils/helpers";
 import VendorProduct from "../../components/vendorProduct/VendorProduct";
 import { fetchVendorInventories } from "../../services/VendorServices";
 import ScrollToTopButton from "../../components/common/ScrollToTopButton";
+import Form from "react-bootstrap/Form";
 
 const index = ({ title, categoryId }) => {
   const [inventories, setInventories] = useState([]);
@@ -17,41 +18,49 @@ const index = ({ title, categoryId }) => {
       }
     });
   }, [categoryId]);
+  console.log(inventories[0]);
 
+  const itemfilter = (id) => {
+    const items = inventories.filter((i) => i.product.sub_category?.id === id);
+    setFilteredinventory(items);
+  };
 
-  // const initialCardCount = 12;
-  // const additionalCardCount = 8;
-  // const [visibleCards, setVisibleCards] = useState(initialCardCount);
-  // const totalCards = inventories.length;
-  // console.log(totalCards)
-  
-  // const loadMore = () => {
-  //   const newVisibleCards = visibleCards + additionalCardCount;
-  //   setVisibleCards(
-  //     newVisibleCards > totalCards ? totalCards : newVisibleCards
-  //   );
-  // };
-
-  // const showLess = () => {
-  //   setVisibleCards(initialCardCount);
-  // };
 
   return (
     <>
       <section className="vendor_part_product pb-5">
         <div className="position-relative vendor_banner_over">
-          <img src="/vendor.png" className=" vendor_img"/>
+          <img src="/vendor.png" className=" vendor_img" />
           <div className="in_stock_text">
-            <h1 className="text-capitalize prosto_one_regular text-light display-5 fw-bold breadcrumb_title">in stock</h1>
+            <h1 className="text-capitalize prosto_one_regular text-light display-5 fw-bold breadcrumb_title">
+              in stock
+            </h1>
           </div>
         </div>
 
         <div className="container">
-          
+          <div>
+            <div className="d-flex justify-content-between align-items-center bg-light shadow rounded-1 mt-3 py-3 px-3">
+              <div>
+                <p className="text-capitalize">all products</p>
+              </div>
+              <div>
+                <Form.Select aria-label="Default select example">
+                  <option> select category</option>
+                   
+                 
+                </Form.Select>
+                
+              </div>
+            </div>
+          </div>
           <div className="row ven_phn_div">
             {inventories.map((inventory, key) => {
               return (
-                <div className="col-lg-2 col-md-3 col-sm-4 px-2 ven_phn_div_card" key={key}>
+                <div
+                  className="col-lg-2 col-md-3 col-sm-4 px-2 ven_phn_div_card"
+                  key={key}
+                >
                   <div className="mt-0">
                     <div className="my-2">
                       <VendorProduct
@@ -74,38 +83,13 @@ const index = ({ title, categoryId }) => {
                         }
                         viewLink={`/vendorProduct/${inventory.id}`}
                       />
-                    </div> 
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
-          {/* {totalCards < 12 ?  : ""} */}
-          {/* {visibleCards < totalCards ? (
-              visibleCards === initialCardCount ? (
-                <div className="d-flex justify-content-center mt-3 mb-3">
-                  <button type="submit" onClick={loadMore} className="requestBtn border-0">
-                    More Products
-                  </button>
-                </div>
-              ) : (
-                <>
-                  <div className="d-flex justify-content-center mt-3 mb-3">
-                     <button type="submit" onClick={loadMore} className="requestBtn border-0">
-                     More Products
-                     </button>
-                  </div>
-                </>
-              )
-            ) : (
-                <div className="d-flex justify-content-center mt-3 mb-3">
-                  <button type="submit" onClick={showLess} className="requestBtn border-0">
-                  Less Products
-                  </button>
-                </div>
-            )} */}
         </div>
-
       </section>
       <ScrollToTopButton />
     </>
