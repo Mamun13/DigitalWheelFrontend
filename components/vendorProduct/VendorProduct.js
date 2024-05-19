@@ -118,7 +118,7 @@ const  ProductCard = ({
           ""
         )}
       </div>
-      <Card.Body className="prod-card-body">
+      <Card.Body className="prod-card-body px-2 pt-1">
         <Card.Title className="text-center text-capitalize font-18">
           <Link href={viewLink} className="prod-title" title={title}>
             {title}

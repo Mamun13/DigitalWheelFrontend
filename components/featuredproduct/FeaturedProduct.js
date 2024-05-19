@@ -78,9 +78,9 @@ const index = ({ title, categoryId }) => {
           <div className="row ven_phn_div">
             {featureinventories.slice(0, visibleCards).map((inventory, key) => {  
               return (
-                <div className="col-lg-2 col-md-3 col-sm-4 ven_phn_div_card" key={key}>
+                <div className="col-lg-2 col-md-3 col-sm-4 px-2 ven_phn_div_card" key={key}>
                   <div className="mt-0">
-                    <div className="my-3 my-sm-2">
+                    <div className="my-2 my-sm-2">
                       <VendorProduct
                         id={inventory.id}
                         categoryId={inventory?.product.category_id}
