@@ -173,8 +173,7 @@ vendor popup part start
 .vendor_popup{
   position: fixed;
   background-color: #8EC5FC;
-background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
   height: auto;
   width: 600px;
   top: 18%;
@@ -182,12 +181,29 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
   transform: translate(-50%);
   z-index: 999999999999999;
 }
+.overlay_shadow::after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.712);
+  height: 100vh;
+  width: 100%;
+}
+
 .vendor_popup_text{
   position: absolute;
   color: #fff;
   left: 5%;
   bottom: 8%;
   z-index: 9999999;
+}
+.cross_btn{
+  position: absolute!important;
+  top: 0;
+  right: 0;
+  z-index: 9999999999;
+
 }
 /*===============
 vendor popup part end
@@ -983,6 +999,9 @@ banner css starts
 /* .vendor_part_feature {
   background-color: #e4e4e4;
 } */
+.product_filter {
+ box-shadow: none!important;
+}
 .vendor_part_feature_responsive{
   display: none;
 }
@@ -2299,7 +2318,7 @@ vendor part css start
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%)!important;
-  z-index: 99999999;
+  z-index: 99999;
 }
 /*================
 vendor part css end

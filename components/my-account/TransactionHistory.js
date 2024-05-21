@@ -1,7 +1,7 @@
 import Row from "react-bootstrap/Row";
 import {Fragment, useEffect, useState} from "react";
 import {fetchTransactions} from "../../services/TransactionService";
-import Link from "next/link";
+
 import { useRouter } from "next/router";
 
 const Deposit = ({transactionstatus}) => {

@@ -1,7 +1,6 @@
 import Row from "react-bootstrap/Row";
 import {Fragment, useEffect, useState} from "react";
 import {fetchCredits} from "../../services/CreditService";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 const Withdraw = ({creditStatus}) => {

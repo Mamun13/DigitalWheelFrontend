@@ -90,36 +90,34 @@ function Overlay() {
               <Accordion>
                 <Accordion.Item eventKey="0" className="rounded-bottom">
                   <Accordion.Header>Categories</Accordion.Header>
-                    <Accordion.Body>
-                      {categories.map((category, key) => {
-                        return (
-                          <NavDropdown.Item key={key} className="m-0 p-0">
-                                      <Link
-                                        href={`/category/${category.id}`}
-                                        onClick={closeSearch}
-                                        className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
-                                      >
-                                        {category.name}
-                                      </Link>
-                                    </NavDropdown.Item>
-                                  );
-                                })} 
-                    </Accordion.Body>
+                  <Accordion.Body>
+                    {categories.map((category, key) => {
+                      return (
+                        <NavDropdown.Item as={Link} href={`/category/${category.id}`} onClick={closeSearch} key={key} className="m-0 p-0">
+                          <span
+                            className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
+                          >
+                            {category.name}
+                          </span>
+                        </NavDropdown.Item>
+                      );
+                    })}
+                  </Accordion.Body>
                 </Accordion.Item>
 
                 <Accordion.Item eventKey="1" className="mt-3 rounded-top">
                   <Accordion.Header>About us</Accordion.Header>
-                    <Accordion.Body>
-                      <Link
-                          href="/company-profile"
-                          onClick={closeSearch}
-                          className="cate-drop text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
-                        >
-                          Who we are
-                        </Link>        
-                    </Accordion.Body>
+                  <Accordion.Body>
+                    <Link
+                      href="/company-profile"
+                      onClick={closeSearch}
+                      className="cate-drop text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
+                    >
+                      Who we are
+                    </Link>
+                  </Accordion.Body>
                 </Accordion.Item>
-                
+
               </Accordion>
             </li>
             {/* <li >
@@ -160,29 +158,29 @@ function Overlay() {
             {reIsLoggedIn ? (
               <>
                 <li className="pe-3 login-modal">
-                  <Link href="/my-account" className="overlay-content-itema">
+                  <Link onClick={closeSearch} href="/my-account" className="overlay-content-itema">
                     My Account
                   </Link>
                 </li>
-                  {customerType === "1" && (
-                          <Fragment>
-                            <li className="pe-3 login-modal">
-                              <Link href="/vendor" className="overlay-content-itema">
-                                in stock
-                              </Link>
-                            </li>
-                            <li className="pe-3 login-modal">
-                              <Link href="/pre_order" className="overlay-content-itema">
-                                Pre-order
-                              </Link>
-                            </li>
-                            <li className="pe-3 login-modal">
-                              <Link href="/sell_products" className="overlay-content-itema">
-                                Sell Products
-                              </Link>
-                            </li>
-                          </Fragment>
-                        )}
+                {customerType === "1" && (
+                  <Fragment>
+                    <li className="pe-3 login-modal">
+                      <Link onClick={closeSearch} href="/vendor" className="overlay-content-itema">
+                        in stock
+                      </Link>
+                    </li>
+                    <li className="pe-3 login-modal">
+                      <Link onClick={closeSearch} href="/pre_order" className="overlay-content-itema">
+                        Pre-order
+                      </Link>
+                    </li>
+                    <li className="pe-3 login-modal">
+                      <Link onClick={closeSearch} href="#" className="overlay-content-itema">
+                        Sell Products
+                      </Link>
+                    </li>
+                  </Fragment>
+                )}
                 <li onClick={closeSearch} >
                   <Link
                     href="/auth/logout"
@@ -196,7 +194,7 @@ function Overlay() {
                   </Link>
                 </li>
               </>
-            ) : ( 
+            ) : (
               <>
                 <li>
                   <Link
@@ -218,8 +216,8 @@ function Overlay() {
                 </li>
               </>
             )}
-            
-           
+
+
           </ul>
         </div>
       </div>
