@@ -202,7 +202,7 @@ vendor popup part start
 .cross_btn{
   position: absolute!important;
   top: 0;
-  right: -2%;
+  right: 0%;
   z-index: 9999999999;
 
 }

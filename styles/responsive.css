@@ -1,4 +1,21 @@
-@media (max-width: 1400px) {}
+@media (max-width: 1920px) {
+  .hero_banner_img3 {
+    height: 36.9vh !important
+  }
+
+  .vendor_popup {
+    width: 750px;
+  }
+  .v_overlay_img2 {
+    height: 23.7vh!important;
+}
+}
+
+@media (max-width: 1400px) {
+  .hero_banner_img3 {
+    height: 36.5vh !important;
+  }
+}
 
 @media (min-width: 993px) and (max-width: 1200px) {}
 
@@ -217,15 +234,18 @@
   .d-flex.justify-content-end.align-items-center.bg-light.mt-3.shadow.rounded-1.p-3.main {
     display: block !important;
   }
+
   .d-flex.align-items-center.me-2.filter_select_form1 {
-    display: block!important;
-}
-.d-flex.align-items-center.me-2.filter_select_form2 {
-  display: block!important;
-}
-.d-flex.align-items-center.me-2.filter_select_form3 {
-    display: block!important;
-}
+    display: block !important;
+  }
+
+  .d-flex.align-items-center.me-2.filter_select_form2 {
+    display: block !important;
+  }
+
+  .d-flex.align-items-center.me-2.filter_select_form3 {
+    display: block !important;
+  }
 }
 
 @media (max-width: 575px) {
@@ -469,6 +489,7 @@
   .breadcrumb_title {
     font-size: 15px !important;
   }
+
   .d-flex.justify-content-end.align-items-center.filter_select_form {
     display: block !important;
   }
@@ -477,15 +498,18 @@
     display: block !important;
 
   }
+
   .d-flex.align-items-center.me-2.filter_select_form1 {
-    display: block!important;
-}
-.d-flex.align-items-center.me-2.filter_select_form2 {
-  display: block!important;
-}
-.d-flex.align-items-center.me-2.filter_select_form3 {
-    display: block!important;
-}
+    display: block !important;
+  }
+
+  .d-flex.align-items-center.me-2.filter_select_form2 {
+    display: block !important;
+  }
+
+  .d-flex.align-items-center.me-2.filter_select_form3 {
+    display: block !important;
+  }
 }
 
 @media (max-width: 350px) {
@@ -500,6 +524,7 @@
   .res_price_tag {
     font-size: 11px !important;
   }
+
   .d-flex.justify-content-end.align-items-center.filter_select_form {
     display: block !important;
   }
@@ -508,13 +533,16 @@
     display: block !important;
 
   }
+
   .d-flex.align-items-center.me-2.filter_select_form1 {
-    display: block!important;
-}
-.d-flex.align-items-center.me-2.filter_select_form2 {
-  display: block!important;
-}
-.d-flex.align-items-center.me-2.filter_select_form3 {
-    display: block!important;
-}
+    display: block !important;
+  }
+
+  .d-flex.align-items-center.me-2.filter_select_form2 {
+    display: block !important;
+  }
+
+  .d-flex.align-items-center.me-2.filter_select_form3 {
+    display: block !important;
+  }
 }

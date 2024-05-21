@@ -48,7 +48,7 @@ const AgeVerification = () => {
     <>
       {isVisible && (
         <div className={styles.overlayVisible}>
-          <div className={styles.overlayContent}>
+          <div className="">
             <div className="">
               {!showMessage && (
                 <>
