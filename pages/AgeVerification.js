@@ -5,7 +5,7 @@ const AgeVerification = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [showMessage, setShowMessage] = useState(false);
 
-  useEffect(() => {
+  useEffect(() => { 
     const isOver18 = localStorage.getItem("isOver18");
     if (isOver18) {
       setIsVisible(false);
@@ -45,7 +45,7 @@ const AgeVerification = () => {
     <>
       {isVisible && (
         <div className={styles.overlayVisible}>
-          <div className={styles.overlayContent}>
+          <div className={styles.overlayContent}> 
             <div className="">
               {!showMessage && (
                 <> 

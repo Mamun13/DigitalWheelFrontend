@@ -18,7 +18,6 @@ import Withdraw from "../../components/my-account/Withdraw";
 import TransactionHistory from "../../components/my-account/TransactionHistory";
 import Deposit from "../../components/my-account/Deposit";
 import { isLoggedIn, logout } from "../../utils/auth";
-import VendorOverlay from "../vendorOverlay.js";
 import VendorOverlayOld from "../vendorOverlayOld.js";
 
 const MyAccountPage = () => {
@@ -69,8 +68,6 @@ const MyAccountPage = () => {
         <title>Account</title>
       </Head>
 
-      {/* {customerType === "1" && (<VendorOverlay/>)} */}
-      {/* {customerType === "1" && (<VendorOverlayOld/>)} */}
       {(customerType === "1") ? (<VendorOverlayOld/>) :""}
       
       {/* <VendorOverlayOld/> */}

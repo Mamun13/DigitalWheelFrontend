@@ -77,10 +77,10 @@ function Overlay() {
         </button>
         <div className="overlay-content text-uppercase font-24 fw-semibold">
           <ul className="lh-lg font-20 text-start px-5">
-            <li >
+            <li onClick={closeSearch}>
               <Link
                 href="/"
-                onClick={closeSearch}
+                
                 className="overlay-content-itema"
               >
                 home
@@ -120,36 +120,20 @@ function Overlay() {
 
               </Accordion>
             </li>
-            {/* <li >
-              <Accordion className="">
-                <Accordion.Item eventKey="1">
-                  <Accordion.Header>About us</Accordion.Header>
-                    <Accordion.Body>
-                      <Link
-                          href="/company-profile"
-                          onClick={closeSearch}
-                          className="cate-drop text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
-                        >
-                          Who we are
-                        </Link>        
-                    </Accordion.Body>
-                </Accordion.Item>
-                
-              </Accordion>
-            </li> */}
-            <li>
+            
+            <li onClick={closeSearch}>
               <Link
                 href="/delivery-information"
-                onClick={closeSearch}
+                
                 className="overlay-content-itema"
               >
                 delivery information
               </Link>
             </li>
-            <li>
+            <li onClick={closeSearch}>
               <Link
                 href="/contact"
-                onClick={closeSearch}
+                
                 className="overlay-content-itema"
               >
                 contacts
@@ -157,24 +141,24 @@ function Overlay() {
             </li>
             {reIsLoggedIn ? (
               <>
-                <li className="pe-3 login-modal">
-                  <Link onClick={closeSearch} href="/my-account" className="overlay-content-itema">
+                <li className="pe-3 login-modal" onClick={closeSearch}>
+                  <Link href="/my-account" className="overlay-content-itema">
                     My Account
                   </Link>
                 </li>
                 {customerType === "1" && (
                   <Fragment>
-                    <li className="pe-3 login-modal">
+                    <li className="pe-3 login-modal" onClick={closeSearch}>
                       <Link onClick={closeSearch} href="/vendor" className="overlay-content-itema">
                         in stock
                       </Link>
                     </li>
-                    <li className="pe-3 login-modal">
+                    <li className="pe-3 login-modal" onClick={closeSearch}>
                       <Link onClick={closeSearch} href="/pre_order" className="overlay-content-itema">
                         Pre-order
                       </Link>
                     </li>
-                    <li className="pe-3 login-modal">
+                    <li className="pe-3 login-modal" onClick={closeSearch}>
                       <Link onClick={closeSearch} href="#" className="overlay-content-itema">
                         Sell Products
                       </Link>
@@ -196,19 +180,18 @@ function Overlay() {
               </>
             ) : (
               <>
-                <li>
+                <li onClick={closeSearch}>
                   <Link
                     href="/auth/login"
-                    onClick={closeSearch}
+                    
                     className="overlay-content-itema"
                   >
                     sign in
                   </Link>
                 </li>
-                <li>
+                <li onClick={closeSearch}>
                   <Link
                     href="/auth/register"
-                    onClick={closeSearch}
                     className="overlay-content-itema"
                   >
                     sign up

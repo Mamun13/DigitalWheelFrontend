@@ -79,7 +79,7 @@ const SingleInventoryPage = () => {
       });
     }
   }, [id]);
-
+ 
   useEffect(() => {
     if (inventory?.id && isLoggedIn()) {
       wishlistStatus(inventory?.id).then((response) => {
