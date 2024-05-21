@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const vendorOverlay = () => {
   const [divVisible, setDivVisible] = useState(true);
- 
+
   const handleClick = () => {
     setDivVisible(false);
   };
@@ -15,8 +15,8 @@ const vendorOverlay = () => {
       {divVisible && (
         <div className="vendor_popup p-3">
           <div>
-            <button onClick={handleClick} className="float-end">
-              <RxCross2 size={"20px"}/>
+            <button onClick={handleClick} className="">
+              <RxCross2 size={"20px"} color="white"/>
             </button>
           </div>
           <div className="">
