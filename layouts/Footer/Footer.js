@@ -62,7 +62,7 @@ export default function Footer() {
                         <Link href="/" target="_blank">
                           <img
                             alt="logo"
-                            src="/logo/LOGO.png"
+                            src="/logo/vabe.png"
                             className="img-fluid footer-logo mb-4"
                             loading="lazy"
                           />

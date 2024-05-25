@@ -12,7 +12,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Image from "next/image";
 // import Logo from "../../public/logo/LOGO.png";
-import Logo from "../../public/logo/whitelogo.png";
+import Logo from "../../public/logo/vabe.png";
 import { BiChevronDown } from "react-icons/bi";
 import { BiAlignLeft } from "react-icons/bi";
 
@@ -155,9 +155,9 @@ export default function Header() {
         </section> */}
 
         {/*Logo and Search*/}
-        <section className="theme-bg mobile_menu_hide">
+        <section className="menu_color mobile_menu_hide">
           <Container>
-            <div className="d-flex justify-content-between align-items-center main-manu-item py-3">
+            <div className="d-flex justify-content-between align-items-center main-manu-item py-2">
               <div className="">
                 <Link href="/">
                   <Image
