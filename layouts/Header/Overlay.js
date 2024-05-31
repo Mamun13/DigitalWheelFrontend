@@ -80,7 +80,11 @@ function Overlay() {
             <li onClick={closeSearch}>
               <Link
                 href="/"
+<<<<<<< HEAD
                 
+=======
+
+>>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
                 className="overlay-content-itema"
               >
                 home
@@ -93,12 +97,23 @@ function Overlay() {
                   <Accordion.Body>
                     {categories.map((category, key) => {
                       return (
+<<<<<<< HEAD
                         <NavDropdown.Item as={Link} href={`/category/${category.id}`} onClick={closeSearch} key={key} className="m-0 p-0">
                           <span
                             className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
                           >
                             {category.name}
                           </span>
+=======
+                        <NavDropdown.Item key={key} className="m-0 p-0">
+                          <Link
+                            href={`/category/${category.id}`}
+                            onClick={closeSearch}
+                            className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
+                          >
+                            {category.name}
+                          </Link>
+>>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
                         </NavDropdown.Item>
                       );
                     })}
@@ -120,11 +135,19 @@ function Overlay() {
 
               </Accordion>
             </li>
+<<<<<<< HEAD
             
             <li onClick={closeSearch}>
               <Link
                 href="/delivery-information"
                 
+=======
+
+            <li onClick={closeSearch}>
+              <Link
+                href="/delivery-information"
+
+>>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
                 className="overlay-content-itema"
               >
                 delivery information
@@ -133,7 +156,11 @@ function Overlay() {
             <li onClick={closeSearch}>
               <Link
                 href="/contact"
+<<<<<<< HEAD
                 
+=======
+
+>>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
                 className="overlay-content-itema"
               >
                 contacts
@@ -149,17 +176,29 @@ function Overlay() {
                 {customerType === "1" && (
                   <Fragment>
                     <li className="pe-3 login-modal" onClick={closeSearch}>
+<<<<<<< HEAD
                       <Link onClick={closeSearch} href="/vendor" className="overlay-content-itema">
+=======
+                      <Link href="/vendor" className="overlay-content-itema">
+>>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
                         in stock
                       </Link>
                     </li>
                     <li className="pe-3 login-modal" onClick={closeSearch}>
+<<<<<<< HEAD
                       <Link onClick={closeSearch} href="/pre_order" className="overlay-content-itema">
+=======
+                      <Link href="/pre_order" className="overlay-content-itema">
+>>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
                         Pre-order
                       </Link>
                     </li>
                     <li className="pe-3 login-modal" onClick={closeSearch}>
+<<<<<<< HEAD
                       <Link onClick={closeSearch} href="#" className="overlay-content-itema">
+=======
+                      <Link href="/sell_products" className="overlay-content-itema">
+>>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
                         Sell Products
                       </Link>
                     </li>
@@ -183,7 +222,11 @@ function Overlay() {
                 <li onClick={closeSearch}>
                   <Link
                     href="/auth/login"
+<<<<<<< HEAD
                     
+=======
+
+>>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
                     className="overlay-content-itema"
                   >
                     sign in
@@ -192,6 +235,10 @@ function Overlay() {
                 <li onClick={closeSearch}>
                   <Link
                     href="/auth/register"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
                     className="overlay-content-itema"
                   >
                     sign up
