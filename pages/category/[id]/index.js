@@ -3,7 +3,7 @@ import ScrollToTopButton from "../../../components/common/ScrollToTopButton";
 import { useRouter } from "next/router";
 import {
   fetchCategories,
-  fetchCategory
+  fetchCategory,
 } from "../../../services/CategoryServices";
 import { fetchInventoriesByCategory } from "../../../services/InventoryServices";
 import Link from "next/link";
@@ -31,7 +31,7 @@ const CategoryPage = () => {
   // fetch
   useEffect(() => {
     fetchCategories({
-      paginate: "no"
+      paginate: "no",
     }).then((response) => {
       if (response?.data) {
         setCategories(response.data);
@@ -74,7 +74,7 @@ const CategoryPage = () => {
   useEffect(() => {
     if (id) {
       fetchInventoriesByCategoryData(id, {
-        paginate: "no"
+        paginate: "no",
       });
     }
   }, [id]);
@@ -84,7 +84,7 @@ const CategoryPage = () => {
     if (page && id) {
       fetchInventoriesByCategoryData(id, {
         page: page,
-        paginate: "yes"
+        paginate: "yes",
       });
     }
   }, [page]);
@@ -95,7 +95,7 @@ const CategoryPage = () => {
   };
 
   const [activeAccordion, setActiveAccordion] = useState(null);
-  
+
   const toggleAccordion = (index) => {
     setActiveAccordion(activeAccordion === index ? null : index);
   };

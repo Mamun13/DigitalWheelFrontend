@@ -95,7 +95,7 @@ function CartOverlay() {
       >
         <div className="d-flex align-items-center top_space">
           <div className="d-flex">
-            <PiShoppingCartLight className="off-canvas-icon pe-0 text-white cart_icon" />
+            <PiShoppingCartLight className="off-canvas-icon pe-0 cart_icon text-dark" />
             <span
               className="badge text-danger cart_icon_length"
               style={{ marginTop: "4px", marginLeft: "-10px" }}
