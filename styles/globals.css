@@ -375,12 +375,17 @@ header css starts
   background-color: rgb(74 186 249) !important;
 }
 .search_btn {
-  width: 200px!important;
+  width: 220px !important;
   position: absolute;
-  right: 17%;
-  top: 1%;
-  box-shadow: none!important;
+  right: 13%;
+  top: 2%;
+  box-shadow: none !important;
+  animation-name: animate-width;
+  -webkit-animation-name: animate-width;
+   animation-duration: 2s;
 }
+
+
 
 .manu-font {
   font-size: 14px;

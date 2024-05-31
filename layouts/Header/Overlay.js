@@ -4,17 +4,15 @@ import Link from "next/link";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { BiChevronDown } from "react-icons/bi";
 import { fetchCategories } from "../../services/CategoryServices";
-import Accordion from 'react-bootstrap/Accordion';
+import Accordion from "react-bootstrap/Accordion";
 import { isLoggedIn, logout } from "../../utils/auth";
 import { useRouter } from "next/router";
-
 
 function Overlay() {
   const [categories, setCategories] = useState([]);
   const [storedToken, setStoredToken] = useState();
   const [reIsLoggedIn, setReIsLoggedIn] = useState(false);
   const [customerType, setCustomerType] = useState(null);
-
 
   useEffect(() => {
     if (isLoggedIn()) {
@@ -26,7 +24,7 @@ function Overlay() {
     setStoredToken(localStorage?.getItem("token"));
 
     fetchCategories({
-      paginate: "no"
+      paginate: "no",
     }).then((response) => {
       if (response?.data) {
         setCategories(response.data);
@@ -78,15 +76,7 @@ function Overlay() {
         <div className="overlay-content text-uppercase font-24 fw-semibold">
           <ul className="lh-lg font-20 text-start px-5">
             <li onClick={closeSearch}>
-              <Link
-                href="/"
-<<<<<<< HEAD
-                
-=======
-
->>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
-                className="overlay-content-itema"
-              >
+              <Link href="/" className="overlay-content-itema">
                 home
               </Link>
             </li>
@@ -97,24 +87,14 @@ function Overlay() {
                   <Accordion.Body>
                     {categories.map((category, key) => {
                       return (
-<<<<<<< HEAD
-                        <NavDropdown.Item as={Link} href={`/category/${category.id}`} onClick={closeSearch} key={key} className="m-0 p-0">
-                          <span
-                            className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
-                          >
-                            {category.name}
-                          </span>
-=======
-                        <NavDropdown.Item key={key} className="m-0 p-0">
-                          <Link
-                            href={`/category/${category.id}`}
-                            onClick={closeSearch}
-                            className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
-                          >
-                            {category.name}
-                          </Link>
->>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
-                        </NavDropdown.Item>
+                        <Link
+                          key={key}
+                          href={`/category/${category.id}`}
+                          onClick={closeSearch}
+                          className="text-capitalize all-icons text-dark px-4 py-2 d-block font-inter tab_screen_menu"
+                        >
+                          {category.name}
+                        </Link>
                       );
                     })}
                   </Accordion.Body>
@@ -132,37 +112,19 @@ function Overlay() {
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
-
               </Accordion>
             </li>
-<<<<<<< HEAD
-            
-            <li onClick={closeSearch}>
-              <Link
-                href="/delivery-information"
-                
-=======
 
             <li onClick={closeSearch}>
               <Link
                 href="/delivery-information"
-
->>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
                 className="overlay-content-itema"
               >
                 delivery information
               </Link>
             </li>
             <li onClick={closeSearch}>
-              <Link
-                href="/contact"
-<<<<<<< HEAD
-                
-=======
-
->>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
-                className="overlay-content-itema"
-              >
+              <Link href="/contact" className="overlay-content-itema">
                 contacts
               </Link>
             </li>
@@ -176,35 +138,30 @@ function Overlay() {
                 {customerType === "1" && (
                   <Fragment>
                     <li className="pe-3 login-modal" onClick={closeSearch}>
-<<<<<<< HEAD
-                      <Link onClick={closeSearch} href="/vendor" className="overlay-content-itema">
-=======
-                      <Link href="/vendor" className="overlay-content-itema">
->>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
+                      <Link
+                        onClick={closeSearch}
+                        href="/vendor"
+                        className="overlay-content-itema"
+                      >
                         in stock
                       </Link>
                     </li>
                     <li className="pe-3 login-modal" onClick={closeSearch}>
-<<<<<<< HEAD
-                      <Link onClick={closeSearch} href="/pre_order" className="overlay-content-itema">
-=======
                       <Link href="/pre_order" className="overlay-content-itema">
->>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
                         Pre-order
                       </Link>
                     </li>
                     <li className="pe-3 login-modal" onClick={closeSearch}>
-<<<<<<< HEAD
-                      <Link onClick={closeSearch} href="#" className="overlay-content-itema">
-=======
-                      <Link href="/sell_products" className="overlay-content-itema">
->>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
+                      <Link
+                        href="/sell_products"
+                        className="overlay-content-itema"
+                      >
                         Sell Products
                       </Link>
                     </li>
                   </Fragment>
                 )}
-                <li onClick={closeSearch} >
+                <li onClick={closeSearch}>
                   <Link
                     href="/auth/logout"
                     onClick={(e) => {
@@ -220,34 +177,17 @@ function Overlay() {
             ) : (
               <>
                 <li onClick={closeSearch}>
-                  <Link
-                    href="/auth/login"
-<<<<<<< HEAD
-                    
-=======
-
->>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
-                    className="overlay-content-itema"
-                  >
+                  <Link href="/auth/login" className="overlay-content-itema">
                     sign in
                   </Link>
                 </li>
                 <li onClick={closeSearch}>
-                  <Link
-                    href="/auth/register"
-<<<<<<< HEAD
-=======
-
->>>>>>> 810c3f7b72146f9c9e6a7673cbf487ee6b394c00
-                    className="overlay-content-itema"
-                  >
+                  <Link href="/auth/register" className="overlay-content-itema">
                     sign up
                   </Link>
                 </li>
               </>
             )}
-
-
           </ul>
         </div>
       </div>

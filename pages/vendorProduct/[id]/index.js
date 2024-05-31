@@ -222,12 +222,12 @@ const SingleInventoryPage = () => {
 
               {inventory?.inventory_variants && (
                 <div className="variation-infos">
-                  <table className="table table-bordered">
+                  <table className="table table-bordered border-dark">
                     <tbody>
                       {inventory.inventory_variants.map((item, key) => (
                         <tr key={key}>
                           <td width={250}>{item?.variant?.name}</td>
-                          <td className="d-flex  text-light">
+                          <td className="d-flex">
                             {item?.variant_option?.name}
                           </td>
                         </tr>

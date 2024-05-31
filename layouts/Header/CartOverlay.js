@@ -91,7 +91,7 @@ function CartOverlay() {
       {/* <Search /> */}
       <Button
         onClick={handleShow}
-        className={`floating-cart-btn off-canvas text-danger dropuser-button ${additionalClass}`}
+        className={`floating-cart-btn off-canvas text-danger pt-2 dropuser-button ${additionalClass}`}
       >
         <div className="d-flex align-items-center top_space">
           <div className="d-flex">
@@ -103,10 +103,6 @@ function CartOverlay() {
               {cart?.items?.length}
             </span>
           </div>
-          {/* <div className="">
-            <p className="text-capitalize text-white font-12 text-start">my</p>
-            <p className="text-white">Cart</p>
-          </div> */}
         </div>
       </Button>
 
@@ -120,8 +116,8 @@ function CartOverlay() {
           <div className="pb-4 border-bottom canvas-height">
             {cart.items.map((item, key) => (
               <div
-                className="d-flex justify-content-between align-items-center mb-2 item-div py-2 mx-1"
                 key={key}
+                className="d-flex justify-content-between align-items-center mb-2 item-div py-2 mx-1"
               >
                 <div className="d-flex justify-content-start">
                   <div className="ms-2">

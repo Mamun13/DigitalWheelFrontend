@@ -79,12 +79,9 @@ export default function Header() {
     setIsVisible(!isVisible);
   };
 
-  const [category, setCategory] = useState({});
+  // const [category, setCategory] = useState({});
   const [inventories, setInventories] = useState([]);
   const [filteredInventory, setFilteredinventory] = useState([]);
-
-  const [meta, setMeta] = useState({});
-  const [page, setPage] = useState("");
 
   // fetch
   useEffect(() => {
@@ -96,17 +93,6 @@ export default function Header() {
       }
     });
   }, []);
-
-  // fetch
-  // useEffect(() => {
-  //   if (id) {
-  //     fetchCategory(id).then((response) => {
-  //       if (response?.data) {
-  //         setCategory(response.data);
-  //       }
-  //     });
-  //   }
-  // }, [id]);
 
   const [tab, setTab] = useState("");
 
@@ -128,113 +114,19 @@ export default function Header() {
     });
   };
 
-  // fetch
-  // useEffect(() => {
-  //   if (id) {
-  //     fetchInventoriesByCategoryData(id, {
-  //       paginate: "no"
-  //     });
-  //   }
-  // }, [id]);
-
-  // paginate
-  // useEffect(() => {
-  //   if (page && id) {
-  //     fetchInventoriesByCategoryData(id, {
-  //       page: page,
-  //       paginate: "yes"
-  //     });
-  //   }
-  // }, [page]);
-
   const itemfilter = (id) => {
     const items = inventories.filter((i) => i.product.sub_category?.id === id);
     setFilteredinventory(items);
   };
 
+  const [expanded, setExpanded] = useState(false);
+
+  const handleClick = () => {
+    setExpanded(!expanded);
+  };
   return (
     <Fragment>
       <header className="overbanner2">
-        {/*Tobpar*/}
-        <section className="theme-bg">
-          <Container className="">
-            <div>
-              {/* <ul className="font-poppins manu-font-one text-white d-flex justify-content-end align-items-center py-1">
-                <li className="pe-3">
-                  <a
-                    className="text-light"
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    How to buy
-                  </a>
-                </li>
-                <li className="pe-3">
-                  <a
-                    className="text-light"
-                    href="/b2b"
-                    target=""
-                    rel="noopener noreferrer"
-                  >
-                    B2B
-                  </a>
-                </li>
-
-                {reIsLoggedIn ? (
-                  <Fragment>
-                    <li className="pe-3 login-modal">
-                      <Link href="/my-account" className="text-light">
-                        My Account
-                      </Link>
-                    </li>
-                    {customerType === "1" && (
-                      <Fragment>
-                        <li className="pe-3 login-modal">
-                          <Link href="/vendor" className="text-light">
-                            Vendor
-                          </Link>
-                        </li>
-                        <li className="pe-3 login-modal">
-                          <Link href="/preorder" className="text-light">
-                            Pre-order
-                          </Link>
-                        </li>
-                      </Fragment>
-                    )}
-
-                    <li className="">
-                      <Link
-                        href="/auth/logout"
-                        className="text-light"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          logout();
-                        }}
-                      >
-                        Logout
-                      </Link>
-                    </li>
-                  </Fragment>
-                ) : (
-                  <Fragment>
-                    <li className="pe-3 login-modal">
-                      <Link href="/auth/login" className="text-light">
-                        Sign In
-                      </Link>
-                    </li>
-                    <li className="">
-                      <Link href="/auth/register" className="text-light">
-                        Sign Up
-                      </Link>
-                    </li>
-                  </Fragment>
-                )}
-              </ul> */}
-            </div>
-          </Container>
-        </section>
-
         {/*Logo and Search*/}
         <section className="bg-light mobile_menu_hide">
           <Container>
@@ -278,43 +170,114 @@ export default function Header() {
                           )}
 
                           <button
-                            className=" mt-2 px-2"
+                            className="mt-1 px-2"
                             onClick={toggleVisibility}
                           >
                             <IoIosSearch size={"25px"} className=" user_icon" />
                           </button>
                         </div>
+
                         <div>
-                          <Link
-                            href="/auth/logout"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              logout();
-                            }}
-                            className="manu-icon border-0 d-flex mt-2 align-items-center"
+                          <NavDropdown
+                            className="me-auto rounded-0"
+                            title={
+                              <span className="font-inter py-3 text-capitalize font-16 d-flex align-items-center categories tab_screen_menu">
+                                <BiUser size={"25px"} className=" user_icon" />
+                              </span>
+                            }
+                            id="navbarScrollingDropdown"
                           >
-                            <BiUser size={"25px"} className=" user_icon" />
-                            <div>
-                              <p className="ps-2 font-13">Logout</p>
-                            </div>
-                          </Link>
+                            <NavDropdown.Item
+                              href="/my-account"
+                              className="font-14 px-0 py-0"
+                            >
+                              <span className=" text-capitalize all-icons text-dark ps-3 py-2 d-block font-inter tab_screen_menu">
+                                My Account
+                              </span>
+                            </NavDropdown.Item>
+                            {customerType === "1" && (
+                              <>
+                                <NavDropdown.Item
+                                  href="/vendor"
+                                  className="font-14 px-0 py-0"
+                                >
+                                  <span className=" text-capitalize all-icons text-dark ps-3 py-2 d-block font-inter tab_screen_menu">
+                                    in stock
+                                  </span>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item
+                                  href="/pre_order"
+                                  className="font-14 px-0 py-0"
+                                >
+                                  <span className=" text-capitalize all-icons text-dark ps-3 py-2 d-block font-inter tab_screen_menu">
+                                    Pre-order
+                                  </span>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item
+                                  href="/#"
+                                  className="font-14 px-0 py-0"
+                                >
+                                  <span className=" text-capitalize all-icons text-dark ps-3 py-2 d-block font-inter tab_screen_menu">
+                                  sell products
+                                  </span>
+                                </NavDropdown.Item>
+                              </>
+                            )}
+
+                            <NavDropdown.Item
+                              href="/auth/logout"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                logout();
+                              }}
+                              className="font-14 px-0 py-0"
+                            >
+                              <span className=" text-capitalize all-icons text-dark ps-3 py-2 d-block font-inter tab_screen_menu">
+                                Logout
+                              </span>
+                            </NavDropdown.Item>
+                          </NavDropdown>
                         </div>
                       </div>
                     </Fragment>
                   ) : (
                     <Fragment>
                       <div className="d-flex">
+                        <div className="d-flex align-items-center">
+                          {isVisible && (
+                            <Form
+                              action="/search"
+                              method="get"
+                              className="mt-2"
+                            >
+                              <Form.Control
+                                type="search"
+                                name="keyword"
+                                placeholder="Search..."
+                                className="rounded border search_btn"
+                                aria-label="Search"
+                              />
+                            </Form>
+                          )}
+
+                          <button
+                            className=" mt-2 px-2"
+                            onClick={toggleVisibility}
+                          >
+                            <IoIosSearch
+                              size={"25px"}
+                              className="mt-2 user_icon"
+                            />
+                          </button>
+                        </div>
                         <Link
                           href="/auth/login"
-                          className="manu-icon border-0 d-flex align-items-center mt-3 me-3"
+                          className="manu-icon border-0 d-flex align-items-center mt-3  "
                         >
                           <BiUser size={"25px"} className=" user_icon" />
-                          <p className="text-capitalize ps-2 fw-light font-13">
-                            sign in
-                          </p>
                         </Link>
 
-                        <Link
+                        {/* <Link
                           href="/auth/register"
                           className="manu-icon border-0 d-flex align-items-center mt-3 font-13"
                         >
@@ -322,7 +285,7 @@ export default function Header() {
                           <p className="text-capitalize ps-2 fw-light">
                             sign up
                           </p>
-                        </Link>
+                        </Link> */}
                       </div>
                     </Fragment>
                   )}
@@ -359,6 +322,7 @@ export default function Header() {
                     return (
                       <>
                         <NavDropdown
+                          key={index}
                           className="px-3 me-auto rounded-0"
                           title={
                             <span className="font-inter py-3 text-capitalize font-16 d-flex align-items-center categories tab_screen_menu">
@@ -366,15 +330,12 @@ export default function Header() {
                               <BiChevronDown size={"15px"} className="ms-1" />
                             </span>
                           }
-                          key={index}
                           id="navbarScrollingDropdown"
                         >
-                          {/* {categories.map((category, key) => {
-                            return (
-                              <> */}
                           {item?.sub_categories &&
                             item.sub_categories.map((sub_items, index) => (
                               <NavDropdown.Item
+                                key={index}
                                 href={`/category/${item.id}`}
                                 className="m-0 p-0"
                               >
@@ -387,26 +348,7 @@ export default function Header() {
                                 </span>
                               </NavDropdown.Item>
                             ))}
-                          {/* </>
-                            );
-                          })} */}
                         </NavDropdown>
-                        {/* {item?.sub_categories?.length ? (
-                          <ul>
-                            {item?.sub_categories &&
-                              item.sub_categories.map((sub_items, index) => (
-                                <li className="pb-2 font-18" key={index}>
-                                  <button
-                                    onClick={(e) => itemfilter(sub_items.id)}
-                                  >
-                                    {sub_items?.name}
-                                  </button>
-                                </li>
-                              ))}
-                          </ul>
-                        ) : (
-                          ""
-                        )} */}
                       </>
                     );
                   })}
@@ -473,7 +415,7 @@ export default function Header() {
               <div className="col-lg-3 col-md-3 me-0">
                 <Link href="/">
                   <img
-                    src="/logo/whitelogo.png"
+                    src="/logo/vabe.png"
                     alt=""
                     className="img-fluid mobile_res_logo"
                   />
