@@ -70,7 +70,7 @@ const InvoiceCard = ({ orderDetails }) => {
           </div>
 
           {orderDetails?.order_items?.map((item, index) => (
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center" key={index}>
               <div className="px-2 py-2 serial_number">{index + 1}</div>
               {item.type === "product" ? (
                 <>

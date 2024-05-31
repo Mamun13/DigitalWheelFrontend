@@ -1,7 +1,4 @@
-.footer_number {
-  border-left: 2px solid #f68422 !important;
-  color: #f68422 !important;
-}
+
 .copyrights {
   padding: 0px 10px !important;
   font-size: 12px;
@@ -12,6 +9,10 @@
   margin-top: 19px;
   margin-left: -4px;
 }
+.footer{
+  background-color: #3140AF!important;
+  /* height: 300px; */
+}
 .footer_payment {
   height: 135px!important;
   width: auto;
@@ -20,6 +21,132 @@ svg.footer-soical-link.ms-2 {
   height: 20px;
   margin-left: 0px !important;
 }
+.footer_text_bg{
+  background-color: #3b67d9;
+}
+/* ===============
+footer part starts
+================== */
+
+.footer_slogan{
+  /* border-bottom: 1px dotted #fff; */
+  border-bottom: 1px dashed #fff;
+}
+.footer-bg {
+  background: #000;
+}
+.footer-logo {
+  height: 120px!important;
+}
+.footer_logo_bg {
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(74 186 249);
+}
+.payment-img {
+  max-width: 180px !important;
+  height: 180px !important;
+  object-fit: cover;
+}
+
+.soical-link {
+  background-color: #fff !important;
+  border-radius: 5px;
+  padding: 5px 5px;
+  color: #333 !important;
+  transition: all linear 0.3s;
+}
+
+.soical-link:hover {
+  color: #fff !important;
+  background-color: #f38120 !important;
+}
+
+.about-border {
+  display: inline-block;
+}
+
+.about-border::after {
+  position: absolute;
+  content: "";
+  bottom: 4%;
+  left: 0;
+  background-color: white;
+  height: 2px;
+  width: 100%;
+}
+
+.information-border {
+  display: inline-block;
+}
+
+.information-border::after {
+  position: absolute;
+  content: "";
+  bottom: 4%;
+  left: 0;
+  background-color: white;
+  height: 2px;
+  width: 100%;
+}
+
+.account-border {
+  display: inline-block;
+}
+
+.account-border::after {
+  position: absolute;
+  content: "";
+  bottom: 4%;
+  left: 0;
+  background-color: white;
+  height: 2px;
+  width: 100%;
+}
+
+.payment-border {
+  display: inline-block;
+}
+
+.payment-border::after {
+  position: absolute;
+  content: "";
+  bottom: 4%;
+  left: 0;
+  background-color: white;
+  height: 2px;
+  width: 100%;
+}
+
+.account-hover {
+  font-size: 16px;
+  transition: all linear 0.3s;
+}
+
+.account-hover:hover {
+  color: #f38120 !important;
+}
+
+.logo-resize {
+  height: 15px;
+  width: 40px;
+  margin-top: 20px;
+}
+
+.topbutton svg {
+  margin-left: 6px;
+  height: 16px;
+}
+
+button.scroll-to-top.topbutton {
+  background-color: #1a4989 !important;
+}
+
+/*============
+footer css end
+==============*/
 /* responsive part here */
 
 

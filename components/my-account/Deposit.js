@@ -47,7 +47,7 @@ const Deposit = ({debitStatus}) => {
                     deposit
                 </h1>
                 <div className=" table-responsive">
-                    <table className="table mb-5 table-width">
+                    <table className=" mb-5 table table-striped">
                         <thead>
                         <tr>
                             <th scope="col" className="text-capitalize accordion">ID</th>
