@@ -6,9 +6,9 @@ import {toast} from "react-toastify";
  *
  * @returns {Promise<*>}
  */
-export const fetchFeaturedProduct = async (params = {}) => {
+export const fetchfaqs = async (params = {}) => {
     try {
-        return await axios.get(`/ecom/inventories/top`, {
+        return await axios.get(`/content-module/30`, {
             params: params
         });
     } catch (error) {

@@ -1,11 +1,25 @@
 import React, { Fragment, useEffect, useState } from "react";
 import ScrollToTopButton from "../../components/common/ScrollToTopButton";
 import Head from "next/head";
-
+import { fetchfaqs } from "../../services/FaqsService";
 import Accordion from "react-bootstrap/Accordion";
 import { Col, Container } from "react-bootstrap";
+import parse from 'html-react-parser'
 
 const CategoryPage = () => {
+  const [faqs, setFaqs] = useState([]);
+  // fetch
+
+  useEffect(() => {
+    fetchfaqs().then((response) => {
+      if (response?.data) {
+        setFaqs(response.data[0]?.content_item);
+      }
+    });
+  }, []);
+
+  console.log(faqs);
+  const defaultActiveKey = faqs.length > 0 ? 0 : null;
   return (
     <Fragment>
       <Head>
@@ -26,33 +40,19 @@ const CategoryPage = () => {
           </h1>
           <div className="pb-4 accordion_focus">
             <Col lg={8} className="faq_content">
-              <Accordion defaultActiveKey="0">
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header>Accordion Item #1</Accordion.Header>
-                  <Accordion.Body>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                  </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="1">
-                  <Accordion.Header>Accordion Item #2</Accordion.Header>
-                  <Accordion.Body>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                  </Accordion.Body>
-                </Accordion.Item>
+              <Accordion defaultActiveKey={defaultActiveKey}>
+                {faqs.map((faqdata, index) => {
+                  return (
+                    <>
+                      <Accordion.Item eventKey={index} key={index}>
+                        <Accordion.Header>{faqdata.item_name || ""}</Accordion.Header>
+                        <Accordion.Body>
+                          {parse(faqdata.item_long_desc || "")}
+                        </Accordion.Body>
+                      </Accordion.Item>
+                    </>
+                  );
+                })}
               </Accordion>
             </Col>
           </div>

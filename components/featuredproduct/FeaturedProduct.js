@@ -18,6 +18,7 @@ const index = ({ title, categoryId }) => {
       }
     });
   }, [categoryId]);
+  
   var settings = {
     dots: false,
     arrow: true,
