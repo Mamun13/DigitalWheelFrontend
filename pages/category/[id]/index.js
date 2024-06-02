@@ -100,6 +100,8 @@ const CategoryPage = () => {
     setActiveAccordion(activeAccordion === index ? null : index);
   };
 
+
+
   return (
     <Fragment>
       <Head>
@@ -153,8 +155,12 @@ const CategoryPage = () => {
                                 {item?.sub_categories &&
                                   item.sub_categories.map(
                                     (sub_items, index) => (
-                                      <li className="pb-2 font-18" key={index}>
+                                      <li
+                                        className={`pb-2 font-18`}
+                                        key={index}
+                                      >
                                         <button
+                                          className=""
                                           onClick={(e) =>
                                             itemfilter(sub_items.id)
                                           }
@@ -219,7 +225,6 @@ const CategoryPage = () => {
             </div>
           </div>
         </div>
-
         <ScrollToTopButton />
       </section>
     </Fragment>
