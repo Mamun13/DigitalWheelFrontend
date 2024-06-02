@@ -26,6 +26,7 @@ const JoinVibe = () => {
               </div>
             </Col>
             <Col lg={5} className="bg-light">
+                <h3 className="text-capitalize text-center font-24 py-3">get started</h3>
               <div className="text-center d-flex justify-content-center align-items-center my-3">
                 <div>
                   <div className="text-center d-flex justify-content-center align-items-center">
