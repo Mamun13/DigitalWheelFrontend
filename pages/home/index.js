@@ -19,6 +19,8 @@ import BrandsName from "../../components/all_band_name/BrandsName";
 import FeaturedProduct from "../../components/featuredproduct/FeaturedProduct";
 import DeliveryInformation from "../../components/home/DeliveryInformation";
 import AddvertBanner from "../../components/home/AddvertBanner";
+import CsvCart from "../../components/home/CsvCart";
+import JoinVabe from "../../components/home/JoinVabe";
 
 const HomePage = () => {
   const [banners, setBanners] = useState([]);
@@ -70,6 +72,8 @@ const HomePage = () => {
       {banners && banners.length > 1 && (
         <AddBanner imagePath={banners?.[1]?.item_image} />
       )}
+      <CsvCart/>
+      <JoinVabe/>
       <BrandSection />
       <DeliveryInformation/>
       <ScrollToTopButton />

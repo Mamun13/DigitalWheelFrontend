@@ -171,7 +171,7 @@ export default function Footer() {
                         </Link>
                       </li>
                       <li className="nav-item pb-2">
-                        <Link href="/company-profile" className="nav-link-ifad">
+                        <Link href="/bulk_in_stock" className="nav-link-ifad">
                           Bulk In stock
                         </Link>
                       </li>
@@ -208,6 +208,7 @@ export default function Footer() {
                           key={index}
                           href={social?.item_link}
                           target="_blank"
+                          className="text-light"
                         >
                           {
                             linkIconMap[

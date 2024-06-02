@@ -16,8 +16,8 @@ const BrandSection = () => {
   }, []);
 
   var settings = {
-    dots: true,
-    arrow: true,
+    dots: false,
+    arrow: false,
     infinite: true,
     speed: 1000,
     autoplay: true,
