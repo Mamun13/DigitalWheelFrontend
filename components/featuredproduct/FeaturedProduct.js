@@ -105,7 +105,7 @@ console.log(featureinventories)
   return (
     <>
       <section className="vendor_part_feature pb-5">
-        <Container className="featured_padd">
+        <Container fluid className="featured_padd">
           <div className="px-0">
             <p className="text-capitalize text-center prosto_one_regular font-30 feature_text pt-4">
               top 10 trending product
